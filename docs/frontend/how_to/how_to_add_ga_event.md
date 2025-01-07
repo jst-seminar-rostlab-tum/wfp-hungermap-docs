@@ -1,6 +1,6 @@
 # How to add new GA event
 
-To add a new Google Analytics event, simply add the following code snippet where you want to send the event:
+You don't have to register events at all, you can just send any event with the following code snippet. Add this to wherever you want to send the event (e.g. when a state value changes in a context).
 
 ```typescript
 window.gtag('event', 'event_name', params);

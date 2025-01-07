@@ -4,9 +4,11 @@ sidebar_position: 5
 
 # Traffic measurement with Google Analytics
 
+The traffic of the website is tracked with Google Analytics.
+
 ## Dynamically loading GA once consent is granted
 
-The traffic of the website is tracked with Google Analytics. Even though Google Analytics doesn't send or store any personal data, tracking only starts when the users consents to it with the `CookieConsentPopup.tsx`.
+Even though Google Analytics doesn't send or store any personal data, tracking only starts when the users consents to it with the `CookieConsentPopup.tsx`.
 
 When the page first loads, only a base script is loaded that doesn't do any tracking, just initializes Google Analytics. This can be found in a Script tag in the base `layout.tsx`.
 
