@@ -12,6 +12,30 @@ Server-side calls are initiated from the Next.js server. We use these for data t
 
 Server-side calls are HTTP requests that are called from the body of server components (usually `page.tsx` files that don't have `'use client'` at the top or in one of their parents), usually with `fetch`. Next has overriden the Fetch API, so by default the response of a fetch call is cached indefinetly. To turn of caching, you need the following options to a fetch call: `{ cache: 'no-store'}`. We usually want to use caching in this app, but want to invalidate the cached data after some time. This can be done with the following options: `{ next: { revalidate: 3600 * 12 }}` - this means that the data will be considered stale after 12 hours. You can see examples of these in the root `page.tsx` and `GlobalDataRepositoryImpl.ts`
 
+Server-side call with no caching:
+
+``` typescript
+async getData(): Promise<DataType> {
+    const response = await fetch('url', {
+        cache: 'no-store',
+    });
+    const data = await response.json();
+    return data.body;
+}
+```
+
+Server-side call with 12 hour caching:
+
+``` typescript
+async getData(): Promise<DataType> {
+    const response = await fetch('url', {
+        next: { revalidate: 3600 * 12 }
+    });
+    const data = await response.json();
+    return data.body;
+}
+```
+
 ## Client-side calls
 
 Client-side calls are initiated by the React application running in the user's browser. We don't want to fetch more data than what is required to serve the pages the user requested, so we only fetch what's needed on the server. Once the client application loads and the user request additional data (by selecting a contry, for instance), we can start calls from the client.
