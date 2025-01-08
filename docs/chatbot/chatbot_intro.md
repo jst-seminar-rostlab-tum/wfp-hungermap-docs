@@ -36,15 +36,3 @@ Custom Prompts: The chatbot includes default prompts that users can click to qui
 Data Security: The chatbot ensures that user data is securely transmitted and stored. Privacy Compliance: The chatbot adheres to privacy regulations, ensuring that user data is handled responsibly.
 
 By achieving these objectives, the HungerMap Chatbot aims to provide a seamless and informative user experience, helping users access critical information about hunger and food security efficiently.
-
-## Features
-- [Key Features](/Features/core.md)
-- [Highlights](/Features/highlights.md)
-- [Example Use Cases](/Features/examples.md)
-- [Known Issues and Limitations](/Features/issues.md)
-
-## Technical Details
-- [Architecture Overview](/Technicality/architecture.md)
-- [Component Structure](/Technicality/components.md)
-- [State Management](/Technicality/state-management.md)
-- [API Calls and Sample Requests/Responses](/Technicality/api.md)
