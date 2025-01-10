@@ -10,7 +10,7 @@ It contains the different layers of the map and configures the general behavior.
 
 ### Map Initialization
 The leaflet map component can be configured with properties in the MapContainer element:
-```js
+```ts
 <MapContainer
       ref={mapRef}
       center={[21.505, -0.09]}
@@ -32,7 +32,7 @@ Since the MapContainer component is a react-leaflet component you can easily add
 
 The map is initialized using the following key properties of the Map.ts file located in the constants folder:
 
-```js
+```ts
 export const MAP_MAX_ZOOM = 8;
 export const MAP_MIN_ZOOM = 3;
 export const SELECTED_COUNTRY_ZOOM_THRESHOLD = 5;
