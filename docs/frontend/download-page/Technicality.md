@@ -1,6 +1,6 @@
 ## Technicality
 
-The `Download Portal` page is designed to provide users with various reports and data downloads. It utilizes an accordion interface to organize the content into different sections. Each section is represented by a React component that displays specific types of data. The components used are 
+The `Download Portal` page is designed to provide users with various reports and data downloads. It utilizes an accordion interface to organize the content into different sections. Each section is represented by a React component that displays specific types of data. The components used are:
 
   - `YearInReviewReports`
   - `CountryReports`
@@ -17,6 +17,8 @@ The `Download Portal` page is designed to provide users with various reports and
 #### YearInReviewReports Component
 
 The `YearInReviewReports` component is used to display reports for a specific year.
+**Props**:
+  - `yearInReviewReports`: An array of objects containing `label` and `url` for each report.
 
 **Example:**
 ```tsx
@@ -33,6 +35,9 @@ const yearInReviews: YearInReview[] = [
 #### CountryReports Component
 
 The `CountryReports` component is used to display reports for different countries.
+
+**Props**:
+  - `countryCodesData`: An array of objects containing `country` information and `url` for each report.
 
 **Example:**
 ```tsx
@@ -56,6 +61,9 @@ const countryCodesData: CountryCodesData[] = [
 #### DownloadCountryAccordion Component
 
 The `DownloadCountryAccordion` component is used to display a list of countries in an accordion format, allowing users to download data for each country.
+
+**Props**:
+  - `countries`: An array of objects containing `id`, `name`, `iso3`, and `iso2` for each country.
 
 **Example:**
 ```tsx
