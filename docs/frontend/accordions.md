@@ -14,7 +14,7 @@ The accordions in our application, sourced from NextUI, are designed to expand a
 
 
 #### Desktop Version
-In Fcs country view, accordions are displayed as in the image. 3 Accordions are placed in the left and 4 accordions are placed to the right.
+In Fcs country view, accordions are displayed as in the image below. Three Accordions are placed in the left and four accordions are placed to the right.
 
 ![Accordion Fcs](./assets/AccordionsFcs.png)
 
@@ -35,7 +35,7 @@ Regardless of the platform (desktop or mobile), each accordion includes an infor
 #### Implementation
 In `AccordionModal.tsx`, AccordionModal() function is designed to render a model with dynamic content on different sizes of mobile screens. Depends upon the screen size of the mobile, if we have small screens **450px or less**, a circular button with an arrow up icon is displayed, while for slightly larger screens **700px or less** a button with an arrow up icon and label named ***Insights*** is shown. Clicking the button opens a modal containing content provided by the `useAccordionModal()` context. The modal includes a title and body fetched from this context and it allows scrolling inside if the content overflows and provides blurred background, enhancing the focus on the modal content. The modal's visibility is managed by the `useDisclosure()` hook.
 
-`AccordionListItems.tsx` defines AccordionListItems() function, which is used to render a list of accordion items, primarily designed for the mobile screens. It enables multiple selection modes, disable selection, expand all items or highlight specific words in the titles. Each accordion item can include tooltips, popovers, descriptions etc. When only one item is provided, it expands by default, otherwise items remain collapsed unless interacted with. The component integrates spinners for loading states and uses a highlighter library to emphasize specific words in item titles. It relies on utility functions, such as `AccordionOperations.getSelectionModeType`, to determine the selection behavior. The parameter of `AccordionListItems()` is defined as following :
+`AccordionListItems.tsx` defines AccordionListItems() function, which is used to render a list of accordion items, primarily designed for the mobile screens. It enables multiple selection modes, disable selection, expand all items or highlight specific words in the titles. Each accordion item can include tooltips, popovers, descriptions etc. When only one item is provided, it expands by default, otherwise items remain collapsed unless interacted with. The component integrates spinners for loading states and uses a highlighter library to emphasize specific words in item titles. It relies on utility functions, such as `AccordionOperations.getSelectionModeType`, to determine the selection behavior. The parameters of `AccordionListItems()` are defined as following :
 ```js
 export default function AccordionListItems({
   items,
@@ -82,7 +82,7 @@ export default function AccordionBoxItems({
 ```
 
 
-`AccordionContainer.tsx` responsible for displaying accordion items adaptively for both mobile and desktop screens. For mobile, it uses a modal (triggered by a custom bottom button) to show the items, leveraging the `useAccordionModal` hook to manage modal content and title. For desktop version, it directly renders the accordions by packing inside `<AccordionBoxItems>` and for mobile version accordions are packed inside `<AccordionListItems>`. Basically, using AccordionContainer to call accordions operations.
+`AccordionContainer.tsx` responsible for displaying accordion items adaptively for both mobile and desktop screens. For mobile, it uses a modal (triggered by a custom bottom button) to show the items, leveraging the `useAccordionModal` hook to manage modal content and title. For desktop version, it directly renders the accordions by packing them inside `<AccordionBoxItems>` and for mobile version accordions are packed inside `<AccordionListItems>`. Basically, using AccordionContainer function to call accordions.
 
 ```js
 export default function AccordionContainer({
@@ -102,9 +102,15 @@ export default function AccordionContainer({
 
 **Accordion Content**
 
-The content of accordions could be string or ReactElement. For instance in our use case, map layers like `FCS` and `IPC` we are giving Card (which is nextui component) or charts (for example line chart) as content. 
+The content of the accordions can be a string or a ReactElement. For instance, in our use case, map layers like FCS and IPC use either a Card (which is a NextUI component) or charts (for example, a line chart) as content.
 
-In `Card.tsx`, CustomCard react component is structured to accept a title and content as props, with content consisting of an array of `CardContent[]`. We have two scenarios for how the cards are structured. In the first scenario, the SVG image is displayed on the left side of the card, followed by the card's title on the right, with numerical values appearing below the title. The first scenario is depicted with the help of below image and the card is named as ***Population*** In the second scenario, used for representing changes in food consumption trends, the design includes two more SVG image to the left. The additional two SVGs are placed in adjacent to each other and below these SVG images, the numerical value is displayed and underneath that, a small text indicates the age of the data such as "1 month ago" or "3 months ago". This particular card is shown in below image and it is named as ***Population with Insufficient Food Consumption*** The parameters of Card are as following: 
+In Card.tsx, the CustomCard React component is structured to accept a title and content as props, with the content being an array of CardContent[]. We have two scenarios for how the cards are structured:
+
+- First scenario: The SVG image is displayed on the left side of the card, followed by the card's title on the right, with numerical values appearing below the title. This scenario is depicted in the image below, and the card is named ***Population***.
+
+- Second scenario: Used to represent changes in food consumption trends, the design includes two additional SVG images on the left. The two SVGs are placed adjacent to each other, and below these SVG images, the numerical value is displayed. Beneath that, a small text indicates the age of the data, such as "1 month ago" or "3 months ago". This card is shown in the image below, and it is named ***Population with Insufficient Food Consumption***.
+
+The parameters of the card are as follows:
 
 ```js
 export interface CardContent {
@@ -133,7 +139,7 @@ export interface CardContent {
 
 #### Example
 
-In this particular we have card as the content of the accordion. Accordions will get wrapped inside AccordionContainer, after that in accordionContainer, depends on if it's mobile version then accordions get wrapped inside AccordionListItems or if it's desktop version then accordions get wrapped inside AccordionBoxItems.
+In this case, the accordion content is a card. The accordions are first wrapped inside the ```<AccordionContainer>```. Within the AccordionContainer function, the wrapping depends on the device version: for mobile, the accordions are wrapped inside ```<AccordionListItems>```, while for desktop, they are wrapped inside ```<AccordionBoxItems>```.
 
 ```js
 
@@ -146,7 +152,11 @@ In this particular we have card as the content of the accordion. Accordions will
 />
 ```
 
-here in our case if the content of accordion is card then the items parameter of the AccordionContainer are set like that 
+If the accordion content is a card, the items parameter of the AccordionContainer is set with:
+- title: title of the Accordion
+- infoIcon: SVG image of the info icon.
+- popoverInfo: Fetched using FcsAccordionOperations.getFoodSecutriyPopoverInfo()
+- content: Conditionally renders a CustomCard if nutritionData.Acute or nutritionData.Chronic is available.
 
 ```js
         title: 'Nutrition',
@@ -172,7 +182,7 @@ here in our case if the content of accordion is card then the items parameter of
               )}
           )
 ```
-Same thing happen if the content is a chart then we just have to call same like Card but instead of CustomCard we need to write the name of the chart for example like this `<LineChart>`.
+The same thing happens if the content is a chart. We just need to call it the same way as a Card, but instead of `<CustomCard>`, we use the name of the chart, for example, `<LineChart>`.
 
 
 
