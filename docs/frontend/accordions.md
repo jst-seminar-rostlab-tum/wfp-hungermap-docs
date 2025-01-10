@@ -14,7 +14,7 @@ The accordions in our application, sourced from NextUI, are designed to expand a
 
 
 #### Desktop Version
-In Fcs country view, accordions are displayed as in the image below. Three Accordions are placed in the left and four accordions are placed to the right.
+For example, in the FCS country view, the accordions are arranged as shown in the image below, with three on the left and four on the right. However, this arrangement is not consistent across all sections. In most other sections, the accordions are stacked vertically.
 
 ![Accordion Fcs](./assets/AccordionsFcs.png)
 
