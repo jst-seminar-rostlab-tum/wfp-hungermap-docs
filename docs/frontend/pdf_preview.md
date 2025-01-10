@@ -1,6 +1,6 @@
 # PDF Preview
 
-The **PDF Preview** feature allows users to view and interact with PDF documents directly within the application. This feature is implemented using the [react-pdf](https://www.npmjs.com/package/react-pdf) library for rendering PDFs, and it integrates seamlessly into the user interface by providing a modal-based preview. 
+The **PDF Preview** feature allows users to view and interact with PDF documents directly within the application. This feature is implemented using [react-pdf](https://www.npmjs.com/package/react-pdf) library, and it integrates seamlessly into the user interface by providing a modal-based preview of the PDF content.
 
 ## Features
 
@@ -12,10 +12,10 @@ The PDF Preview feature provides a modal-based interface where users can:
 
 ## Design
 
-The modal is implemented using `@nextui-org/modal` and provides a user-friendly interface for previewing PDFs.
+Modal is implemented using `@nextui-org/modal` and provides a user-friendly interface for previewing PDFs.
 
 ### Backdrop and Styling 
-The modal includes a gradient backdrop for enhanced visuals.
+Modal includes a gradient backdrop for enhanced visuals.
 ![PDF Preview Modal](/img/pdf_preview_backdrop.png)
 ### Error Handling 
 If an error occurs (e.g., file not found), a user-friendly error message is displayed.
@@ -27,10 +27,10 @@ Top bar includes page number, download options, and close button. Download optio
 
 ## Technical Details
 
-The PDF Preview feature consists of the following components:
+PDF Preview feature consists of the following components:
 
 ### PdfPreview
-The main entry point for the feature, responsible for displaying the modal and handling user interactions like opening and closing the preview. In order to display a PDF, the `PdfPreview` component requires the following props:
+The main entry point for this feature, responsible for displaying the modal and handling user interactions like opening and closing the preview. In order to display a PDF, `PdfPreview` component requires the following props:
 1. `isModalOpen`: A boolean value indicating whether the modal is open or closed.
 2. `toggleModal`: A function to toggle the modal open or closed.
 3. `pdfFile`: The PDF file to be displayed. PDF files can be passed as a string representing the name of a file located in public folder or as a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) object representing the PDF file itself. 
@@ -38,10 +38,10 @@ The main entry point for the feature, responsible for displaying the modal and h
 5. `onDownloadPdf`: A function to handle the download of the PDF file.
 
 ### PdfLoader
-A lightweight wrapper that dynamically loads the `PdfViewer` component without server-side rendering (SSR). This was implemented to prevent issues `react-pdf` has with `next.js`. 
+A lightweight wrapper that dynamically loads `PdfViewer` component without server-side rendering (SSR). This was implemented to prevent issues `react-pdf` has with `next.js`. 
 
 ### PdfViewer 
-Handles the actual rendering of the PDF file using `react-pdf`. Includes functionality for text selection, downloads and scrolling through pages. Some technical details include:
+Handles rendering of the PDF file using `react-pdf`. Includes functionality for text selection, downloads and scrolling through pages. Some technical details include:
 - **Responsive Design**: The PDF viewer is responsive and adjusts to the size of the modal by registering an event listener for window resize events and controlling `pageWidth` parameter of the `Page` component depending on the modal width.
 ```typescript
 const onResize = useCallback(() => {
