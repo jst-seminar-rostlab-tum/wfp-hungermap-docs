@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Accordions
 
-The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. In this website, the accordions of the ***Splitted variant*** have been used.. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website: 
+The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. In this website, the accordions of the ***Splitted variant*** have been used. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website: 
 
 - Comparison Portal
 - Data Sources
@@ -152,7 +152,7 @@ In this case, the accordion content is a card. The accordions are first wrapped 
 />
 ```
 
-If the accordion content is a card, the items parameter of the AccordionContainer is set with:
+In this example the accordion content is a card, the items parameter of the AccordionContainer is set with:
 - title: title of the Accordion
 - infoIcon: SVG image of the info icon.
 - popoverInfo: Fetched using FcsAccordionOperations.getFoodSecutriyPopoverInfo()
