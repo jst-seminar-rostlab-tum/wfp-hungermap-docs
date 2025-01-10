@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Accordions
 
-The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website: 
+The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. In this website, the accordions of the ***Splitted variant*** have been used.. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website: 
 
 - Comparison Portal
 - Data Sources
@@ -33,9 +33,9 @@ Regardless of the platform (desktop or mobile), each accordion includes an infor
 ---
 
 #### Implementation
-In `AccordionModal.tsx`, AccordionModal() function is designed to render a model with dynamic content on different sizes of mobile screens. Depends upon the screen size of the mobile, if we have small screens **450px or less**, a circular button with an arrow up icon is displayed, while for slightly larger screens **700px or less** a button with an arrow up icon and label named ***Insights*** is shown. Clicking the button opens a modal containing content provided by the `useAccordionModal()` context. The modal includes a title and body fetched from this context and it allows scrolling inside if the content overflows and provides blurred background, enhancing the focus on the modal content. The modal's visibility is managed by the `useDisclosure()` hook.
+In `AccordionModal.tsx`, AccordionModal function is designed to render a model with dynamic content on different sizes of mobile screens. Depends upon the screen size of the mobile, if we have small screens **450px or less**, a circular button with an arrow up icon is displayed, while for slightly larger screens **700px or less** a button with an arrow up icon and label named ***Insights*** is shown. Clicking the button opens a modal containing content provided by the `useAccordionModal()` context. The modal includes a title and body fetched from this context and it allows scrolling inside if the content overflows and provides blurred background, enhancing the focus on the modal content. The modal's visibility is managed by the `useDisclosure()` hook.
 
-`AccordionListItems.tsx` defines AccordionListItems() function, which is used to render a list of accordion items, primarily designed for the mobile screens. It enables multiple selection modes, disable selection, expand all items or highlight specific words in the titles. Each accordion item can include tooltips, popovers, descriptions etc. When only one item is provided, it expands by default, otherwise items remain collapsed unless interacted with. The component integrates spinners for loading states and uses a highlighter library to emphasize specific words in item titles. It relies on utility functions, such as `AccordionOperations.getSelectionModeType`, to determine the selection behavior. The parameters of `AccordionListItems()` are defined as following :
+`AccordionListItems.tsx` defines AccordionListItems function, which is used to render a list of accordion items, primarily designed for the mobile screens. It enables multiple selection modes, disable selection, expand all items or highlight specific words in the titles. Each accordion item can include tooltips, popovers, descriptions etc. When only one item is provided, it expands by default, otherwise items remain collapsed unless interacted with. The component integrates spinners for loading states and uses a highlighter library to emphasize specific words in item titles. It relies on utility functions, such as `AccordionOperations.getSelectionModeType`, to determine the selection behavior. The parameters of `AccordionListItems()` are defined as following :
 ```js
 export default function AccordionListItems({
   items,
@@ -65,7 +65,7 @@ export interface SearchableAccordionItemProps extends AccordionItemProps {
 }
 ```
 
-The AccordionBoxItems() function in `AccordionBoxItems.tsx`renders a set of collapsible accordion items stacked vertically for desktop version, with customization options for appearance, behavior and content. It allows single or multiple items to be expanded at once, supports word highlighting in titles and includes optional tooltips, popovers and loading spinners. The expandAll prop can automatically expand all items and a ReadMore Component manages lengthy popover content. The parameters of `AccordionBoxItems()` are defined as following: 
+The AccordionBoxItems function in `AccordionBoxItems.tsx` renders a set of collapsible accordion items stacked vertically for desktop version, with customization options for appearance, behavior and content. It allows single or multiple items to be expanded at once, supports word highlighting in titles and includes optional tooltips, popovers and loading spinners. The expandAll prop can automatically expand all items and a ReadMore Component manages lengthy popover content. The parameters of `AccordionBoxItems()` are defined as following: 
 
 ```js
 export default function AccordionBoxItems({
@@ -104,11 +104,11 @@ export default function AccordionContainer({
 
 The content of the accordions can be a string or a ReactElement. For instance, in our use case, map layers like FCS and IPC use either a Card (which is a NextUI component) or charts (for example, a line chart) as content.
 
-In Card.tsx, the CustomCard React component is structured to accept a title and content as props, with the content being an array of CardContent[]. We have two scenarios for how the cards are structured:
+In ```Card.tsx```, the CustomCard function is structured to accept a title and content as props, with the content being an array of CardContent[]. We have two scenarios for how the cards are structured:
 
-- First scenario: The SVG image is displayed on the left side of the card, followed by the card's title on the right, with numerical values appearing below the title. This scenario is depicted in the image below, and the card is named ***Population***.
+- First scenario: The SVG image is displayed on the left side of the card, followed by the card's title on the right, with numerical values appearing below the title. This scenario is depicted in the image below, and the card is named as ***Population***.
 
-- Second scenario: Used to represent changes in food consumption trends, the design includes two additional SVG images on the left. The two SVGs are placed adjacent to each other, and below these SVG images, the numerical value is displayed. Beneath that, a small text indicates the age of the data, such as "1 month ago" or "3 months ago". This card is shown in the image below, and it is named ***Population with Insufficient Food Consumption***.
+- Second scenario: Used to represent changes in food consumption trends, the design includes two additional SVG images on the left. The two SVGs are placed adjacent to each other, and below these SVG images, the numerical value is displayed. Beneath that, a small text indicates the age of the data, such as "1 month ago" or "3 months ago". This card is shown in the image below, and it is named as ***Population with Insufficient Food Consumption***.
 
 The parameters of the card are as follows:
 
