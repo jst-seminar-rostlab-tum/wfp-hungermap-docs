@@ -70,6 +70,7 @@ export function ConflictLayer() {
 ```
 All markers are collected in a MarkerClusterGroup wrapper component from the [react-leaflet-cluster](https://akursat.gitbook.io/marker-cluster) library.
 This library clusters multiple alerts close to each other to one marker and shows them with a number of how many markers
-are simplified by the cluster.
+are simplified by the cluster.\
+![img.png](map_alerts.png) \
 In this component markers are mapped to the alert data. Here you can also further customize the [cluster behavior](https://akursat.gitbook.io/marker-cluster/api)
 or [the markers](https://leafletjs.com/reference.html#marker) itself.
