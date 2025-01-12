@@ -27,7 +27,7 @@ export const useNutritionQuery = (enabled: boolean) =>
     cachedQueryClient
   );
 ``` 
-The code snippet which triggers Nutrition Map.
+The code snippet which triggers Nutrition Map:
 
 ```js
  {selectedMapType === GlobalInsight.NUTRITION &&
@@ -41,14 +41,14 @@ The code snippet which triggers Nutrition Map.
     ))}
 ```
 
-```NutritionChoropleth.tsx``` creates a global view of nutrition data by rendering the NutritionChoropleth for every country. It enables visualization of nutrition information at global level. In ``` NutritionChoropleth.tsx ``` the NutritionChoropleth function renders a nutrition-focused interactive choropleth map using react-leaflet and GeoJSON data. It dynamically displays country or pass region-level features to ```NutritionStateChoropleth``` if the user selects the country, applying custom styles based on selected micronutrient data. Main props need by NutritionChoropleth are : 
+```NutritionChoropleth.tsx``` creates a global view by rendering the NutritionChoropleth for every country. The NutritionChoropleth function renders a nutrition-focused interactive choropleth map using react-leaflet and GeoJSON data. It dynamically displays country or pass region-level features to ```NutritionStateChoropleth``` if the user selects the country, applying custom styles based on selected micronutrient data. Main props need by NutritionChoropleth are : 
 
 - ```data```:	GeoJSON data for rendering the map layers.
 - ```countryId```: ID of the country represented by this instance of the component.
 -  ```setRegionLabelTooltips```: Function to set the region label tooltips.
 -  ```onDataUnavailable```: A callback to signal to the parent component that there's no regional Nutrition data for this    country. 
 
- Along with nutrition information, the point legend will also appear. For the world view, the legends help to see whether the data is actual, predicted or not analyzed. Apart from point legend, there is also hover effected activated.
+ Along with nutrition information, the point legend will also appear. For the world view, the legends help to see whether the data is actual, predicted or not analyzed. Apart from point legend, there is also hover effect activated.
 
 ![Nutrition World](./assets/NutritionWorldView.png)
 
@@ -56,7 +56,7 @@ The code snippet which triggers Nutrition Map.
 
 #### Country View
 
-The Country view of nutrition map visualizes the Micronutrients information, along with customized tooltip, accordions, gradient legend and customized button.
+The Country view of nutrition map visualizes the Micronutrients information, along with customized tooltip, accordion and gradient legend.
 
 ***Technical Overview***
 
@@ -78,7 +78,12 @@ NutritionStateChoropleth component get rendered with the following props:
 />
 ```
 
-Tooltips and hover effects enrich interactivity, while the NutritionAccordion in ```NutritionAccordion.tsx``` enables users to select different nutrients, driving visual and informational updates across the map. Per default it will show the region map of ***Mean Adequacy Ratio***. User can select from 7 different micronutrients. These are Folate, Iron, Zinc, Vitamin A and Vitamin B12.
+To further improve the user experience, a loading state has been enabled in this view. Once the region data becomes available, the loading state will be dismissed. 
+``` js
+ <CountryLoadingLayer countryMapData={countryMapData} color="hsl(var(--nextui-nutritionAnimation))" />
+ ```
+
+The NutritionAccordion in ```NutritionAccordion.tsx``` enables users to select different micronutrients, driving visual and informational updates across the map. Per default it will show the region map of ***Mean Adequacy Ratio***. User can select from 7 different micronutrients. These are Folate, Iron, Zinc, Vitamin A and Vitamin B12. The Nutrition Accordion is triggered as follows: :
 
 ```js
     <NutritionAccordion
@@ -87,7 +92,7 @@ Tooltips and hover effects enrich interactivity, while the NutritionAccordion in
       countryName={countryData.adm0_name}
     >
 ```
-Gradient legend depicts the information regarding the ```Risk of Inadequate Micronutrient Intake```
+Gradient legend depicts the information regarding the ```Risk of Inadequate Micronutrient Intake```. 
 
 ![Nutrition Region](./assets/NutritionRegion.png)
 
