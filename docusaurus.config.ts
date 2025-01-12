@@ -70,15 +70,15 @@ const config: Config = {
           items: [
             {
               label: "Frontend",
-              to: "/docs/category/frontend",
+              to: "/category/frontend",
             },
             {
               label: "Chatbot",
-              to: "/docs/category/chatbot",
+              to: "/category/chatbot",
             },
             {
               label: "Email service",
-              to: "/docs/category/email-service",
+              to: "/category/email-service",
             },
           ],
         },
