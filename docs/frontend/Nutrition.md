@@ -50,7 +50,7 @@ The code snippet which triggers Nutrition Map.
 
  Along with nutrition information, the point legend will also appear. For the world view, the legends help to see whether the data is actual, predicted or not analyzed. Apart from point legend, there is also hover effected activated.
 
-![Nutrition World](./NutritionWorldView.png)
+![Nutrition World](./assets/NutritionWorldView.png)
 
 ---
 
@@ -89,10 +89,10 @@ Tooltips and hover effects enrich interactivity, while the NutritionAccordion in
 ```
 Gradient legend depicts the information regarding the ```Risk of Inadequate Micronutrient Intake```
 
-![Nutrition Region](./NutritionRegion.png)
+![Nutrition Region](./assets/NutritionRegion.png)
 
 In the country view of the nutrition, user experience hover effect when move mouse over the region. When hover over the region, the tooltip appear with content name of the region, current selected micronutrient and the value of the micronutrient.
 
-![Nutrition Tooltip](./NutritionTooltip.png)
+![Nutrition Tooltip](./assets/NutritionTooltip.png)
 
 
