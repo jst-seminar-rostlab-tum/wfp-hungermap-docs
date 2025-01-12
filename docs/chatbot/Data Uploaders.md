@@ -70,7 +70,7 @@ Each document also includes `document_name`, `data_labels`, `data_description` f
 --- 
 ## Functions 
 
-The Data Uploaders have common functions that are used across different scripts. They can be renamed slightly to fit the specific uploader's requirements and implement speicific sorting or filtering logic.
+The Data Uploaders have common functions that are used across different scripts. They are named slightly different to fit the specific uploader's requirements and implement specific sorting or filtering logic.
 Moreover, every uploader is using the function `load_db_config()` from `db_utils.py` to load the MongoDB configuration and connection settings.
 
 ### Common Functions
