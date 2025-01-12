@@ -32,6 +32,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
+          routeBasePath: "/",
           // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/jst-seminar-rostlab-tum/wfp-hungermap-docs/",
