@@ -93,37 +93,59 @@ def __init__(self, model_name="microsoft/phi-2"):
 
 Creates a dictionary that can be inserted into MongoDB to store the compressed prompt.
 
-*Params*:
+*Arguments*:
 -	`obj_id` (int): Unique ID for the document or prompt.
 -	`compressed_prompt` (str): The summarized version of the input content.
+
+*Returns:*
+- a dictionary containing the compressed prompt and the document id
 
 ---
 **Function:** `insert_cache(item)`:
 
 
 Inserts a compressed prompt dictionary into MongoDB.
+
+*Arguments*:
 -	`item` (dict): A dictionary containing at least doc_id and compressed_prompt.
+
+*Returns*:
+- Nothing. A message is printed if the caching is successful
 
 ---
 **Function:** `is_cached(obj_id)`:
 
 Checks if a compressed prompt is already cached.
+
+*Arguments*:
 - `obj_id` (int): The ID of the document to look up.
+
+*Returns*:
+- a boolean value, if the document it already cached
 
 ---
 **Function:** `get_cached_prompt(obj_id)`
 
 Retrieves a compressed prompt from the MongoDB cache if it exists.
 
+*Arguments*:
 - `obj_id` (int): The ID of the document to retrieve.
+
+*Returns*:
+- The cached prompt
 
 ---
 **Function:** `compress_document(content, id_of_document)`
 
 Compresses a larger piece of text content using a chosen model. If the document has been compressed before, it uses the cached version (no additional token usage).
 
+*Arguments*:
 - `content` (str): The text content to be compressed.
 - `id_of_document` (int): A unique identifier for the document to cache/retrieve.
+
+*Returns*:
+- The compressed prompt
+- A dictionary containing the number of tokens of the uncompressed prompt, the number of tokens of the compressed prompt, the compression rate, and the cost of the compression
 
 ---
 ### Usage Example
