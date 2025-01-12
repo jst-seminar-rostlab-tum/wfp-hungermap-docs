@@ -48,12 +48,6 @@ After running the script, the `assets` folder will be empty or removed if it was
 #### Recursive Deletion
 The script traverses through the `assets` directory and removes all files and subdirectories recursively.
 
-#### Error Handling
-The script handles common errors such as:
-- `FileNotFoundError`: If the `assets` directory is missing.
-- `PermissionError`: If the script lacks sufficient permissions to delete files.
-- General exceptions with detailed error messages.
-
 ---
 
 ## Function(s)
@@ -105,10 +99,9 @@ All assets removed.
 
 1. **Directory Traversal:** The script uses `os.listdir` to find subdirectories and files within the `assets` folder.
 2. **Recursive Deletion:** For each subdirectory, it removes all files and any nested subdirectories before deleting the parent directory.
-3. **Error Handling:** Catches and prints messages for common errors like missing directories or insufficient permissions.
 
 ---
 
 ## Conclusion
 
-The **Cleanup Script** is a lightweight and efficient solution for managing the `assets` folder by removing unnecessary files and directories. It is particularly useful for cleaning up after data processing or parser runs.
+The **Cleanup Script** is a lightweight and efficient solution for managing the `assets` folder by removing unnecessary files and directories. It is particularly useful for cleaning up after the uploader is ran.
