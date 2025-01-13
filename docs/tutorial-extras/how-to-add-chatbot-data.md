@@ -34,6 +34,8 @@ import json
 import os
 import requests
 
+from ..utils.country_utils import get_list_of_all_country_ids
+
 API_ENDPOINT = "https://api.hungermapdata.org/v2/your-endpoint"
 SRC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -47,14 +49,23 @@ def parse_your_data():
     csv_path = os.path.join(output_dir, "your_data.csv")
     json_path = os.path.join(output_dir, "your_data.json")
     
+    if os.path.exists(csv_path):
+        os.remove(csv_path)
+    if os.path.exists(json_path):
+        os.remove(json_path)
+    
     # Your parsing logic goes here...
     
-if __name__ == "__main__":
+def main():
     parse_your_data()
+    
+if __name__ == "__main__":
+    main()
 ```
 
 2. Once you have added the file to `src/parsers/`, you can run the `run_all_parsers.py` 
 script which will automatically detect and upload all files from the parsers folder.
+Note that after all parsers run, temporary files in assets/ are cleaned up.
 
 ## Adding Data Through Uploaders
 
@@ -86,15 +97,24 @@ Located in `src/data_uploaders/`:
 ```python
 # db_upload_your_data.py
 
-from ..database_prep.db_vectorizing import insert_or_update_all_embeddings
+import os
 from ..utils.csv_utils import read_csv_data
-from ..utils.db_utils import load_db_config, upload_chatbot_data
+from ..utils.db_utils import upload_chatbot_data
 
 if __name__ == "__main__":
+    # Read the CSV file
     data = read_csv_data("path/to/your_data.csv")
-    # Logic for data processing and upload preparation goes here...
+    
+    # Format your data for the database
+    processed_data = []
+    for row in data:
+        processed_data.append({
+            "document_name": f"your_identifier_{row['type']}",
+            "data": row,
+        })
+    
+    # Upload to MongoDB
     upload_chatbot_data(processed_data)
-    insert_or_update_all_embeddings()
 ```
 
 2. Once you have added the file to `src/data_uploaders/`, you can run the `run_all_uploaders.py` 
