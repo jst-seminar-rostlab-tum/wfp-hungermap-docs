@@ -1,6 +1,9 @@
 # Database Utils
 
 The **Database Utils module** provides a streamlined approach for managing data in a MongoDB collection.
+
+## Overview
+
 1. **`load_db_config`**: Dynamically loads database connection settings from environment variables.
 2. **`upload_chatbot_data`**: Simplifies the process of inserting the chatbot data into the MongoDB collection.
 3. **`clear_data`**: Provides a quick way to delete all documents in the collection.
