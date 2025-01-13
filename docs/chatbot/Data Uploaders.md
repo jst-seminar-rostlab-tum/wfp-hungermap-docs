@@ -135,8 +135,8 @@ Generally, a `main` function is mostly responsible for orchestrating the data pr
 The Data Uploaders rely on the following libraries:
 - [**Location Utilities**](/docs/loc-utils): For country code conversion and country name retrieval. It is used to provide human-readable location names instead of coordinates. 
 - [**Country Utilities**](/docs/country-utils): For country name retrieval based on country IDs. It is used to provide human-readable country names based on their IDs.
-- [**CSV Utilities**](/docs/csv-utils): For reading and processing CSV files. It is used to parse and process raw data from CSV files. (The Link needs to be changed to the actual docs page)
-- [**Database Utilities**](/docs/db-utils): This utility provides functions for loading MongoDB configurations and and uploading data to the database. It also provides a function to delete all records.
+- **CSV Utilities**: For reading and processing CSV files. It is used to parse and process raw data from CSV files. (The Link needs to be changed to the actual docs page)
+- **Database Utilities**: This utility provides functions for loading MongoDB configurations and and uploading data to the database. It also provides a function to delete all records. (The Link needs to be changed to the actual docs page)
 
 ---
 
