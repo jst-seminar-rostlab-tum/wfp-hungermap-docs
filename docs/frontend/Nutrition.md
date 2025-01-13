@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 ### Nutrition Map
 
 Nutrition map gives the information of Nutrition in the world as well as country level. It helps to visualize and retrieve the information risk of inadequate intake of micronutrients at country level.
@@ -50,7 +46,7 @@ The code snippet which triggers Nutrition Map:
 
  Along with nutrition information, the point legend will also appear. For the world view, the legends help to see whether the data is actual, predicted or not analyzed. Apart from point legend, there is also hover effect activated.
 
-![Nutrition World](./assets/NutritionWorldView.png)
+![Nutrition World](/img/Nutrition/NutritionWorldView.png)
 
 ---
 
@@ -94,10 +90,10 @@ The NutritionAccordion in ```NutritionAccordion.tsx``` enables users to select d
 ```
 Gradient legend depicts the information regarding the ```Risk of Inadequate Micronutrient Intake```. 
 
-![Nutrition Region](./assets/NutritionRegion.png)
+![Nutrition Region](/img/Nutrition/NutritionRegion.png)
 
 In the country view of the nutrition, user experience hover effect when move mouse over the region. When hover over the region, the tooltip appear with content name of the region, current selected micronutrient and the value of the micronutrient.
 
-![Nutrition Tooltip](./assets/NutritionTooltip.png)
+![Nutrition Tooltip](/img/Nutrition/NutritionTooltip.png)
 
 
