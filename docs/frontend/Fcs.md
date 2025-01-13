@@ -4,7 +4,7 @@ sidebar_position: 6
 
 ### FCS Map
 
-FCS or Food Consumption Score map visualize fcs data. Along with map, customized components like accordions, tooltips, legends.
+FCS or Food Consumption Score map visualize fcs data. In addition to the map, custom components such as accordions, tooltips, and legends are included.
 
 ---
 
