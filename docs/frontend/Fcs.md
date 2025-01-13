@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 ### FCS Map
 
 FCS or Food Consumption Score map visualize fcs data. In addition to the map, custom components such as accordions, tooltips, and legends are included.
@@ -37,7 +33,7 @@ If no selectedCountryId is specified then a TileLayer is added inside a Pane com
 </Pane>
 ```
 
-![Fcs World View](./assets/FcsWorldView.png)
+![Fcs World View](/img/fcs/FcsWorldView.png)
 
 ---
 
@@ -98,11 +94,11 @@ In order to extract the content of the accordions, first country data and countr
 
 If there is no data available, then the content would be ```No Data available```for the particular accordion.
 
-![Fcs Country View](./assets/FcsCountryView.png)
+![Fcs Country View](/img/fcs/FcsCountryView.png)
 
 With the help of the scrollbar on the left side, user can see the last accordion.
 
-![Fcs Country View2](./assets/FcsCountryView2.png)
+![Fcs Country View2](/img/fcs/FcsCountryView2.png)
 
 Customized tooltip has been implemented in ```FcsRegionTooltip.tsx```. FcsRegionTooltip component, which renders a tooltip displaying detailed information about a region in an FCS map. The component receives GeoJSON feature data as a prop and extracts relevant properties, such as population data for insufficient food consumption (fcs) and food-based coping, formatting them for display.
 
@@ -113,7 +109,7 @@ The tooltip includes:
 - A continuous chart showing trends in insufficient food consumption if graph data (fcsGraph) is available.
 The component uses dynamic styling and displays data interactively, enhancing the map's visualization with contextual insights.
 
-![Fcs Tooltip](./assets/FcsTooltip.png)
+![Fcs Tooltip](/img/fcs/FcsTooltip.png)
 
 Gradient Legend will appear, which depicts the color with information ```People with insufficient food consumption```.  
 
