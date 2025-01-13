@@ -5,8 +5,8 @@ and ensures that users are only subscribed to available reports.
 
 ## Overview
 The following functionalities are available:
-1. **upload_daily_reports_to_db**: Synchronizes the database with the latest daily reports available through the HungerMap API.
-2. **check_if_topic_exists**: Ensures that the countries in the database are up-to-date by removing daily_reports and unsubscribing affected users.
+1. **upload_daily_reports_to_db**: Synchronizes the database with the latest countries with daily reports which are available through the HungerMap API.
+2. **check_if_topic_exists**: Ensures that the countries in the database are up-to-date by removing no longer available countries and unsubscribing affected users.
 3. **get_countries_with_daily_reports**: Retrieves a list of all countries that currently have daily reports stored in the database.
 
 ## Classes and Functions
@@ -50,7 +50,7 @@ Uploads or Updates all available daily reports to the MongoDB database.
 
 **Function**: `check_if_topic_exists(country_arr)`:
 
-Removes all daily reports from the database which have countries not included in `country_arr`. It also unsubscribes all from the country
+Removes all countries from the database which are not included in `country_arr`. It also unsubscribes all users from the removed countries
 
 *Params*:
 - **country_arr** (`List[str]`): List of countries from the json
