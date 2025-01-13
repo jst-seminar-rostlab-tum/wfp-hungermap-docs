@@ -19,15 +19,18 @@ country IDs is automatically passed to the function insuring no countries are mi
 
 To modify the Endpoint from which the data is fetched, the relevant parameter can be changed in the corresponding Python file.
 
-## Classes and Functions
+## Python Scripts and Functions
 
 ### General Country Data
+
+**Name of Python Script**: `api_country_general_data.py`
+
+---
 
 **Function:** `parse_api_country_general_data(country_ids):`
 
 Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/adm0/{}/countryData.json` and
 saves the relevant data to `country_data/countries_general.csv` and `country_data/countries_general.json`.
-
 
 *Params*:
 - **country_ids** (`List[str]`): List of country ids to retrieve data for.
@@ -51,6 +54,10 @@ saves the relevant data to `country_data/countries_general.csv` and `country_dat
 
 ### Additional Country Data
 
+**Name of Python Script**: `api_country_additional_data.py`
+
+---
+
 **Function:** `parse_api_country_additional_data(country_ids):`
 
 Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/adm0/{}/adm1data.json` and 
@@ -69,7 +76,12 @@ saves the relevant data to `country_data/countries_additional.csv` and `country_
 - **features** (`list[dict]`): List of geographic features containing fields: type, geometry, properties, id.
 
 ---
+
 ### Conflicts Data
+
+**Name of Python Script**: `api_country_conflict.py`
+
+---
 
 **Function:** `parse_conflicts():`
 
@@ -125,6 +137,10 @@ A function to print all locations in the given in csv files for each country acc
 
 ### IPC Data
 
+**Name of Python Script**: `api_country_ipc.py`
+
+---
+
 **Function:** `parse_api_ipc():`
 
 Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/ipc.json` and
@@ -148,7 +164,12 @@ saves the relevant Data to `ipc_data/ipc.csv` and `ipc_data/ipc.json`
 - **phase_5_population** (`int`): Population in Phase 5.
 
 ---
+
 ### PDC Data
+
+**Name of Python Script**: `api_country_pdc.py`
+
+---
 
 **Function:** `parse_pdc():`
 
@@ -172,7 +193,12 @@ saves the relevant Data to `pdc_data/pdc.csv` and `pdc_data/pdc.json`
 - **lastUpdate** (`str`): The last update date and time.
 
 ---
+
 ### Country Reports
+
+**Name of Python Script**: `api_country_reports.py`
+
+---
 
 **Function:** `parse_reports():`
 
@@ -194,6 +220,10 @@ saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.
 
 ### ISO3 Data
 
+**Name of Python Script**: `api_iso3_data.py`
+
+---
+
 **Function:** `parse_api_iso3(country_codes):`
 
 Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/iso3/{}/countryIso3Data.json` and
@@ -214,7 +244,12 @@ saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.
 - **inflationGraphs** (`dict`): Headline and food inflation graphs containing fields: headline, food.
 
 ---
+
 ### Yearly Reviews
+
+**Name of Python Script**: `api_yearly_review.py`
+
+---
 
 **Function:** `parse_yearly_reports():`
 
