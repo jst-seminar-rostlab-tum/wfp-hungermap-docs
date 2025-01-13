@@ -4,12 +4,12 @@ sidebar_position: 6
 
 ### FCS Map
 
-FCS or Food Consumption security map visualize fcs data in country view. 
+FCS or Food Consumption Score map visualize fcs data. Along with map, customized components like accordions, tooltips, legends.
 
 ---
 
 #### World View 
-In world view, fcs map appears with country alert's. Along with alerts, one point legends and other gradient legend appears. To enhance user experience, hover effect is also activated. 
+In world view, fcs map appears with country alert's. Along with alerts, one point legend and other gradient legend appears. To enhance user experience, hover effect is also activated. 
 
 ***Technical Overview***
 
@@ -43,7 +43,7 @@ If no selectedCountryId is specified then a TileLayer is added inside a Pane com
 
 #### Country View
 
-Apart from that, customized accordions appeared, legend, loading state and hover effect appears. 
+Apart from that, customized accordions, legend, loading state and hover effect appears. 
 
  ***Technical Overview***
 
@@ -86,7 +86,7 @@ In ```FcsAccordion.tsx```, the fcsAccordion functions depending upon whether it'
 - ```countryId```
 - ```countryCode```
 
-In order to extract the content of the accordions, first the data country data and country iso3 data get extracted using ```useCountryDataQuery(countryId)```and ```useCountryIso3DataQuery(countryCode)```. After that the data got processed in ```FcsFoodSecurityOperations.tsx```and ```FcsMacroEconomicOperations.tsx```. The following accordions are shown in the view: 
+In order to extract the content of the accordions, first country data and country iso3 data get extracted using ```useCountryDataQuery(countryId)```and ```useCountryIso3DataQuery(countryCode)```. After that the data got processed in ```FcsFoodSecurityOperations.tsx```and ```FcsMacroEconomicOperations.tsx```. The following accordions are shown in the view: 
 
 - ```Food Security Accordion``` 
 - ```Malnutrition```
@@ -96,7 +96,7 @@ In order to extract the content of the accordions, first the data country data a
 - ```Balance of Trade```
 - ```Head and Food Inflation```
 
-If there is data is available, it's just say ```No Data available```for the particular accordion.
+If there is no data available, then the content would be ```No Data available```for the particular accordion.
 
 ![Fcs Country View](./assets/FcsCountryView.png)
 
@@ -104,7 +104,7 @@ With the help of the scrollbar on the left side, user can see the last accordion
 
 ![Fcs Country View2](./assets/FcsCountryView2.png)
 
-Customized tooltip has been implemented in ```FcsRegionTooltip.tsx```. FcsRegionTooltip component, which renders a tooltip displaying detailed information about a region in an FCS (Food Consumption Score) map. The component receives GeoJSON feature data as a prop and extracts relevant properties, such as population data for insufficient food consumption (fcs) and food-based coping strategies (rcsi), formatting them for display.
+Customized tooltip has been implemented in ```FcsRegionTooltip.tsx```. FcsRegionTooltip component, which renders a tooltip displaying detailed information about a region in an FCS map. The component receives GeoJSON feature data as a prop and extracts relevant properties, such as population data for insufficient food consumption (fcs) and food-based coping, formatting them for display.
 
 The tooltip includes:
 
