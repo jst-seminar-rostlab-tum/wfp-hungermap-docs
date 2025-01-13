@@ -202,8 +202,9 @@ searched texts is relatively low, no "real" search structure is necessary.
 
 2. Wherever items contains text that will be rendered and should be searchable, it needs to have a
    `RecursiveHighlighter` as parent.
-   </TabItem>
-   </Tabs>
+
+</TabItem>
+</Tabs>
 
 ### Displaying searchable content using `SearchableSection`
 
