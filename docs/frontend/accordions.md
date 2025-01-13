@@ -16,17 +16,17 @@ The accordions in our application, sourced from NextUI, are designed to expand a
 #### Desktop Version
 For example, in the FCS country view, the accordions are arranged as shown in the image below, with three on the left and four on the right. However, this arrangement is not consistent across all sections. In most other sections, the accordions are stacked vertically.
 
-![Accordion Fcs](assets/AccordionsFcs.png)
+![Accordion Fcs](./assets/AccordionsFcs.png)
 
 
 #### Mobile Version
 Depend upon the dimension of the mobile either there will be button with an upward arrow or button with an upward arrow labeled as "Insights" displayed.
 
-![Accordion Mobile](assets/AccordionFcsMobile.png)
+![Accordion Mobile](./assets/AccordionFcsMobile.png)
 
-![Accordion Mobile](assets/AccordionFcsMobileXS.png)
+![Accordion Mobile](./assets/AccordionFcsMobileXS.png)
 
-![Accordion Open](assets/AccordionFcsOpen.png)
+![Accordion Open](./assets/AccordionFcsOpen.png)
 
 Regardless of the platform (desktop or mobile), each accordion includes an informational popover at the end for additional information.
 
@@ -132,7 +132,7 @@ export interface CardContent {
 
 ```
 
-![Accordion Card](assets/AccordionCard.png)
+![Accordion Card](./assets/AccordionCard.png)
 
 
 ---
