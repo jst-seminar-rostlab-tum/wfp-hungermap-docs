@@ -1,6 +1,6 @@
 # PDF Attachments
 
-The PDF Attachments feature allows for a reliable attachment of PDFs to emails using the Brevo API.
+The PDF Attachments Module allows for a reliable attachment of PDFs to emails using the Brevo API.
 
 ## How it Works
 1. **Receive PDF links:** A list of PDF URLs is received 
@@ -14,8 +14,8 @@ The PDF Attachments feature allows for a reliable attachment of PDFs to emails u
 **Function**: `process_attachments(pdf_links)`:
 
 *Params*:
-- `pdf_links` (`List`[`str`]): List of PDF URLs.
+- **pdf_links** (`List[str]`): List of PDF URLs.
 
 *Returns*:
-- `List`[`SendSmtpEmailAttachment`] or `None`: List of attachment objects or None if no links are provided.
+- `List[SendSmtpEmailAttachment]` or `None`: List of attachment objects or None if no links are provided.
 
