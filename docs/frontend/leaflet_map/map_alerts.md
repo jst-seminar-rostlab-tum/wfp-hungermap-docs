@@ -6,7 +6,7 @@ sidebar_position: 6
 
 ## Overview
 Alerts are the markers that are placed inside of the map indicating certain events such as different types of conflicts for
-the conflict alerts. The different alert types are implemented in src/components/Map/Alerts/AlertContainer.tsx that is placed
+the conflict alerts. The different alert types are implemented in ```src/components/Map/Alerts/AlertContainer.tsx``` that is placed
 as a leaflet layer in the [Map Component](map_component.md). You can read more about [how to add a new alert](../how_to/how_to_add_alert).
 
 ## Structure
@@ -28,7 +28,7 @@ export const AlertContainer = React.memo(({ countries, alertData }: AlertContain
 });
 ```
 Thus the functionality for each type is implemented in its layer component. The data for country alerts are passed down
-from the parent element, conflict layer and hazard layer use hooks for fetching the data.
+from the parent element. Conflict layer and hazard layer use hooks for fetching the data.
 The structure for the different types is quite similar. That's why we will take the conflict layer as an example:
 
 ```ts
@@ -72,5 +72,5 @@ All markers are collected in a MarkerClusterGroup wrapper component from the [re
 This library clusters multiple alerts close to each other to one marker and shows them with a number of how many markers
 are simplified by the cluster.\
 ![img.png](map_alerts.png) \
-In this component markers are mapped to the alert data. Here you can also further customize the [cluster behavior](https://akursat.gitbook.io/marker-cluster/api)
+In this component markers are mapped to the alert data. You can also further customize the [cluster behavior](https://akursat.gitbook.io/marker-cluster/api)
 or [the markers](https://leafletjs.com/reference.html#marker) itself.

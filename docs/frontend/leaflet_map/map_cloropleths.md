@@ -31,5 +31,5 @@ src/operations/map/FcsCountryChoroplethOperations.tsx.
 
 ## IPC Cloropleth
 The main difference to the other Cloropleth elements mentioned above is that the component placed in the [Map Component](map_component.md)
-renders all countries shown in the global view. That's why it contains a component called IpcGlobalCloropleth that redners
+renders all countries shown in the global view. That's why it contains a component called IpcGlobalCloropleth that renders
 all the countries shown in the global view. The components for the country view are implemented analogously to FCS and Nutrition.

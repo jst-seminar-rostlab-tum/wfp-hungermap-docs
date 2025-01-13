@@ -13,7 +13,7 @@ Some exceptions are elements like tooltips or markers that are displayed on top 
 
 ## 2. Adding a new component
 For each new layer an own wrapper component should be created so that directly in the MapContainer only one component is used.
-This improves the readability by hiding code that is not relevant at this position and making clear what layer is added.
+This improves the readability by hiding code that is not relevant in this part and making clear what layer is added.
 For adding behavior when to show the layer the component could only be rendered when some condition is met such as for the
 vegetation layer:
 ```ts

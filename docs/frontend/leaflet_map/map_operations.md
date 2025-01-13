@@ -16,14 +16,14 @@ This method loads geographic and country-specific data based on the selected map
 The data loaded here is then reused in the [Map Component](map_component.md) and then further passed down to the different components of the map.
 
 #### Parameters
-- selectedMapType: Type of map data to fetch (GlobalInsight)
+- selectedMapType: Currently selected mode
 - selectedCountryData: Data of the selected country
 - setIsLoadingCountry: Updates the loading state
 - setRegionData: Updates region data
 - setCountryData: Updates country data
 - setCountryIso3Data: Updates country ISO3 data
 - setRegionNutritionData: Updates region nutrition data
-- setIpcRegionData: Updates IPC (Integrated Phase Classification) region data
+- setIpcRegionData: Updates IPC region data
 - regionLabelData: Data for region labels
 - setRegionLabelData: Updates region label data
 - setIsDataAvailable: Indicates whether data is available
@@ -72,6 +72,9 @@ when the user is zooming in or out.
 - map: Leaflet map instance
 - tooltip: Tooltip instance to be updated
 
+#### Workflow
+You can find details about the region labeling under [region labels](map_region_labels.md).
+
 ### setupRegionLabelTooltip()
 #### Description
 The method configures a permanent tooltip for region labels and updates it dynamically during zoom events.
@@ -83,3 +86,5 @@ The method configures a permanent tooltip for region labels and updates it dynam
 - map: Leaflet map instance.
 - setRegionLabelTooltips: Function to update the list of tooltips.
 
+#### Workflow
+You can find details about the region labeling under [region labels](map_region_labels.md).

@@ -30,7 +30,7 @@ The leaflet map component can be configured with properties in the MapContainer 
 Since the MapContainer component is a react-leaflet component you can easily add an customize the map behavior according to their [Map Documentation](https://leafletjs.com/reference.html#map).
 
 
-The map is initialized using the following key properties of the Map.ts file located in the constants folder:
+The map is initialized using the following key properties of the ```Map.ts`` file located in the constants folder:
 
 ```ts
 export const MAP_MAX_ZOOM = 8;
@@ -65,7 +65,7 @@ export const disputedAreaStyle = {
 - **MAP_MAX_ZOOM:** how much you can zoom in the map
 - **MAP_MIN_ZOOM:** how much you can zoom out the map
 - **SELECTED_COUNTRY_ZOOM_THRESHOLD:** at what zoom level the map should switch from the country view mode to the global view when zooming out
-- **REGION_LABEL_SENSITIVITY:** how sensitive the labels of the regions of countries should react to zooming when switching from displaying the name to "...". A higher value makes the labels turn faster into "...". More about this you can read in //TODO
+- **REGION_LABEL_SENSITIVITY:** how sensitive the labels of the regions of countries should react to zooming when switching from displaying the name to "...". A higher value makes the labels turn faster into "...". More about this you can read in [region labels](map_region_labels.md)
 - **oceanBounds:** sets the border for the ocean layer
 - **countryBaseStyle:** sets the style for the base shapes of all the countries
 - **countryBorderStyle:** sets the style for the country borders
@@ -73,7 +73,7 @@ export const disputedAreaStyle = {
 
 ### Layers
 The map renders layers dynamically based on user interaction. Layers are stacked beginning from the first element in the MapContainer
-Wrapper Component being in the background. Here you can read more about [how to add a new leaflet layer](../how_to/how_to_add_leaflet_layer).
+wrapper component being in the background. Here you can read more about [how to add a new leaflet layer](../how_to/how_to_add_leaflet_layer).
 
 #### Alert Layer
 The AlertContainer component contains the functionality for displaying the alerts.
@@ -95,7 +95,7 @@ interaction functionality with the countries.
 
 #### Border Layer
 Regular borders and borders of disputed areas are rendered in two separate leaflet layers. You can customize their style
-in the Map.ts constants file (see above).
+in the ```Map.ts``` constants file (see above).
 
 ## 2.Data Flow
 The component processes geographic and contextual data using props and local state management. When the Map Type or
@@ -114,7 +114,7 @@ work in detail is further explained in [Map Operations](map_operations.md).
 #### useState manages various aspects of the map:
 - countryData: Holds details of selected countries
 - regionData: Holds details of the regions of the selected country
-- countryIso3Data: Holds details about nutrition used for accordion elements in the FCS and IPC mode
+- countryIso3Data: Holds details about nutrition data used for accordion elements in the FCS and IPC mode
 - isLoadingCountry: Tracks whether the data for a country is currently loading
 - regionNutritionData: Holds details of the regions of the selected country in Nutrition mode
 - ipcRegionData: Holds details of the regions of the selected country in IPC mode
@@ -129,6 +129,6 @@ work in detail is further explained in [Map Operations](map_operations.md).
 
 
 ## 3. Error Handling
-The component gracefully handles missing data. When data is unavailable for a selected country the map zooms out by 4 levels for a broader view.
+The component handles missing data. When data is unavailable for a selected country the map zooms out by 4 levels for a broader view.
 The state isDataAvailable tracks data presence and is set in the [Map Operations](map_operations.md).
 

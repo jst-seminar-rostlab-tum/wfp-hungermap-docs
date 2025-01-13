@@ -6,8 +6,8 @@ sidebar_position: 5
 
 ## Overview
 The region labels are shown in the FCS and Nutrition view. Since for some countries like Vietnam labels get very long and would
-have to fit in very small region shapes the display of the names switched between the full label and "...".
-This is done based on an estimation on the label length and the borders of the region.
+have to fit in very small region shapes the display of the names switches between the full label and "...".
+This is done based on an estimation on the label width and the borders of the region.
 
 ## Setup
 The labels are set up once the user selects a country and the regions are rendered by the setupRegionLabelTooltip() method
@@ -60,8 +60,8 @@ static setupRegionLabelTooltip(
 2: The found label data is then used to create a tooltip element that is added to leaflet map element and also to a list that keeps track of
 all the used tooltips in order to be able to remove them later again. This list is passed down from the main [Map Component](map_component.md).
 
-3: Lastly listeners are added. When zooming the labels should update and if given should switch between the full region name and "...". Also when the
-tooltip is removed listener that was just setup should be removed so that no unnecessary listeners are running in the background for elements that are not being used anymore.
+3: Lastly listeners are added. When zooming, the labels should update and if given should switch between the full region name and "...". Also when the
+tooltip is removed, the listener that was just setup should be removed so that no unnecessary listeners are running in the background for elements that are not being used anymore.
 
 ## Updating
 The updating process of the labels mainly consist of reevaluating what the labels should display:
@@ -115,6 +115,6 @@ if (mapRef.current) {
 ```
 
 ## Customization
-In the map constants file located in src/domain/constant/map/Map.ts there is a property called **REGION_LABEL_SENSITIVITY**.
+In the map constants file located in ```src/domain/constant/map/Map.ts``` there is a property called **REGION_LABEL_SENSITIVITY**.
 This value controls how sensitive the labels should be to zooming considering the display of the full name or "...".
 A higher value means that labels are turning faster into "...".
