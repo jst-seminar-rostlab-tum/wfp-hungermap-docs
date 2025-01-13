@@ -13,7 +13,11 @@ Running one of the modules will generally result in the following:
 All data is saved in the folder `assets/` and further subfolders.
 
 ## Usage and configuration
+All retrieval functions can be executed by simply running the corresponding Python file. For Methods with parameters, a list of all available 
+country IDs is automatically passed to the function insuring no countries are missed. The list of countries is sourced from the file
+`assets/country_data/country_ids.csv`.
 
+To modify the Endpoint from which the data is fetched, the relevant parameter can be changed in the corresponding Python file.
 
 ## Classes and Functions
 
@@ -21,9 +25,8 @@ All data is saved in the folder `assets/` and further subfolders.
 
 **Function:** `parse_api_country_general_data(country_ids):`
 
-Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/adm0/{}/countryData.json`
-
-Saves the relevant Data to `country_data/countries_general.csv` and `country_data/countries_general.json`.
+Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/adm0/{}/countryData.json` and
+saves the relevant data to `country_data/countries_general.csv` and `country_data/countries_general.json`.
 
 
 *Params*:
@@ -50,9 +53,8 @@ Saves the relevant Data to `country_data/countries_general.csv` and `country_dat
 
 **Function:** `parse_api_country_additional_data(country_ids):`
 
-Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/adm0/{}/adm1data.json`
-
-Saves the relevant Data to `country_data/countries_additional.csv` and `country_data/countries_additional.json`
+Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/adm0/{}/adm1data.json` and 
+saves the relevant data to `country_data/countries_additional.csv` and `country_data/countries_additional.json`
 
 
 *Params*:
@@ -71,9 +73,8 @@ Saves the relevant Data to `country_data/countries_additional.csv` and `country_
 
 **Function:** `parse_conflicts():`
 
-Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/acled.geojson`
-
-Saves the relevant Data to `conflict_data/conflicts.csv` and `conflict_data/conflicts.json`
+Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/acled.geojson` and
+saves the relevant Data to `conflict_data/conflicts.csv` and `conflict_data/conflicts.json`
 
 *Params*:
 - `None`
@@ -92,9 +93,7 @@ Saves the relevant Data to `conflict_data/conflicts.csv` and `conflict_data/conf
 
 **Function:** `parse_conflicts_per_country(parsed_csv):`
 
-This function preprocesses the parsed CSV file to group the conflicts by country and saves the result in a new CSV file.
-
-Saves the relevant Data to `conflict_data/countries/{country_name}.csv`
+This function preprocesses the parsed CSV file to group the conflicts by country and saves the result in the new CSV files `conflict_data/countries/{country_name}.csv`
 
 *Params*:
 - **parsed_csv** (`str`): Path to the parsed csv file.
@@ -128,10 +127,8 @@ A function to print all locations in the given in csv files for each country acc
 
 **Function:** `parse_api_ipc():`
 
-Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/ipc.json`
-
-Saves the relevant Data to `ipc_data/ipc.csv` and `ipc_data/ipc.json`
-
+Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/ipc.json` and
+saves the relevant Data to `ipc_data/ipc.csv` and `ipc_data/ipc.json`
 
 *Params*:
 - `None`
@@ -155,10 +152,8 @@ Saves the relevant Data to `ipc_data/ipc.csv` and `ipc_data/ipc.json`
 
 **Function:** `parse_pdc():`
 
-Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/pdc.json`
-
-Saves the relevant Data to `pdc_data/pdc.csv` and `pdc_data/pdc.json`
-
+Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/pdc.json` and
+saves the relevant Data to `pdc_data/pdc.csv` and `pdc_data/pdc.json`
 
 *Params*:
 - `None`
@@ -167,9 +162,9 @@ Saves the relevant Data to `pdc_data/pdc.csv` and `pdc_data/pdc.json`
 - `None`
 
 *CSV File Structure:*:
-- **id** (`int`): The unique identifier.
+- **id** (`int`): The unique hazard ID.
 - **type** (`str`): The type of hazard.
-- **severityId** (`str`): The severity level identifier.
+- **severityId** (`str`): The severity level ID.
 - **hazardName** (`str`): The name of the hazard.
 - **latitude** (`float`): The latitude coordinate.
 - **longitude** (`float`): The longitude coordinate.
@@ -181,10 +176,8 @@ Saves the relevant Data to `pdc_data/pdc.csv` and `pdc_data/pdc.json`
 
 **Function:** `parse_reports():`
 
-Fetches the data from the Endpoint `https://static.hungermapdata.org/insight-reports/latest/country.json`
-
-Saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.json`
-
+Fetches the data from the Endpoint `https://static.hungermapdata.org/insight-reports/latest/country.json` and
+saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.json`
 
 *Params*:
 - `None`
@@ -203,9 +196,8 @@ Saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.
 
 **Function:** `parse_api_iso3(country_codes):`
 
-Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/iso3/{}/countryIso3Data.json`
-
-Saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.json`
+Fetches the data from the Endpoint `https://api.hungermapdata.org/v2/iso3/{}/countryIso3Data.json` and
+saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.json`
 
 
 *Params*:
@@ -226,9 +218,8 @@ Saves the relevant Data to `reports_data/reports.csv` and `reports_data/reports.
 
 **Function:** `parse_yearly_reports():`
 
-Fetches the data from the Endpoint `https://static.hungermapdata.org/year-in-review/config.json`
-
-Saves the relevant Data to `yearly_reports/yearly_reports.csv` and `yearly_reports/yearly_reports.json`
+Fetches the data from the Endpoint `https://static.hungermapdata.org/year-in-review/config.json` and
+saves the relevant Data to `yearly_reports/yearly_reports.csv` and `yearly_reports/yearly_reports.json`
 
 *Params*:
 - `None`
