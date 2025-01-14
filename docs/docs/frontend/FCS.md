@@ -1,15 +1,15 @@
 ### FCS Map
 
-FCS or Food Consumption Score map visualize fcs data. In addition to the map, custom components such as accordions, tooltips, and legends are included.
+FCS or Food Consumption Score map visualize FCS data. In addition to the map, custom components such as accordions, tooltips, and legends are included.
 
 ---
 
 #### World View 
-In world view, fcs map appears with country alert's. Along with alerts, one point legend and other gradient legend appears. To enhance user experience, hover effect is also activated. 
+In world view, FCS map appears with country alert's. Along with alerts, one point legend and other gradient legend appears. To enhance user experience, hover effect is also activated. 
 
 ***Technical Overview***
 
-The code below in ```Map.ts``` helps to trigger the Fcs map. For each country FcsChoropleth get rendered. The props need by FcsChoropleth:
+The code below in ```Map.ts``` helps to trigger the FCS map. For each country FcsChoropleth get rendered. The props need by FcsChoropleth:
 - ```key```: A unique key derived from the country's adm0_id property.
 - ```data```: The geoJSON data for the specific country.
 - ```fcsData```: The food security data for rendering.
@@ -33,7 +33,7 @@ If no selectedCountryId is specified then a TileLayer is added inside a Pane com
 </Pane>
 ```
 
-![Fcs World View](/img/fcs/FcsWorldView.png)
+![Fcs World View](/img/FCS/FcsWorldView.png)
 
 ---
 
@@ -43,7 +43,7 @@ Apart from that, customized accordions, legend, loading state and hover effect a
 
  ***Technical Overview***
 
- In ```FcsCountryChoropth.tsx```, the fcs map for the country view get rendered. It returns 
+ In ```FcsCountryChoropth.tsx```, the FCS map for the country view get rendered. It returns 
 This ```<GeoJSON>``` component renders GeoJSON data (regionData) on a map. It applies custom styling through ```FcsCountryChoroplethOperations.styleFunction``` and defines interactive behavior for each map feature using ```FcsCountryChoroplethOperations.onEachFeature```.
  ```js
   <GeoJSON
@@ -94,22 +94,22 @@ In order to extract the content of the accordions, first country data and countr
 
 If there is no data available, then the content would be ```No Data available```for the particular accordion.
 
-![Fcs Country View](/img/fcs/FcsCountryView.png)
+![Fcs Country View](/img/FCS/FcsCountryView.png)
 
 With the help of the scrollbar on the left side, user can see the last accordion.
 
-![Fcs Country View2](/img/fcs/FcsCountryView2.png)
+![Fcs Country View2](/img/FCS/FcsCountryView2.png)
 
-Customized tooltip has been implemented in ```FcsRegionTooltip.tsx```. FcsRegionTooltip component, which renders a tooltip displaying detailed information about a region in an FCS map. The component receives GeoJSON feature data as a prop and extracts relevant properties, such as population data for insufficient food consumption (fcs) and food-based coping, formatting them for display.
+Customized tooltip has been implemented in ```FcsRegionTooltip.tsx```. FcsRegionTooltip component, which renders a tooltip displaying detailed information about a region in an FCS map. The component receives GeoJSON feature data as a prop and extracts relevant properties, such as population data for insufficient food consumption (FCS) and food-based coping, formatting them for display.
 
 The tooltip includes:
 
 - The region's name.
 - Percentages and populations (in millions) for insufficient food consumption and food-based coping, or messages indicating missing data.
-- A continuous chart showing trends in insufficient food consumption if graph data (fcsGraph) is available.
+- A continuous chart showing trends in insufficient food consumption if graph data (FCSGraph) is available.
 The component uses dynamic styling and displays data interactively, enhancing the map's visualization with contextual insights.
 
-![Fcs Tooltip](/img/fcs/FcsTooltip.png)
+![Fcs Tooltip](/img/FCS/FcsTooltip.png)
 
 Gradient Legend will appear, which depicts the color with information ```People with insufficient food consumption```.  
 
