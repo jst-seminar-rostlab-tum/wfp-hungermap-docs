@@ -3,15 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # How to add a new info page
 
-:::note
-All pages that are reachable from the sidebar (except for the home page) are _info pages_. They differ from the map page
-as follows:
-
-* Instead of a sidebar, a **topbar** (desktop) or a **hamburger menu** (mobile) without the map layers and filters is
-  displayed
-* The content has a **maximum width** (and is centered)
-* Textual content is searchable (optional)
-  :::
+> See the [general guide on info pages](/docs/frontend/info_pages) for more general information on the info pages.
 
 ## Adding the page itself
 
