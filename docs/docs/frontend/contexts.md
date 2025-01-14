@@ -9,3 +9,8 @@ sidebar_position: 4
 ## SelectedAlertContext
 
 ## SelectedCountryIdContext
+
+
+## userRoleContext
+
+See [Mock Authentication](/docs/frontend/mock-authentication).
