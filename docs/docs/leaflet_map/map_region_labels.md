@@ -12,48 +12,50 @@ This is done based on an estimation on the label width and the borders of the re
 ## Setup
 The labels are set up once the user selects a country and the regions are rendered by the setupRegionLabelTooltip() method
 that is located in [Map Operations](map_operations.md). This method is called inside of the [Cloropleth Elements](map_cloropleths.md)
-on country level in the corresponding operations file. Let's have a closer look at how the labels are set up: 
+on country level in the corresponding components. Let's have a closer look at how the labels are set up: 
 ```ts
-static setupRegionLabelTooltip(
-    feature: GeoJsonFeature<Geometry, GeoJsonProperties>,
+static
+setupRegionLabelTooltip(
+    feature: Feature<CommonRegionProperties>,
     regionLabelData: FeatureCollection<Geometry, GeoJsonProperties>,
-    countryMapData: CountryMapData,
-    map: L.Map,
-    setRegionLabelTooltips: (tooltips: (prevRegionLabelData: L.Tooltip[]) => L.Tooltip[]) => void
-  ) {
-        /*----------------- 1 -------------------*/
+    countryIso3: string,
+    map: L.Map): L.Tooltip | undefined
+{
+    /*----------------- 1 -------------------*/
     const featureLabelData = regionLabelData.features.find((labelItem) => {
-      return (
-        labelItem.properties?.iso3 === countryMapData.properties.iso3 &&
-        labelItem.properties?.name === feature.properties?.Name
-      );
+        return (
+            labelItem.properties?.iso3 === countryMapData.properties.iso3 &&
+            labelItem.properties?.name === feature.properties?.Name
+        );
     });
-        /*----------------- 1 -------------------*/
+    /*----------------- 1 -------------------*/
 
-        /*----------------- 2 -------------------*/
+    /*----------------- 2 -------------------*/
     if (featureLabelData && featureLabelData.geometry.type === 'Point') {
-      const tooltip = L.tooltip({
-        permanent: true,
-        direction: 'center',
-        className: 'text-background dark:text-foreground',
-        content: '',
-      }).setLatLng([featureLabelData.geometry.coordinates[1], featureLabelData.geometry.coordinates[0]]);
-      tooltip.addTo(map);
-      setRegionLabelTooltips((prevRegionLabelData) => [...prevRegionLabelData, tooltip]);
+        const tooltip = L.tooltip({
+            permanent: true,
+            direction: 'center',
+            className: 'text-background dark:text-foreground',
+            content: '',
+        }).setLatLng([featureLabelData.geometry.coordinates[1], featureLabelData.geometry.coordinates[0]]);
+        tooltip.addTo(map);
+        setRegionLabelTooltips((prevRegionLabelData) => [...prevRegionLabelData, tooltip]);
         /*----------------- 2 -------------------*/
-        
-        
-        /*----------------- 3 -------------------*/ 
-      const zoomListener = () => this.updateRegionLabelTooltip(feature, map, tooltip);
 
-      this.updateRegionLabelTooltip(feature, map, tooltip);
-      map.on('zoom', zoomListener);
-      tooltip.on('remove', () => {
-        map.off('zoom', zoomListener);
-      });
+
         /*----------------- 3 -------------------*/
+        const zoomListener = () => this.updateRegionLabelTooltip(feature, map, tooltip);
+
+        this.updateRegionLabelTooltip(feature, map, tooltip);
+        map.on('zoom', zoomListener);
+        tooltip.on('remove', () => {
+            map.off('zoom', zoomListener);
+        });
+        /*----------------- 3 -------------------*/
+        return tooltip;
     }
-  }
+    return undefined;
+}
 ```
 1: From the data containing information about the label and position for each label the right element is searched for.
 
@@ -62,6 +64,8 @@ all the used tooltips in order to be able to remove them later again. This list 
 
 3: Lastly listeners are added. When zooming, the labels should update and if given should switch between the full region name and "...". Also when the
 tooltip is removed, the listener that was just setup should be removed so that no unnecessary listeners are running in the background for elements that are not being used anymore.
+
+The method returns the created tooltip so that the calling component can add it to a list in order to keep track of it for later removal.
 
 ## Updating
 The updating process of the labels mainly consist of reevaluating what the labels should display:

@@ -48,11 +48,13 @@ You can find details about the region labeling under [region labels](map_region_
 The method configures a permanent tooltip for region labels and updates it dynamically during zoom events.
 
 #### Parameters
-- ```feature```: GeoJSON feature representing the label.
-- ```regionLabelData```: Data for region labels.
-- ```countryMapData```: Data of the selected country.
-- ```map```: Leaflet map instance.
-- ```setRegionLabelTooltips```: Function to update the list of tooltips.
+- ```feature```: GeoJSON feature representing the label
+- ```regionLabelData```: Data for region labels
+- ```countryIso3```: iso3 code for matching the regions with the country
+- ```map```: Leaflet map instance
+
+#### Returns
+The method returns the created tooltip
 
 #### Workflow
 You can find details about the region labeling under [region labels](map_region_labels.md).
