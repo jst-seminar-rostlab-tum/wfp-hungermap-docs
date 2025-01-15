@@ -12,7 +12,7 @@ Here we will go over the most important loading functionality regarding the map.
 When the map is loading the initial data containing information about the shapes of the countries and their borders, a skeleton
 shaped like a world map is shown. Instead of the zoom control element also a skeleton is shown:
 ![img.png](map_initial_skeleton.png)
-In src/components/Map/MapLoader.tsx you can find the code for showing the skeleton component while loading the application and
+In ```src/components/Map/MapLoader.tsx``` you can find the code for showing the skeleton component while loading the application and
 once this is done the [Map Component](map_component.md) is shown.
 
 The skeleton for the map is based on a SVG that is used in ```src/components/Map/MapSkeleton.tsx```. Here both of the skeletons can be customized:

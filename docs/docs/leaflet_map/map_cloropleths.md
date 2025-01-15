@@ -27,7 +27,7 @@ with some grey overlay. Operations for this are located for example in src/opera
 Once the user selects a country, a loading skeleton showing the shape of the country and the accordions (for very small screens skeletons instead) are shown while
 the more detailed data for the country is loading. When the loading has finished the Country Cloropleth Component is rendered.
 This component simply renders the data of the regions with needed style and functionality. Operations are located for example in
-src/operations/map/FcsCountryChoroplethOperations.tsx.
+```src/operations/map/FcsCountryChoroplethOperations.tsx```.
 
 ## IPC Cloropleth
 The main difference to the other Cloropleth elements mentioned above is that the component placed in the [Map Component](map_component.md)

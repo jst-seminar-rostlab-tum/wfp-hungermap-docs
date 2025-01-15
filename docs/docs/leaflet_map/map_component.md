@@ -30,7 +30,7 @@ The leaflet map component can be configured with properties in the MapContainer 
 Since the MapContainer component is a react-leaflet component you can easily add an customize the map behavior according to their [Map Documentation](https://leafletjs.com/reference.html#map).
 
 
-The map is initialized using the following key properties of the ```Map.ts`` file located in the constants folder:
+The map is initialized using the following key properties of the ```Map.ts``` file located in the constants folder:
 
 ```ts
 export const MAP_MAX_ZOOM = 8;
@@ -104,28 +104,28 @@ work in detail is further explained in [Map Operations](map_operations.md).
 
 ### Props
 
-- countries: A FeatureCollection containing country-level geographic data used for the base shapes and other things
-- disputedAreas: A FeatureCollection of disputed territories
-- fcsData: Food security data used for choropleth
-- alertData: Alert-related data for display within the map
+- ```countries```: A FeatureCollection containing country-level geographic data used for the base shapes and other things
+- ```disputedAreas```: A FeatureCollection of disputed territories
+- ```fcsData```: Food security data used for choropleth
+- ```alertData```: Alert-related data for display within the map
 
 ### State Management
 
 #### useState manages various aspects of the map:
-- countryData: Holds details of selected countries
-- regionData: Holds details of the regions of the selected country
-- countryIso3Data: Holds details about nutrition data used for accordion elements in the FCS and IPC mode
-- isLoadingCountry: Tracks whether the data for a country is currently loading
-- regionNutritionData: Holds details of the regions of the selected country in Nutrition mode
-- ipcRegionData: Holds details of the regions of the selected country in IPC mode
-- selectedCountryName: Holds the name of the currently selected country if present
-- regionLabelData: Holds details (name, position) of all labels for all regions. It is only loaded once.
-- regionLabelTooltips: Holds the tooltips showing the labels of the regions of the currently selected country (More in [Region Labels](map_region_labels.md))
-- isDataAvailable: Tracks whether relevant data is present for the selected country
+- ```countryData```: Holds details of selected countries
+- ```regionData```: Holds details of the regions of the selected country
+- ```countryIso3Data```: Holds details about nutrition data used for accordion elements in the FCS and IPC mode
+- ```isLoadingCountry```: Tracks whether the data for a country is currently loading
+- ```regionNutritionData```: Holds details of the regions of the selected country in Nutrition mode
+- ```ipcRegionData```: Holds details of the regions of the selected country in IPC mode
+- ```selectedCountryName```: Holds the name of the currently selected country if present
+- ```regionLabelData```: Holds details (name, position) of all labels for all regions. It is only loaded once.
+- ```regionLabelTooltips```: Holds the tooltips showing the labels of the regions of the currently selected country (More in [Region Labels](map_region_labels.md))
+- ```isDataAvailable```: Tracks whether relevant data is present for the selected country
 
 #### Contexts provide global state across the application:
-- useSelectedCountryId: Tracks the currently selected country
-- useSelectedMap: Handles the selected map type
+- ```useSelectedCountryId```: Tracks the currently selected country
+- ```useSelectedMap```: Handles the selected map type
 
 
 ## 3. Error Handling
