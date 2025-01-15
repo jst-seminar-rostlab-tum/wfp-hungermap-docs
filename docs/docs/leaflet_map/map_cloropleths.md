@@ -7,10 +7,10 @@ sidebar_position: 4
 ## Overview
 The map supports multiple thematic data visualizations for each mode. For the FCS, Nutrition and IPC view Cloropleth elements
 are implemented in order to make countries clickable and add other behavior. The basic structure of these Cloropleth elements
-is very similar for all three modes. A main cloropleth wrapper component (e.g. src/components/Map/FcsMap/FcsCloropleth.tsx) is placed inside of the MapContainer of the
+is very similar for all three modes. A main cloropleth wrapper component (e.g. ```src/components/Map/FcsMap/FcsCloropleth.tsx```) is placed inside of the MapContainer of the
 [Map Component](map_component.md). This component is visible in the global view and contains functionality that is needed for
 behavior in the global view. Once a country is selected, a different component inside of the before mentioned component (that is being disabled now) is rendered.
-This cloropleth element on country level (e.g. /src/components/Map/FcsMap/FcsCountryCloropleth.tsx) is providing all necessary functionality for rendering the data of the different
+This cloropleth element on country level (e.g. ```src/components/Map/FcsMap/FcsCountryCloropleth.tsx```) is providing all necessary functionality for rendering the data of the different
 regions of one country. Since there are small differences between the three cloropleths we will further explain its details in the
 following:
 
@@ -21,7 +21,7 @@ Each cloropleth component directly placed in the MapContainer is rendering one s
 to each country of all the data a single Cloropleth element is mapped. This Cloropleth element thus also contains functionality
 that is needed in the global view such as binding a tooltip showing the name of the country to the component but also rendering the
 data for this country in the needed style and with the needed functionality. In FCS mode this for example means displaying countries that have no further data and should not be clickable
-with some grey overlay. Operations for this are located for example in src/operations/map/FcsChoroplethOperations.ts.
+with some grey overlay. Operations for this are located for example in ```src/operations/map/FcsChoroplethOperations.ts```.
 
 ### Country View
 Once the user selects a country, a loading skeleton showing the shape of the country and the accordions (for very small screens skeletons instead) are shown while
