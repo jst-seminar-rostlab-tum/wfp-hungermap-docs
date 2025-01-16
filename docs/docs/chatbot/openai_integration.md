@@ -1,3 +1,10 @@
+---
+id: openai-integration
+title: OpenAI Integration & Response
+slug: /chatbot/openai-integration
+sidebar_position: 6
+---
+
 # Chatbot: OpenAI Integration & Response
 
 This document details how the WFP Chatbot integrates with OpenAI's API and handles responses.
@@ -16,6 +23,8 @@ The chatbot supports multiple OpenAI models with different configurations:
 
 Note: The token limits for gpt-4o and o1-mini are set to 26,000 (below the organizational limit of 30,000) for safety.
 
+---
+
 ### Authentication
 
 The integration uses OpenAI's API key, which should be set in the environment variables:
@@ -23,13 +32,15 @@ The integration uses OpenAI's API key, which should be set in the environment va
 OPENAI_API_KEY=your_api_key_here
 ```
 
+---
+
 ### Request Flow
 
 1. **Query Processing**
    - User query is received
    - Relevant documents are retrieved via similarity search
-     - If country report is specified: limit=1 document
-     - If no country report is specified: uses user-specified limit (default: 5)
+     - If country report specified: limit=1 document
+     - If no country report: uses user-specified limit (default: 5)
    - Documents are compressed to optimize token usage
    - Conversation context is gathered from recent interactions
 
@@ -49,6 +60,8 @@ OPENAI_API_KEY=your_api_key_here
    )
    ```
 
+---
+
 ### Error Handling
 
 1. **Rate Limit Handling**
@@ -65,6 +78,8 @@ OPENAI_API_KEY=your_api_key_here
    - Catches and logs all OpenAI API errors
    - Propagates errors for proper client notification
 
+---
+
 ## Response Handling
 
 ### Token Management
@@ -78,6 +93,8 @@ OPENAI_API_KEY=your_api_key_here
    - Compresses document content before API calls
    - Truncates text to stay within model limits
    - Caches compressed documents for efficiency
+
+---
 
 ### Document Compression
 
@@ -102,6 +119,8 @@ The chatbot uses a compression system to maximize context while minimizing token
      print(f"Cost saved: ${(input_cost - cost_compression):.8f}")
      ```
 
+---
+
 ### Context Building
 
 The chatbot builds context for OpenAI in several layers:
@@ -125,9 +144,18 @@ The chatbot builds context for OpenAI in several layers:
      f"Use the following context:\n{search_result}"
      ```
 
+---
+
 ### Response Formatting
 
-The chatbot's responses follow strict formatting and content guidelines as defined in the system prompt:
+The chatbot's responses follow strict formatting and content guidelines:
+
+| Category | Guidelines |
+|----------|------------|
+| Language | - Clear and concise<br>- Professional tone<br>- No technical jargon |
+| Content Restrictions | - No future predictions<br>- No political opinions<br>- No food aid recommendations<br>- No sensitive information |
+| Data Usage | - Only use provided context<br>- No external data sources<br>- Cite sources when available |
+| Formatting | - Use markdown for structure<br>- Include relevant headers<br>- Maintain consistent style |
 
 1. **Supported Markdown Syntax**
    - Headers (h1-h3) for section organization
@@ -162,6 +190,8 @@ The formatting ensures responses are:
 - Professional in tone
 - Data-focused and factual
 
+---
+
 ## Monitoring and Optimization
 
 1. **Performance Monitoring**
@@ -173,6 +203,8 @@ The formatting ensures responses are:
    - Calculates and logs cost savings from compression
    - Uses appropriate models based on context size
    - Caches frequently used data
+
+---
 
 ## Configuration
 

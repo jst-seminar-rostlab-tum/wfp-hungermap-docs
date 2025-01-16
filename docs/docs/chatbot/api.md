@@ -1,26 +1,40 @@
+---
+id: chatbot-api
+title: Chatbot API Documentation
+slug: /chatbot/api
+sidebar_position: 4
+---
+
 # Chatbot API Documentation
 
+Author: `Georgi Peev`
+
 This document provides detailed information about the WFP Chatbot API endpoints and their usage.
+
+---
 
 ## Base URL
 
 The API is available at the following base URLs depending on the environment:
 
-- Development: `http://localhost:5000`
-- Production: `https://wfp-hungermap.netlify.app`
+| Environment | URL |
+|------------|-----|
+| Development | `http://localhost:5000` |
+| Production | `https://wfp-hungermap.netlify.app` |
 
 ## Authentication and CORS
 
 The API uses CORS (Cross-Origin Resource Sharing) for security. The following restrictions apply:
-- **Allowed Origins:**
-  - `http://localhost:3000`
-  - `http://127.0.0.1:3000`
-  - `http://127.0.0.1:5000`
-  - `https://wfp-hungermap.netlify.app`
-- **Allowed Methods:** POST only
-- **Allowed Headers:** Content-Type, Authorization
-- **Exposed Headers:** Content-Type
-- **Max Age:** 600 seconds
+
+| Category | Values |
+|----------|--------|
+| Allowed Origins | `http://localhost:3000`<br>`http://127.0.0.1:3000`<br>`http://127.0.0.1:5000`<br>`https://wfp-hungermap.netlify.app` |
+| Allowed Methods | POST only |
+| Allowed Headers | Content-Type, Authorization |
+| Exposed Headers | Content-Type |
+| Max Age | 600 seconds |
+
+---
 
 ## Endpoints
 
@@ -39,7 +53,7 @@ Used to send queries to the chatbot and receive AI-generated responses.
     "reports_country_name": "string | null",  // Optional: Country name for report-specific context
     "query": "string",                        // Required: User's question
     "version": 1,                            // Optional: API version (default: 1)
-    "chatbot_type": "string",                // Optional but currently fixed to "gpt-4o"
+    "chatbot_type": "string",                // Optional but currently fixed to "gpt-4o" - see [Model Types](#implementation-notes) for more information
     "limit": 5,                              // Optional: Max number of context documents (default: 5)
     "previous_messages": []                  // Optional: Reserved for future use
 }
@@ -77,19 +91,15 @@ Root endpoint that serves the API documentation page.
 #### Response
 Returns an HTML page containing API documentation.
 
+---
+
 ## Implementation Notes
 
-1. **Model Type**
-   - While the API accepts a `chatbot_type` parameter, it currently always uses "gpt-4o" internally
-   - This is hardcoded for consistency and quality control
-
-2. **Token Usage**
-   - Token usage is tracked internally for monitoring purposes
-   - This information is not exposed in the API response
-
-3. **Previous Messages**
-   - The `previous_messages` parameter is accepted but reserved for future implementation
-   - Currently does not affect the response generation
+| Category | Description |
+|----------|-------------|
+| Model Type | - Accepts `chatbot_type` parameter<br>- Currently fixed to "gpt-4o"<br>- Hardcoded for consistency |
+| Token Usage | - Tracked internally<br>- Used for monitoring<br>- Daily limits enforced |
+| Previous Messages | - The `previous_messages` parameter is accepted but reserved for future implementation<br>- Currently does not affect the response generation |
 
 ## Example Usage
 
