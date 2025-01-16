@@ -15,13 +15,19 @@ If comparison data is continuous, it is plotted on a line chart.
 
 ![Comparison Portal Line Chart](/img/comparison_portal_line_chart.png)
 
-In case there is no data for a specific chart, an alert is displayed.
+## Error Handling
+
+If an error occurs while fetching data for a specific country, a snackbar is displayed. Then the country is disabled in the selection dropdown.
+
+![Comparison Portal Snackbar](/img/comparison_portal_algeria.png)
+
+In addition, if a country has no data for a specific chart, a corresponding alert is displayed.
 
 ![Comparison Portal Alert](/img/comparison_portal_alert.png)
 
-In addition, there are certain countries that might have an fcs value but our api does not return data for them. In this case, a snackbar is displayed and a country becomes disabled in the selection dropdown.
+If data for all countries for a specific chart is missing, an error message is displayed on a chart.
 
-![Comparison Portal Snackbar](/img/comparison_portal_algeria.png)
+![Comparison Portal Error Message](/img/comparison_portal_chart_error_message.png)
 
 ## Technical Details
 
@@ -29,7 +35,7 @@ To enable selection only from countries that have fcs data, the page needs to fe
 
 ![Comparison Portal Skeleton](/img/comparison_portal_skeleton.png)
 
-In order to get data for a selected country, the page needs to fetch data from two endpoints: `/adm0/${countryId}/countryData.json` and `/iso3/${countryCode}/countryIso3Data.json`. To utilize client-side caching, two custom hooks are used: `useCountryDataListQuery` and `useCountryIso3DataListQuery`. They accept and array of country ids and country codes respectively and return the data for each country. In addition, they accept a callback function for the case when an error is returned for a specific country. The hooks are implemented using (useQueries)[https://tanstack.com/query/latest/docs/framework/react/reference/useQueries] hook from Tanstack Query library. It allows to execute a variable number of queries in parallel and return the results in an array.
+In order to get data for a selected country, the page needs to fetch data from two endpoints: `/adm0/${countryId}/countryData.json` and `/iso3/${countryCode}/countryIso3Data.json`. To utilize client-side caching, two custom hooks are used: `useCountryDataListQuery` and `useCountryIso3DataListQuery`. They accept and array of country ids and country codes respectively and return the data for each country. In addition, they accept a callback function for the case when an error is returned for a specific country. The hooks are implemented using [useQueries](https://tanstack.com/query/latest/docs/framework/react/reference/useQueries) hook from Tanstack Query library. It allows to execute a variable number of queries in parallel and return the results in an array.
 
 ```typescript
 export const useCountryDataListQuery = (
@@ -77,7 +83,8 @@ export const useCountryIso3DataListQuery = (
     );
 ```
 
-Selected countries are stored in the url query string so that the user can share the comparison with others. In order to update the state of the page in sync with query parameters, a custom hook was implemented. It returns the current selected countries and a function to update them. The function updates both the state and the query string with the new value.
+Selected countries are stored in the url query string so that our users can share the comparison with others. Here is an example of a url with two selected countries: https://wfp-hungermap.netlify.app/comparison-portal?countries=31,8.
+In order to update the state of the page in sync with query parameters, a custom hook was implemented. It returns the current selected countries and a function to update them. The function updates both the state and the query string with the new value.
 
 ```typescript
 export const useSelectedCountries = (countryMapData: CountryMapDataWrapper) => {
@@ -107,3 +114,5 @@ export const useSelectedCountries = (countryMapData: CountryMapDataWrapper) => {
     return [selectedCountries, setSelectedCountriesFn] as const;
 };
 ```
+
+Currently number of selected countries is limited to five. In order to increase this limit, `COUNTRY_LIMIT` constant needs to be updated in `CountrySelection.tsx` file.
