@@ -1,5 +1,7 @@
 # Comparison Portal
 
+**Author:** `Bohdan Garchu`
+
 **Comparison Portal** allows users to compare two to five countries based on various indicators such as food security, import dependency, balance of trade, food and headline inflation. 
 
 ## Functionality
