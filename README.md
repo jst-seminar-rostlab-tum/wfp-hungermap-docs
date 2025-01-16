@@ -1,11 +1,11 @@
 # WFP HungerMap Documentation
 
 This software is dual-licensed:
-1. **Open-Source License**: Distributed under the terms of the GNU General Public License (GPL). See the `LICENSE` file for details.
+1. **Open-Source License**: Distributed under the terms of the Server Side Public License (SSPL). See the `LICENSE` file for details.
 2. **Commercial License**: Available for businesses requiring proprietary use. Contact the Center for Software Engineering Excellence at partners@csee.tech for more information.
 Failure to comply with either license will constitute a violation of intellectual property rights.
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern open-source static website generator.
 
 ### Installation
 
