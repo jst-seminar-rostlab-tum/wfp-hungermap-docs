@@ -1,61 +1,84 @@
 # How to Run All Services
 
-## Prerequisites
+Author: `Georgi Peev`
 
-Before starting any service, ensure:
-1. MongoDB is running and accessible
-2. You have copied `.env_template` to `.env` and set required variables:
-   1. Copy root `.env_template` to `.env` for the Chatbot service:
-   ```bash
-   MONGODB_URI=your_mongodb_uri 
-   MONGODB_DB=db_main 
-   MONGODB_COLLECTION=chatbot_data 
-   OPENAI_API_KEY=your_openai_api_key
-   ```
-   2. Copy `email_service/.env_template` to `email_service/.env` for the Email service:
-   ```bash
-   MONGODB_URI=your_mongodb_uri 
-   MONGODB_DB_EMAIL_SERVICE=email_service 
-   BREVO_API_KEY=your_brevo_api_key 
-   BREVO_SENDER_EMAIL=jstwfp@gmail.com 
-   BREVO_SENDER_NAME=WFP 
-   BASE_URL=your_base_url
-   ```
-3. All dependencies are installed:
+This guide explains how to set up and run the WFP Chatbot and Email services - particularly, all the parsers, uploaders, and services required to run the WFP Hungermap project.
+
+---
+
+## Environment Setup
+
+1. Create and activate a Python virtual environment:
+```bash
+# Create venv
+python -m venv venv
+
+# Activate venv
+# On Windows:
+venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+2. Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
+---
+
+## Prerequisites
+
+Before starting any service:
+
+1. Ensure MongoDB is running and accessible
+
+2. Copy environment templates and configure variables:
+
+| Service | Template Location | Target Location | Required Variables |
+|---------|------------------|-----------------|-------------------|
+| Chatbot | `.env_template` | `.env` | `MONGODB_URI`<br>`MONGODB_DB`<br>`MONGODB_COLLECTION`<br>`OPENAI_API_KEY` |
+| Email | `email_service/.env_template` | `email_service/.env` | `MONGODB_URI`<br>`MONGODB_DB_EMAIL_SERVICE`<br>`BREVO_API_KEY`<br>`BREVO_SENDER_EMAIL`<br>`BREVO_SENDER_NAME`<br>`BASE_URL` |
+
+---
+
 ## Running the Email Service
 
-1. Start the Email Service:
+Start the service:
 ```bash
 python src/email_service/app.py
 ```
 
-The service will be available at `http://localhost:5001` with the following endpoints:
-- `/send-email`: Send email to recipient
-- `/subscribe`: Subscribe to topics
-- `/unsubscribe`: Unsubscribe from topics
-- `/topics`: List available topics
-- `/daily-reports/countries`: Get countries with daily reports
+Available endpoints at `http://localhost:5001`:
+
+| Endpoint | Method | Purpose |
+|----------|---------|----------|
+| `/send-email` | POST | Send email to recipient |
+| `/subscribe` | POST | Subscribe to topics |
+| `/unsubscribe` | POST | Unsubscribe from topics |
+| `/topics` | GET | List available topics |
+| `/daily-reports/countries` | GET | Get countries with daily reports |
+
+---
 
 ## Running the Chatbot
 
-1. Start the Chatbot service:
+Start the service:
 ```bash
 python src/app.py
 ```
 
-The chatbot will be available at `http://localhost:5000` with these endpoints:
-- `/query`: Main endpoint for chatbot interactions
-   - Accepts POST requests with:
-      - `reports_country_name` (optional): Country for report chatting
-      - `query`: User's question
-      - `version`: API version
-      - `chatbot_type`: Model type (e.g., "gpt-4")
-      - `limit`: Result limit
-      - `previous_messages`: Chat history
+Available endpoints at `http://localhost:5000`:
+
+| Endpoint | Method | Purpose |
+|----------|---------|----------|
+| `/query` | POST | Main chatbot interaction endpoint |
+| `/docs` | GET | OpenAPI documentation |
+| `/redoc` | GET | Alternative API documentation |
+
+See [API Documentation](../chatbot/api.md) for detailed endpoint specifications.
+
+---
 
 ## Running Data Pipeline
 

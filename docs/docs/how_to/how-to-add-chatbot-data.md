@@ -1,9 +1,53 @@
 # How to Add More Data to the Chatbot
 
+Author: `Georgi Peev`
+
 The chatbot's data pipeline consists of three main components:
 1. **Parsers**: Scripts that fetch and format data from the WFP Hungermap API
 2. **Uploaders**: Scripts that upload the parsed data to the MongoDB database
 3. **Upload All**: A utility file to run all parsers and uploaders in sequence
+
+See also: [Database Structure](../chatbot/database-structure.md) for the format of stored data.
+
+---
+
+## Environment Setup
+
+Before working with the data pipeline:
+
+1. Create and activate a Python virtual environment:
+```bash
+# Create venv
+python -m venv venv
+
+# Activate venv
+# On Windows:
+venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+2. Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Available Data Types
+
+| Data Type | Parser | Description | Collection Fields |
+|-----------|---------|-------------|-------------------|
+| Country Reports | `api_country_reports.py` | Country-specific reports | `document_name`, `country_name`, `report_content` |
+| General Data | `api_country_general_data.py` | Basic country metrics | `country_id`, `country_name`, `fcs`, `rcsi` |
+| Additional Data | `api_country_additional_data.py` | Extended metrics | `regions_data`, `fcs_graph`, `rcsi_graph` |
+| PDC Data | `api_country_pdc.py` | Pacific Disaster Center data | `event_type`, `severity`, `location` |
+| Conflict Data | `api_country_conflict.py` | Conflict events | `event_type`, `occurrences`, `regions` |
+| IPC Data | `api_country_ipc.py` | Food security classification | `phase`, `population`, `region` |
+| ISO3 Data | `api_iso3_data.py` | ISO3 country code mappings | `iso3`, `country_name` |
+| Yearly Review | `api_yearly_review.py` | Annual review reports | `document_name`, `year`, `report_content` |
+
+---
 
 ## Adding New Data Through Parsers
 

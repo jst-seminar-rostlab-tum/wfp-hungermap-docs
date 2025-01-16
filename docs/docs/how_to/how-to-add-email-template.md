@@ -1,10 +1,40 @@
 # How to Add a New Email Template
 
+Author: `Georgi Peev`
+
+This documentation covers the process of adding a new email template to the Email Service. Email templates are used to structure and style the cores of the emails sent to users. By following the steps outlined below, you can create a new template and upload it to the MongoDB database for use in the Email Service.
+
+## Environment Setup
+
+Before working with email templates:
+
+1. Create and activate a Python virtual environment:
+```bash
+# Create venv
+python -m venv venv
+
+# Activate venv
+# On Windows:
+venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+2. Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
 ## Template Structure
 
 Email templates are located in the `src/email_service/email_templates` directory and consist of two files:
-- An HTML file (e.g., `template_name.html`)
-- A CSS file (e.g., `template_name_styles.css`)
+
+| File Type | Example | Purpose |
+|-----------|---------|----------|
+| HTML Template | `template_name.html` | Main email content and structure |
+| CSS Styles | `template_name_styles.css` | Styling for the template |
 
 ## Add a New Template
 
