@@ -3,6 +3,6 @@
     "position": 4,
     "link": {
       "type": "generated-index",
-      "description": "Documentation of the email service"
+      "description": "Documentation of the email service that sends email notification to subscribers."
     }
   }

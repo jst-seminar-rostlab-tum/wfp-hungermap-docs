@@ -3,6 +3,6 @@
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Documentation of the chatbot"
+    "description": "Documentation of the OpeanAI powered custom chatbot that helps users summarize and analyze the data of the HungerMap."
   }
 }
