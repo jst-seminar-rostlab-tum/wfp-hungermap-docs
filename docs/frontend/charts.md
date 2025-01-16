@@ -1,8 +1,8 @@
----
-sidebar_position: 3
----
+Author: Linus Sander
 
 # Charts
+
+TODO links everywhere the "how to charts"
 
 ## Overview
 
@@ -10,12 +10,15 @@ Two reusable components were created to enable the visualization of charts.
 For continuous data the `ContinuousChart` component and for categorical data the `CategoricalChart` should be used.
 Both provide various practical customization options, which will be explained in detail in the following sections.
 
+> Note: there is also a ['How to Charts' guide](/docs/frontend/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
+
 The components are basically boxes that render a title, description, and chart.
 They have a width of 100%, so they adjust to the width of their parent element in which they are used.
 The height of the boxes depend on the provided text, while the chart itself has a fixed height (adjustable with the `chartHeight` parameter).
-For the chart itself, the widely used [Highcharts](https://www.highcharts.com/) framework was utilized. This framework makes it easy to represent charts of any complexity.
+For the chart itself, the widely used [Highcharts](https://www.highcharts.com/) framework was utilized. 
+This framework makes it easy to represent charts of any complexity.
 
-<img src="/img/charts/charts_custom_functionalities_icons.png" alt="Charts custom functionalities" width="200" />
+> <img src="/img/charts/charts_custom_functionalities_icons.png" alt="Charts custom functionalities" width="200" />
 
 1. Functionality to reveal a slider, that allows the displayed x-axis to be adjusted. This feature is only available for the `ContinuousChart`.
 2. It is possible to change the chart type. By default, a line chart is displayed in the `ContinuousChart`, but with a button press, one can switch to a bar chart. In the `CategoricalChart` the default bar chart can be changed to a donut (pie) chart. 
@@ -25,7 +28,7 @@ For the chart itself, the widely used [Highcharts](https://www.highcharts.com/) 
 ## Parameters
 
 The following section provides a detailed explanation of the individual parameters for the two chart components. 
-For more information on the structure of the expected data object by `params.data, please refer to the 'Data' section below.
+For more information on the structure of the expected data object by `params.data`, please refer to the 'Data' section below.
 
 ### `ContinuousChart` Parameters
 
@@ -67,8 +70,6 @@ parameter is set to `ContinuousChartDataType.LINE_CHART_DATA` to inform the char
 about the available x-axis types, see [official highcharts documentation](https://api.highcharts.com/class-reference/Highcharts#.AxisTypeValue). 
 The optional `yAxisLabel` parameter can be used to set the title of the y-axis.
 
-TODO predictionVerticalLineX
-
 The actual data is stored in `lines`, which contains an array where each entry represents a data series ('line') in the chart. 
 Each `lines` element must have a `name` and an array called `dataPoints`, which includes all data points of this data series. 
 For each individual data point, an `x` value must be specified, and a `y` value can be optionally provided. 
@@ -90,7 +91,9 @@ Furthermore, it is also possible to label data series in the chart as 'predictio
 To display a predictions data series, the following two parameters need to be configured: 
 First, the `predictionVerticalLineX` parameter must define the x-value where the 'future' begins.
 Second, the `prediction` value must be set to true for the predictions data series, so the component recognizes it as the 'predictions' series.
-Multiple predictions series can exist in a single chart, but each must be marked with `prediction = true`.
+Multiple predictions series can exist in a single chart, but each must be marked with `prediction: true`.
+
+> Note: there is also a ['How to Charts' guide](/docs/frontend/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
 
 
 ``` javascript
@@ -134,10 +137,10 @@ export interface ContinuousChartData {
 
 ### `CategoricalChartData`
 
-The `CategoricalChart` component expects a data object of type `CategoricalChartData`. In this object, 
-the title of the y-axis label can be defined using `yAxisLabel` (optional), along with an arbitrarily long `categories` array 
-where each entry corresponds to a category. A category consists of a `name`, a `dataPoint` containing only the 
-actual data point (`y`), and an optional `color` attribute.
+The `CategoricalChart` component expects a data object of type `CategoricalChartData`. 
+In this object, the title of the y-axis label can be defined using `yAxisLabel` (optional), 
+along with an arbitrarily long `categories` array where each entry corresponds to a category. 
+A category consists of a `name`, a `dataPoint` containing only the actual data point (`y`), and an optional `color` attribute.
 
 ``` javascript
 export interface CategoricalChartData {
@@ -153,6 +156,8 @@ export interface CategoricalChartData {
 ```
 
 ## Examples
+
+> Note: there is also a ['How to Charts' guide](/docs/frontend/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
 
 ### `ContinuousChart` examples
 
