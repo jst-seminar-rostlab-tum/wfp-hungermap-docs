@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # How to add a new network call
 
 If you need to fetch additional data in the application, you'll likely need to create a new Tanstack Query, unless the data is needed for the initial page. Make sure to read the docs on [Network calls](/docs/frontend/network_calls) first to understand the differences between client- and server-side calls.

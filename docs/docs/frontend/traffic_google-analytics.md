@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # Traffic measurement with Google Analytics
 
 The traffic of the website is tracked with Google Analytics.

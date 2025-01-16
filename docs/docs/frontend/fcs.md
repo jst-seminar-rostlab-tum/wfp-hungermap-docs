@@ -1,11 +1,11 @@
-### FCS Map
+# Food Consumption map
 
 FCS or Food Consumption Score map visualize FCS data. In addition to the map, custom components such as accordions, tooltips, and legends are included.
 
 ---
 
-#### World View 
-In world view, FCS map appears with country alert's. Along with alerts, one point legend and other gradient legend appears. To enhance user experience, hover effect is also activated. 
+#### World View
+In world view, FCS map appears with country alert's. Along with alerts, one point legend and other gradient legend appears. To enhance user experience, hover effect is also activated.
 
 ***Technical Overview***
 
@@ -14,9 +14,9 @@ The code below in ```Map.ts``` helps to trigger the FCS map. For each country Fc
 - ```data```: The geoJSON data for the specific country.
 - ```fcsData```: The food security data for rendering.
 - ```setRegionLabelTooltips```: A function to set tooltips for region labels.
-- ```onDataUnavailable```: A callback to handle missing data. 
+- ```onDataUnavailable```: A callback to handle missing data.
 
-```js 
+```js
   <FcsChoropleth
     key={country.properties.adm0_id}
     countryId={country.properties.adm0_id}
@@ -39,11 +39,11 @@ If no selectedCountryId is specified then a TileLayer is added inside a Pane com
 
 #### Country View
 
-Apart from that, customized accordions, legend, loading state and hover effect appears. 
+Apart from that, customized accordions, legend, loading state and hover effect appears.
 
  ***Technical Overview***
 
- In ```FcsCountryChoropth.tsx```, the FCS map for the country view get rendered. It returns 
+ In ```FcsCountryChoropth.tsx```, the FCS map for the country view get rendered. It returns
 This ```<GeoJSON>``` component renders GeoJSON data (regionData) on a map. It applies custom styling through ```FcsCountryChoroplethOperations.styleFunction``` and defines interactive behavior for each map feature using ```FcsCountryChoroplethOperations.onEachFeature```.
  ```js
   <GeoJSON
@@ -60,7 +60,7 @@ This ```<GeoJSON>``` component renders GeoJSON data (regionData) on a map. It ap
 - ```setRegionLabelTooltips```
 - ``` onDataUnavailable```
 
- Before the Country view appear, in order enhance the experience while fetching the data, the loading state for the view is activated via : 
+ Before the Country view appear, in order enhance the experience while fetching the data, the loading state for the view is activated via :
 
   ```js
    <CountryLoadingLayer countryMapData={countryMapData} color="hsl(var(--nextui-fcsAnimation))" />
@@ -76,15 +76,15 @@ Three accordions appear on the left side and four accordions appear on the right
         countryName={countryData.adm0_name}
     />
 ```
-In ```FcsAccordion.tsx```, the fcsAccordion functions depending upon whether it's mobile or desktop version, accordion content packed inside ```<AccordionContainer>```. Main props needed by fcsAccordion are: 
+In ```FcsAccordion.tsx```, the fcsAccordion functions depending upon whether it's mobile or desktop version, accordion content packed inside ```<AccordionContainer>```. Main props needed by fcsAccordion are:
 
 - ```countryName```
 - ```countryId```
 - ```countryCode```
 
-In order to extract the content of the accordions, first country data and country iso3 data get extracted using ```useCountryDataQuery(countryId)```and ```useCountryIso3DataQuery(countryCode)```. After that the data got processed in ```FcsFoodSecurityOperations.tsx```and ```FcsMacroEconomicOperations.tsx```. The following accordions are shown in the view: 
+In order to extract the content of the accordions, first country data and country iso3 data get extracted using ```useCountryDataQuery(countryId)```and ```useCountryIso3DataQuery(countryCode)```. After that the data got processed in ```FcsFoodSecurityOperations.tsx```and ```FcsMacroEconomicOperations.tsx```. The following accordions are shown in the view:
 
-- ```Food Security Accordion``` 
+- ```Food Security Accordion```
 - ```Malnutrition```
 - ```Food Security Trends```
 - ```Import Dependency```
@@ -111,7 +111,7 @@ The component uses dynamic styling and displays data interactively, enhancing th
 
 ![Fcs Tooltip](/img/fcs/FcsTooltip.png)
 
-Gradient Legend will appear, which depicts the color with information ```People with insufficient food consumption```.  
+Gradient Legend will appear, which depicts the color with information ```People with insufficient food consumption```.
 
 
 
