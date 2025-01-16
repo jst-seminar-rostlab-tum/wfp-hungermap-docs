@@ -1,7 +1,7 @@
    ---
-id: context-retrieval
+id: context_retrieval
 title: Context Retrieval System
-slug: /chatbot/context-retrieval
+slug: /chatbot/context_retrieval
 sidebar_position: 5
 ---
 
@@ -10,6 +10,29 @@ sidebar_position: 5
    ## Overview
 
    The Context Retrieval System manages conversation history and context awareness. The system enables the chatbot to maintain coherent conversations by efficiently storing, retrieving, and utilizing relevant parts of the conversation history.
+
+   ---
+
+   ## Environment Setup
+
+   Before working with the Context Retrieval System:
+
+   1. Create and activate a Python virtual environment:
+   ```bash
+   # Create venv
+   python -m venv venv
+
+   # Activate venv
+   # On Windows:
+   venv\Scripts\activate
+   # On Unix/MacOS:
+   source venv/bin/activate
+   ```
+
+   2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
    ---
 

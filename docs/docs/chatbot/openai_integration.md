@@ -1,13 +1,42 @@
 ---
-id: openai-integration
+id: openai_integration
 title: OpenAI Integration & Response
-slug: /chatbot/openai-integration
+slug: /chatbot/openai_integration
 sidebar_position: 6
 ---
 
 # Chatbot: OpenAI Integration & Response
 
 This document details how the WFP Chatbot integrates with OpenAI's API and handles responses.
+
+## Environment Setup
+
+Before working with the OpenAI integration:
+
+1. Create and activate a Python virtual environment:
+```bash
+# Create venv
+python -m venv venv
+
+# Activate venv
+# On Windows:
+venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+2. Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Set up OpenAI API key:
+```bash
+# Add to .env file
+OPENAI_API_KEY=your_api_key_here
+```
+
+---
 
 ## OpenAI Integration
 

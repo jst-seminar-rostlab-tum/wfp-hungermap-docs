@@ -7,9 +7,30 @@ sidebar_position: 4
 
 # Chatbot API Documentation
 
-Author: `Georgi Peev`
-
 This document provides detailed information about the WFP Chatbot API endpoints and their usage.
+
+---
+
+## Environment Setup
+
+Before running the API:
+
+1. Create and activate a Python virtual environment:
+```bash
+# Create venv
+python -m venv venv
+
+# Activate venv
+# On Windows:
+venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+2. Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
