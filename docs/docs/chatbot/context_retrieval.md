@@ -6,7 +6,7 @@ slug: /chatbot/context_retrieval
 
    # Context Retrieval System
 
-Author: `Muhammed Emre Bayraktaroglu`
+Author: `Georgi Peev`
 
    ## Overview
 
