@@ -2,10 +2,11 @@
 id: email-service
 title: Email Service
 slug: /email-service
-sidebar_position: 1
 ---
 
 # Email Service
+
+Author: `Georgi Peev`
 
 The Email Service handles email communications - it uses Brevo as the email delivery provider and provides a REST API for email management. The service runs on port 5001 and includes subscription management capabilities.
 
