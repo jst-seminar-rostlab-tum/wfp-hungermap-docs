@@ -2,10 +2,11 @@
 id: openai_integration
 title: OpenAI Integration & Response
 slug: /chatbot/openai_integration
-sidebar_position: 6
 ---
 
 # Chatbot: OpenAI Integration & Response
+
+Author: `Georgi Peev`
 
 This document details how the WFP Chatbot integrates with OpenAI's API and handles responses.
 

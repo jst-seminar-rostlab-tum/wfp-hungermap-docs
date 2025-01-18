@@ -2,10 +2,11 @@
 id: chatbot-api
 title: Chatbot API Documentation
 slug: /chatbot/api
-sidebar_position: 4
 ---
 
 # Chatbot API Documentation
+
+Author: `Georgi Peev`
 
 This document provides detailed information about the WFP Chatbot API endpoints and their usage.
 

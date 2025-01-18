@@ -1,11 +1,12 @@
-   ---
+---
 id: context_retrieval
 title: Context Retrieval System
 slug: /chatbot/context_retrieval
-sidebar_position: 5
 ---
 
    # Context Retrieval System
+
+Author: `Muhammed Emre Bayraktaroglu`
 
    ## Overview
 
