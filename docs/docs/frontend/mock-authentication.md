@@ -1,5 +1,7 @@
 # Mock Authentication
 
+**Author:** `Sámuel Fekete`
+
 Authentication is currently implemented in a very basic way. There are two available roles, `RestrictedUser` and `Admin`, defined in `UserRole.ts`. By default, the user is a `RestrictedUser` and authentication is disabled (meaning the user will never be an admin) unless the `NEXT_PUBLIC_FORECASTS_ENABLED` environment variable is set to `true`.
 
 If the env var is set to true, a switch is displayed in the sidebar, where we can switch to admin mode. In admin mode, the user is are granted admin priviliges and can see:

@@ -1,5 +1,7 @@
 # Content Security Policy
 
+**Author:** `Sámuel Fekete`
+
 Content Security Policy (CSP) is a feature that helps to prevent or minimize the risk of certain types of security threats. It consists of a series of instructions from a website to a browser, which instruct the browser to place restrictions on the things that the code comprising the site is allowed to do. [Read more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
 
 To align with best practices, our application also uses CSP to ensure that our users won't be a victim of an XSS attack. In Next.js, a Content Security Policy can be defined in the root middleware file (`/src/middleware.ts`). We define the CSP header here and attach it to every request and response of our application, as this middleware will be called by Next for all of them.
