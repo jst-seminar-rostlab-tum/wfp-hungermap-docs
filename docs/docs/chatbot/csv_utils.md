@@ -1,5 +1,7 @@
 # CSV Utils
 
+**Author:** `Marius Moldovan`
+
 The **CSV Utils** Module provides an easy adn efficient way to interact with CSV files.
 
 ## Overview

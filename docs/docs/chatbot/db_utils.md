@@ -1,5 +1,7 @@
 # Database Utils
 
+**Author:** `Marius Moldovan`
+
 The **Database Utils module** provides a streamlined approach for managing data in a MongoDB collection.
 
 ## Overview
