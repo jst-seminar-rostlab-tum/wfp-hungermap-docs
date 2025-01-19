@@ -1,6 +1,5 @@
 {
     "label": "Download Page",
-    "position": 6,
     "link": {
       "type": "generated-index",
       "description": "Download page is part of the second page of HungerMap project"
