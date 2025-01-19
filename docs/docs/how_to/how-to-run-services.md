@@ -37,8 +37,8 @@ Before starting any service:
 
 | Service | Template Location | Target Location | Required Variables |
 |---------|------------------|-----------------|-------------------|
-| Chatbot | `.env_template` | `.env` | `MONGODB_URI`<br>`MONGODB_DB`<br>`MONGODB_COLLECTION`<br>`OPENAI_API_KEY` |
-| Email | `email_service/.env_template` | `email_service/.env` | `MONGODB_URI`<br>`MONGODB_DB_EMAIL_SERVICE`<br>`BREVO_API_KEY`<br>`BREVO_SENDER_EMAIL`<br>`BREVO_SENDER_NAME`<br>`BASE_URL` |
+| Chatbot | `.env_template` | `.env` | `MONGODB_URI`<br />`MONGODB_DB`<br />`MONGODB_COLLECTION`<br />`OPENAI_API_KEY` |
+| Email | `email_service/.env_template` | `email_service/.env` | `MONGODB_URI`<br />`MONGODB_DB_EMAIL_SERVICE`<br />`BREVO_API_KEY`<br />`BREVO_SENDER_EMAIL`<br />`BREVO_SENDER_NAME`<br />`BASE_URL` |
 
 ---
 
@@ -76,7 +76,7 @@ Available endpoints at `http://localhost:5000`:
 | `/docs` | GET | OpenAPI documentation |
 | `/redoc` | GET | Alternative API documentation |
 
-See [API Documentation](../chatbot/api.md) for detailed endpoint specifications.
+See [API Documentation](This link needs to be added) for detailed endpoint specifications.
 
 ---
 
