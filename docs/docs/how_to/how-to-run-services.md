@@ -76,7 +76,7 @@ Available endpoints at `http://localhost:5000`:
 | `/docs` | GET | OpenAPI documentation |
 | `/redoc` | GET | Alternative API documentation |
 
-See [API Documentation](../chatbot/api.md) for detailed endpoint specifications.
+See [API Documentation](This link needs to be added) for detailed endpoint specifications.
 
 ---
 

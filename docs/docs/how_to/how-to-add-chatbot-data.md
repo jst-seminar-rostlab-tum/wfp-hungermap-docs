@@ -7,7 +7,7 @@ The chatbot's data pipeline consists of three main components:
 2. **Uploaders**: Scripts that upload the parsed data to the MongoDB database
 3. **Upload All**: A utility file to run all parsers and uploaders in sequence
 
-See also: [Database Structure](../chatbot/database-structure.md) for the format of stored data.
+See also: [Database Structure](../chatbot/database_structure.md) for the format of stored data.
 
 ---
 
