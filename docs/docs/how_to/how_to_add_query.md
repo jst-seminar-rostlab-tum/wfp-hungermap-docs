@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # How to add a new network call
 
 **Author:** `Sámuel Fekete`

@@ -1,0 +1,8 @@
+{
+  "label": "The Leaflet Map",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "The map and its components"
+  }
+}
