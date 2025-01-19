@@ -1,0 +1,8 @@
+{
+  "label": "Reservoir Computing",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Reservoir computing is a machine learning technique ideal for time-series forecasting tasks. It is used to predict the next 90 days of key food security metrics, including the Food Consumption Score (FCS) and Reduced Coping Strategies Index (RCSI), based on historical data. This documentation covers the approach applied to predict these indices for multiple countries, helping improve decision-making and resource allocation. Predictions are updated daily to ensure the latest information is always available for accurate assessments."
+  }
+}
