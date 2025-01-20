@@ -1,3 +1,5 @@
+Author: Linus Sander
+
 # Tooltip
 
 The Tooltip component renders a customizable tooltip. It is based on the NextUI Tooltip component.
