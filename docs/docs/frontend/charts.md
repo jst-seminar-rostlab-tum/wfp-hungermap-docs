@@ -1,8 +1,6 @@
-Author: Linus Sander
-
 # Charts
 
-TODO links everywhere the "how to charts"
+Author: Linus Sander
 
 ## Overview
 
@@ -10,7 +8,7 @@ Two reusable components were created to enable the visualization of charts.
 For continuous data the `ContinuousChart` component and for categorical data the `CategoricalChart` should be used.
 Both provide various practical customization options, which will be explained in detail in the following sections.
 
-> Note: there is also a ['How to Charts' guide](/docs/frontend/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
+> Note: there is also a ['How to Charts' guide](/docs/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
 
 The components are basically boxes that render a title, description, and chart.
 They have a width of 100%, so they adjust to the width of their parent element in which they are used.
@@ -93,7 +91,7 @@ First, the `predictionVerticalLineX` parameter must define the x-value where the
 Second, the `prediction` value must be set to true for the predictions data series, so the component recognizes it as the 'predictions' series.
 Multiple predictions series can exist in a single chart, but each must be marked with `prediction: true`.
 
-> Note: there is also a ['How to Charts' guide](/docs/frontend/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
+> Note: there is also a ['How to Charts' guide](/docs/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
 
 
 ``` javascript
@@ -157,7 +155,7 @@ export interface CategoricalChartData {
 
 ## Examples
 
-> Note: there is also a ['How to Charts' guide](/docs/frontend/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
+> Note: there is also a ['How to Charts' guide](/docs/how_to/how_to_create_a_chart.md) that explains step by step how to easily set up a `ContinuousChart` component.
 
 ### `ContinuousChart` examples
 

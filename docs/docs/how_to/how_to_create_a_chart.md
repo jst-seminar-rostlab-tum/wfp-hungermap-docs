@@ -1,6 +1,6 @@
-Author: Linus Sander
-
 # How to create a chart
+
+Author: Linus Sander
 
 In the following guide, we will create a `ContinuousChart` together. 
 We will address the required structure of the data, and build a simple `ContinuousChart` component, and then gradually customizing it to fit our needs.
