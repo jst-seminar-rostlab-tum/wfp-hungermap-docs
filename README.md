@@ -7,6 +7,13 @@ Failure to comply with either license will constitute a violation of intellectua
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern open-source static website generator.
 
+## Guidelines
+
+- Add each page as a markdown file under the `/docs/docs/{category}` directory, where category is the topic this document belongs to (Frontend, Chatbot, How to, etc.).
+- Add the title of the page to the start of the file as a Heading 1 (with `# `)
+- Use the same title as the file name, but in snake_case (How to add new Event -> `how_to_add_new_event`)
+- Add your name to the top of the file (under the title) like this: `Author: {full name}`
+
 ### Installation
 
 ```
@@ -29,18 +36,3 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

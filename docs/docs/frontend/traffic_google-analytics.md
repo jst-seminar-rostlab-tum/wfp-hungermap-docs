@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # Traffic measurement with Google Analytics
 
 The traffic of the website is tracked with Google Analytics.
@@ -16,7 +12,7 @@ The `CookieConsentPopup` component is rendered by default. If the `cookie_consen
 
 ## Events
 
-An event is sent by default to Google Analytics whenever the user opens a new page or downloads a file. We also send custom events when the user changes the selected map or alert, or clicks on a country. If events happen quickly, GA will group them and send them together, not one-by-one. To add a new custom event, see [How to add new GA event](/docs/how_to/how_to_add_ga_event).
+An event is sent by default to Google Analytics whenever the user opens a new page or downloads a file. We also send custom events when the user changes the selected map or alert, or clicks on a country. If events happen quickly, GA will group them and send them together, not one-by-one. To add a new custom event, see [How to add new GA event](/docs/how_to/how_to_add_new_ga_event).
 
 ### \<alert_type>_alert_selected
 

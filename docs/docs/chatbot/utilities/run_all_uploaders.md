@@ -6,6 +6,8 @@ slug: /run-all-uploaders
 
 # `run_all_uploaders.py`
 
+**Author:** `Muhammed Emre Bayraktaroglu`
+
 **Purpose:**  
 This script automates the execution of all Python scripts in the `src/data_uploaders` folder, essentially running every single data uploader to set up the database for the chatbot. It runs each script sequentially, captures output, and handles errors, making it ideal for batch processing.
 

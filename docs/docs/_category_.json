@@ -4,6 +4,6 @@
     "link": {
       "slug": "/",
       "type": "generated-index",
-      "description": "This is the Documentation for the WFP HungerMap Project. The Documentation is an extensive guideline of how things work, coding guidelines, how to guidelines etc. Also we should add links to the Frontend Docs, the Chatbot, the Email Service and the How To."
+      "description": "This is the Documentation for the WFP HungerMap Project. The Documentation is an extensive guideline of how things work, coding guidelines, how to guidelines etc."
     }
   }

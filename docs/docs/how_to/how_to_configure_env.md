@@ -1,4 +1,4 @@
-# How to Configure and Extend a `.env` File?
+# How to configure and extend the `.env` File?
 
 Author: `Muhammed Emre Bayraktaroglu`
 
@@ -52,6 +52,6 @@ mongodb_db = os.getenv('MONGODB_DB')
 mongodb_collection = os.getenv('MONGODB_COLLECTION')
 ...
 
-``` 
+```
 
 
