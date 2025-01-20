@@ -1,5 +1,7 @@
 # Data Retrievals
 
+**Author:** `Marius Moldovan`
+
 The **Data Retrieval** Module allows for the data retrieval from the HungerMap API and saves the fetched Data locally in CSV and JSON files.
 This prepares the data for the upload to the database.
 
