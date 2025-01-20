@@ -15,7 +15,7 @@ Upon triggering the chatbot, you will be greeted with three predefined default p
 
 ### Accessing the Chatbot Sidebar to Add a New Chat
 The chatbot sidebar can be accessed to add a new chat session. This feature is particularly useful for managing multiple conversations simultaneously. Whether you need to ask different questions or handle various topics, the sidebar allows you to switch between chats effortlessly, ensuring a streamlined and organized interaction. To access the sidebar, click on the menu icon located on the left side of the chatbot window.
-![sidebar](../../../static/img/chatbot/normal_size_sidebar.png)
+![sidebar](../../../invalidlinkhahahaha/static/img/chatbot/normal_size_sidebar.png)
 *In the image above, the sidebar menu icon is highlighted on the left side of the chatbot window. Click on this icon to open the sidebar and manage your chat sessions.*
 
 ### Viewing Chat History and Handling Errors
