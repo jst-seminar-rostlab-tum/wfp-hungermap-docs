@@ -28,3 +28,11 @@
   --ifm-color-primary-lightest: #188ed8;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+@media screen and (max-width: 768px) {
+  #search_input_react {
+    transform: scale(0.85);
+    transform-origin: left center;
+    max-width: 200px; /* Adjust as needed */
+  }
+}
