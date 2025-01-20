@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Documentation of the frontend Next.js app"
+    "description": "Documentation of the client web application."
   }
 }
