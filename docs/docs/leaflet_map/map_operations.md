@@ -58,3 +58,23 @@ The method returns the created tooltip
 
 #### Workflow
 You can find details about the region labeling under [region labels](map_region_labels.md).
+
+### handleCountryTooltip()
+#### Description
+This method handles the functionality for the tooltips shown in the global view when hovering over a country.
+
+#### Parameters
+- ```geoJsonRef```: Reference to the cloropleth element i.e. the country the tooltip is being attached to
+- ```map```: The leaflet map
+- ```fcsData?```: Food consumption data - needs to be set when calling from FCS cloropleth
+- ```nutritionData?```: Nutrition data - needs to be set when calling from nutrition cloropleth
+- ```countryMapData?```: general data about the country the tooltip is being attached to - needs to be set when calling from nutrition cloropleth
+
+#### Returns
+A method destructing the map listeners that is used in the corresponding useEffect of the [Cloropleth Elments](map_cloropleths.md).
+
+#### Workflow
+The method binds and unbinds the tooltips to the leaflet map. When dragging the map however, there is a certain lag which can
+lead to other tooltips being opened even though they are not supposed to. Therefore, when dragging, the method unbinds all the
+tooltips of the countries except for the one that the mouse is currently hovering over and rebinds them once the dragging is
+finished.
