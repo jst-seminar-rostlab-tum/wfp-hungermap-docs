@@ -7,35 +7,35 @@
 ## Functionality
 
 Comparison Portal consists of a [select](https://nextui.org/docs/components/select) component and an accordion. Select component allows users to select up to five countries from all countries that have fcs data. When a country is selected the accordion gets updated with corresponding information. While updating, every accordion item shows a loading spinner. 
-![Comparison Portal](/img/comparison_portal_loading.png)
+![Comparison Portal](/img/comparison_portal/loading.png)
 
 An accordion item can be expanded to show more detailed information. Categorical data like population, people with insufficient food consumption, and import dependency is displayed using a bar chart.
 
-![Comparison Portal Bar Chart](/img/comparison_portal_bar_chart.png)
+![Comparison Portal Bar Chart](/img/comparison_portal/bar_chart.png)
 
 If comparison data is continuous, it is plotted on a line chart. 
 
-![Comparison Portal Line Chart](/img/comparison_portal_line_chart.png)
+![Comparison Portal Line Chart](/img/comparison_portal/line_chart.png)
 
 ## Error Handling
 
 If an error occurs while fetching data for a specific country, a snackbar is displayed. Then the country is disabled in the selection dropdown.
 
-![Comparison Portal Snackbar](/img/comparison_portal_algeria.png)
+![Comparison Portal Snackbar](/img/comparison_portal/algeria.png)
 
 In addition, if a country has no data for a specific chart, a corresponding alert is displayed.
 
-![Comparison Portal Alert](/img/comparison_portal_alert.png)
+![Comparison Portal Alert](/img/comparison_portal/alert.png)
 
 If data for all countries for a specific chart is missing, an error message is displayed on a chart.
 
-![Comparison Portal Error Message](/img/comparison_portal_chart_error_message.png)
+![Comparison Portal Error Message](/img/comparison_portal/chart_error_message.png)
 
 ## Technical Details
 
 To enable selection only from countries that have fcs data, the page needs to fetch global fcs data from `/adm0/fcs.json`. In addition, country map data is fetched from `/adm0data.json` so that there is a `adm0_id` and `iso3` code for every country. Both of these calls are executed on the server side in order to cache the data and avoid fetching it on every request. While the data is being fetched, a skeleton is displayed. This is implemented using React's `Suspense` and `Skeleton` component from NextUI.
 
-![Comparison Portal Skeleton](/img/comparison_portal_skeleton.png)
+![Comparison Portal Skeleton](/img/comparison_portal/skeleton.png)
 
 In order to get data for a selected country, the page needs to fetch data from two endpoints: `/adm0/${countryId}/countryData.json` and `/iso3/${countryCode}/countryIso3Data.json`. To utilize client-side caching, two custom hooks are used: `useCountryDataListQuery` and `useCountryIso3DataListQuery`. They accept and array of country ids and country codes respectively and return the data for each country. In addition, they accept a callback function for the case when an error is returned for a specific country. The hooks are implemented using [useQueries](https://tanstack.com/query/latest/docs/framework/react/reference/useQueries) hook from Tanstack Query library. It allows to execute a variable number of queries in parallel and return the results in an array.
 
