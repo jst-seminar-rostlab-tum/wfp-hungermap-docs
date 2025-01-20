@@ -1,8 +1,6 @@
----
-sidebar_position: 3
----
-
 # Network calls
+
+**Author:** `Sámuel Fekete`
 
 The frontend application requests data from various APIs of WFP. These network calls fall under two categories based on how and when they're initiated. This page describes the differences between these to types. If you want to create a new network call, read [How to add a new network call](/docs/how_to/how_to_add_query).
 

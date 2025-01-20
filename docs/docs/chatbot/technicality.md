@@ -1,8 +1,8 @@
 ---
 sidebar_position: 3
 ---
-
-## Infrastructure Layer  Components
+# Technicality
+## Infrastructure Layer Components
 ### Chatbot Context
 - **File**: ChatbotContext.tsx
 - **Description**: This file is defining a context for managing the state and operations related to a chatbot in this project, it provides context for managing chatbot state and operations and manages the state of the chatbot, including chats, current chat index.
@@ -18,7 +18,7 @@ sidebar_position: 3
   - `setIsOpen` : A function to update the `isOpen` state.
   - `setIsSidebarOpen` : A function to update the `isSidebarOpen` state.
 
-- **Key Methods**: 
+- **Key Methods**:
   - `openChat(chatIndex: number)` : A function to open a chat by its index.
   - `startNewChat(newChat?: IChat)` : A function to start a new chat, optionally with a provided chat object.
   - `initiateChatAboutReport(countryName: string, reportURL: string)` : A function to initiate a chat about a specific report.
