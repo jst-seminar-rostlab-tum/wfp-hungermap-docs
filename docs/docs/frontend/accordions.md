@@ -1,15 +1,11 @@
----
-sidebar_position: 5
----
-
 # Accordions
 
-The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. In this website, the accordions of the ***Splitted variant*** have been used. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website: 
+The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. In this website, the accordions of the ***Splitted variant*** have been used. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website:
 
 - Comparison Portal
 - Data Sources
-- Country view of three types of map `FCS`, `Nutrition` and `IPC`. 
-- About 
+- Country view of three types of map `FCS`, `Nutrition` and `IPC`.
+- About
 - Download Portal
 
 
@@ -65,7 +61,7 @@ export interface SearchableAccordionItemProps extends AccordionItemProps {
 }
 ```
 
-The AccordionBoxItems function in `AccordionBoxItems.tsx` renders a set of collapsible accordion items stacked vertically for desktop version, with customization options for appearance, behavior and content. It allows single or multiple items to be expanded at once, supports word highlighting in titles and includes optional tooltips, popovers and loading spinners. The expandAll prop can automatically expand all items and a ReadMore Component manages lengthy popover content. The parameters of `AccordionBoxItems()` are defined as following: 
+The AccordionBoxItems function in `AccordionBoxItems.tsx` renders a set of collapsible accordion items stacked vertically for desktop version, with customization options for appearance, behavior and content. It allows single or multiple items to be expanded at once, supports word highlighting in titles and includes optional tooltips, popovers and loading spinners. The expandAll prop can automatically expand all items and a ReadMore Component manages lengthy popover content. The parameters of `AccordionBoxItems()` are defined as following:
 
 ```js
 export default function AccordionBoxItems({
