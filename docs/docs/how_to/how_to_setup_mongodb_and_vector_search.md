@@ -5,6 +5,8 @@ sidebar_label: "How to Setup MongoDB and Vector Search"
 
 # How to Set Up MongoDB Atlas and Vector Search
 
+Author: `Shaurya Sharma`
+
 This guide provides a step-by-step process for setting up MongoDB Atlas and enabling vector search capabilities via the dashboard. MongoDB Atlas is a cloud database service that simplifies deployment and management of MongoDB clusters.
 
 ## Step 1: Create a MongoDB Atlas Account
