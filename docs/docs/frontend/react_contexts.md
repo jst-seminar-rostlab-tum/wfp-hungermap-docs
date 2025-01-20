@@ -5,3 +5,8 @@
 ## SelectedAlertContext
 
 ## SelectedCountryIdContext
+
+
+## userRoleContext
+
+See [Mock Authentication](/docs/frontend/mock-authentication).
