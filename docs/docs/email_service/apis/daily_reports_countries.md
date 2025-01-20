@@ -5,6 +5,8 @@ sidebar_label: Daily Reports
 
 # Available Daily Reports API
 
+Author: `Marius Moldovan`
+
 **Endpoint**: `/daily-reports/countries`  
 **Method**: **GET**
 
