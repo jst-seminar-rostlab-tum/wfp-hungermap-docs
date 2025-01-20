@@ -33,6 +33,11 @@
   #search_input_react {
     transform: scale(0.85);
     transform-origin: left center;
-    max-width: 200px; /* Adjust as needed */
+    max-width: 200px;
+  }
+
+  .navbar__brand {
+    transform: scale(0.9);
+    transform-origin: left center;
   }
 }
