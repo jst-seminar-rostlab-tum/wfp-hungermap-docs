@@ -118,3 +118,7 @@ function MapComponent() {
 ```
 
 **Note:** All hooks must be used within their respective providers or they will throw an error.
+
+## userRoleContext
+
+See [Mock Authentication](/docs/frontend/mock-authentication).

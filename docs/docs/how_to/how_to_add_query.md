@@ -1,5 +1,7 @@
 # How to add a new network call
 
+**Author:** `Sámuel Fekete`
+
 If you need to fetch additional data in the application, you'll likely need to create a new Tanstack Query, unless the data is needed for the initial page. Make sure to read the docs on [Network calls](/docs/frontend/network_calls) first to understand the differences between client- and server-side calls.
 
 First, you'll need to extend one of the repository interfaces (`domain/repositories`) with the method signature, then you need to create the implementation of that method in one of the repository implementations (`infrastructure/repositories`). Use `fetch` to send the HTTP request to the server. If this will be a server-side call, make sure to set the Next caching options as neededa and call it from a server component.
