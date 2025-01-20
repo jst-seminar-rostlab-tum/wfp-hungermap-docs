@@ -13,8 +13,7 @@ This documentation provides an overview of various data uploaders used in the Hu
 
 ## Overview
 
-Data Uploaders provide:
-
+Data Uploaders provide: 
 - Conversion of CSV files, resulting from parsers, with their respective headers and sorting to ready-to-use dictionaries.
 - Uploading of these dictionaries into MongoDB collections for access and retrieval.
 - Updating of existing collections with new data, ensuring data integrity and consistency.
@@ -24,22 +23,18 @@ Data Uploaders provide:
 ## Requirements and Setup
 
 Before using the various Data Uploaders, ensure you have the following:
-
 - Python 3.8+
 - Installed dependencies from `requirements.txt`, including `pymongo`, `dotenv`, `openai`, and other required libraries.
 - A running MongoDB instance (local or cloud) and credentials/connection strings.
 
 ### Environment Variables
-
 Set up the following environment variables in your system or in a `.env` file:
-
 - **MONGODB_URI**: Connection string for your MongoDB database.
 - **MONGODB_DB**: The name of the MongoDB database.
 - **MONGODB_COLLECTION**: The name of the MongoDB collection for the chatbot data.
 - **OPENAI_API_KEY**: Your OpenAI API key for accessing the OpenAI services.
 
 Example `.env` file:
-
 ```plaintext
 MONGODB_URI=url_to_your_mongodb_instance
 MONGODB_DB=db_NAME
@@ -86,34 +81,29 @@ Moreover, every uploader is using the function `load_db_config()` from `db_utils
 Processes raw CSV data into dictonary format for the specific data uploader. It includes sorting and filtering tasks for the data.
 
 *Arguments*:
-
 - `data` (List[Dict[str,str]]): Corresponding raw CSV data for the specific data uploader.
 
 *Returns*:
-
 - `List[Dict[str,str]]`: Processed data in dictionary format.
-
----
+ 
+--- 
 
 ### Specific Functions
 
 *Affecting following scripts: `db_upload_yearly_reports_data.py`, `db_upload_reports_data.py`, `db_upload_country_pdc_data.py`, `db_upload_country_conflict_data.py`*
 
- **Function** : `upload_[specific_data_uploader]_data(data)`
+**Function**: `upload_[specific_data_uploader]_data(data)`
 
 Uploads processed data into the MongoDB collection. It also performs checks to avoid duplicate entries and updates existing records in case a re-upload is imminent.
 
- *Arguments* :
+*Arguments*:
+- `data` (List[Dict[str,str]]): Processed data in dictionary format.
 
-* `data` (List[Dict[str,str]]): Processed data in dictionary format.
-
- *Returns* :
-
-* No return value.
-* Prints status messages for successful uploads or updates.
+*Returns*:
+- No return value.
+- Prints status messages for successful uploads or updates.
 
 ---
-
 *Affecting following scripts: `db_upload_country_ipc_data.py`*
 
 ***Function***: `create_global_document(data)`
@@ -163,11 +153,10 @@ Generally, a `main` function is mostly responsible for orchestrating the data pr
 
 ---
 
-## Use of Libraries
+## Use of Libraries 
 
 The Data Uploaders rely on the following libraries:
-
-- [**Location Utilities**](loc-utils): For country code conversion and country name retrieval. It is used to provide human-readable location names instead of coordinates.
+- [**Location Utilities**](loc-utils): For country code conversion and country name retrieval. It is used to provide human-readable location names instead of coordinates. 
 - [**Country Utilities**](/country-utils): For country name retrieval based on country IDs. It is used to provide human-readable country names based on their IDs.
 - **CSV Utilities**: For reading and processing CSV files. It is used to parse and process raw data from CSV files. (TODO: Add link to CSV Utilities)
 - **Database Utilities**: This utility provides functions for loading MongoDB configurations and and uploading data to the database. It also provides a function to delete all records. (TODO: Add link to Database Utilities)
@@ -175,8 +164,7 @@ The Data Uploaders rely on the following libraries:
 ---
 
 ## Conclusion
+The various Data Uploaders are essentially processing the raw data provided from the APIs through the API Parsers. 
 
-The various Data Uploaders are essentially processing the raw data provided from the APIs through the API Parsers.
-
-- **Sorted and well-formed data sets** as a result of thorough filtering and processing
-- **Building** a data-rich collection database, which is the heart of the chatbot
+- **Sorted and well-formed data sets** as a result of thorough filtering and processing 
+- **Building** a data-rich collection database, which is the heart of the chatbot 

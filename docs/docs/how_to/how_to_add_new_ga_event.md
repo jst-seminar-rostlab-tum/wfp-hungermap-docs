@@ -1,4 +1,6 @@
-# How to add new GA event
+# How to add a new GA event
+
+**Author:** `Sámuel Fekete`
 
 You don't have to register events at all, you can just send any event with the following code snippet. Add this to wherever you want to send the event (e.g. when a state value changes in a context).
 

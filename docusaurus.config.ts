@@ -44,9 +44,23 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    'docusaurus-plugin-image-zoom',
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      background: {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(50, 50, 50)'
+      },
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+      }
+    },
     navbar: {
       title: "WFP HungerMap",
       logo: {
@@ -121,7 +135,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ??? Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Center for Software Engineering Excellence GmbH - Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
