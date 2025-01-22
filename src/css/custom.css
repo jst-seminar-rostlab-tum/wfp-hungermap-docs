@@ -31,8 +31,8 @@
 
 @media screen and (max-width: 768px) {
   #search_input_react {
-    transform: scale(0.85);
-    transform-origin: left center;
+    transform: scale(0.8);
+    transform-origin: right center;
     max-width: 200px;
   }
 
