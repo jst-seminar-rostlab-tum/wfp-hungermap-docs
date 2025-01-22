@@ -1,4 +1,12 @@
+---
+title: PDF Attachments
+sidebar_label: PDF Attachments
+sidebar_position: 6
+---
+
 # PDF Attachments
+
+**Author:** `Marius Moldovan`
 
 The PDF Attachments Module allows for a reliable attachment of PDFs to emails using the Brevo API.
 
