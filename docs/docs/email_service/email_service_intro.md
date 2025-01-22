@@ -1,7 +1,7 @@
 ---
 id: email-service
 title: Email Service
-slug: /email-service
+sidebar_position: 1
 ---
 
 # Email Service

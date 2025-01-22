@@ -1,3 +1,9 @@
+---
+title: Daily Reports
+sidebar_label: Daily Reports
+sidebar_position: 4
+---
+
 # Daily Reports
 
 **Author:** `Marius Moldovan`
