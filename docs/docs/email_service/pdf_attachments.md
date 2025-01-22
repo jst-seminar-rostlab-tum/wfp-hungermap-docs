@@ -1,3 +1,9 @@
+---
+title: PDF Attachments
+sidebar_label: PDF Attachments
+sidebar_position: 6
+---
+
 # PDF Attachments
 
 **Author:** `Marius Moldovan`
