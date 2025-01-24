@@ -1,4 +1,12 @@
+---
+title: Daily Reports
+sidebar_label: Daily Reports
+sidebar_position: 4
+---
+
 # Daily Reports
+
+**Author:** `Marius Moldovan`
 
 The **Daily Reports** Module is designed to manage reports in a MongoDB database. It fetches, uploads, updates daily reports, 
 and ensures that users are only subscribed to available reports.

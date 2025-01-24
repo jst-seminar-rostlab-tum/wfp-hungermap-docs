@@ -1,6 +1,4 @@
----
-sidebar_position: 3
----
+Author: Linus Sander
 
 # Tooltip
 
