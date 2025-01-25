@@ -1,7 +1,7 @@
----
-sidebar_position: 3
----
 # Technicality
+
+**Author:** `Haidong Xu`
+
 ## Infrastructure Layer Components
 ### Chatbot Context
 - **File**: ChatbotContext.tsx

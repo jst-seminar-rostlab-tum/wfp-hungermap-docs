@@ -1,7 +1,7 @@
----
-sidebar_position: 2
----
-# Chatbot Features
+# Features
+
+**Author:** `Haidong Xu`
+
 ## Highlights
 ### Trigger the Chatbot from HungerMap Website
 You can initiate the HungerMap Chatbot directly from the HungerMap website by clicking on the chatbot icon located in the upper right corner of the page. This seamless integration allows you to start interacting with the chatbot without leaving the page, providing a smooth user experience. The chatbot icon is easily identifiable with a speech bubble symbol, ensuring quick access.

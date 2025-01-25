@@ -2,7 +2,10 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Introduction
+
+**Author:** `Haidong Xu`
+
 ## Background
 The HungerMap Chatbot is designed to assist users in obtaining information related to hunger and food security. It leverages AI to provide responses to user queries, making it easier for users to access relevant information quickly. The chatbot can handle various types of queries, including those related to specific country reports, climate change impacts, and initiatives by organizations like the World Food Programme (WFP).
 

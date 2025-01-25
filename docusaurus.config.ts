@@ -26,6 +26,12 @@ const config: Config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       "classic",
@@ -46,6 +52,7 @@ const config: Config = {
 
   plugins: [
     'docusaurus-plugin-image-zoom',
+    require.resolve('docusaurus-lunr-search')
   ],
 
   themeConfig: {
