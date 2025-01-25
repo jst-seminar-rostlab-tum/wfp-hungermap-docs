@@ -60,7 +60,7 @@ If data for all countries or regions for a chart is missing, an error message is
 
 ## Technical Details
 
-### Data Fetching
+### Data Fetching (Country Comparison)
 
 To enable selection only from countries that have FCS data, the page needs to fetch global FCS data from
 `/adm0/fcs.json`. In addition, country map data is fetched from `/adm0data.json` so that there is a `adm0_id` and `iso3`
@@ -82,6 +82,20 @@ hooks are implemented using [useQueries](https://tanstack.com/query/latest/docs/
 hook from Tanstack Query library. It allows to execute a **variable number of queries in parallel** and return the
 results
 in an array.
+
+### Data Fetching (Region Comparison)
+
+After selection of a country for region comparison, the `useRegionDataQuery` hook is used to fetch additional country
+data from `/adm0/${countryId}/adm1data.json`, which includes information on a single countries' regions (including e.g.
+historic FCS data). During the fetch, a Skeleton is shown.
+
+:::note
+When opening a link to the Comparison portal where regions are specified, the skeleton might show an additional accordion item. This is to avoid layout shifts in case a warning as below will be shown above the other items.
+
+![Warning message if too many regions are selected](/img/comparison_portal/warning.png)
+:::
+
+Similar to above, the implementation is based on the Tanstack Query library. When changing the region selection, no further fetch is necessary.
 
 ### Query parameters
 
