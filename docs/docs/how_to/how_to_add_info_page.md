@@ -3,6 +3,8 @@ import TabItem from '@theme/TabItem';
 
 # How to add a new info page
 
+**Author:** `Jakob Schödl`
+
 > See the [general guide on info pages](/docs/frontend/info_pages) for more general information on the info pages.
 
 ## Adding the page itself
