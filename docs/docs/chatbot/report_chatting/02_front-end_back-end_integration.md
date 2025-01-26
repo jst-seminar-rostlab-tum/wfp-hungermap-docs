@@ -14,16 +14,24 @@ Every chat with the chatbot (general chatting as well as report chatting) has th
 
 ```typescript
 export interface IChat {
-  id: string;
-  title: string;
-  reports_country_name?: string; // specific for report chatting
-  messages: IMessage[];
-  isTyping: boolean;
-  timestamp: number;
+    id: string;
+    title: string;
+    isReportStarter?: boolean;
+    messages: IMessage[];
+    isTyping: boolean;
+    timestamp: number;
+    report_context?: IReportContext;
 }
 ```
 
-The optional `reports_country_name` attribute specifies whether a specific chat is general (`reports_country_name` is not set) or about a report (`reports_country_name` is set with the according country name).
+The optional `report_context` attribute specifies that a specific chat is about a report. It contains the type of the report (currently only `country` for country reports and `year_in_review` for year in review reports are supported) and the value of the report (e.g. the country name or the year).
+
+```typescript
+export interface IReportContext {
+    type: 'country' | 'year_in_review';
+    value: string;
+}
+```
 
 ### Query Request
 
@@ -37,41 +45,41 @@ The interface for a query has the following structure:
 
 ```typescript
 export interface QueryRequest {
-  chatId: string;
-  reports_country_name?: string; // set with the reports' country name when the chat is about a report
-  query: string;
-  version?: number;
-  chatbot_type?: string;
-  limit?: number;
-  previous_messages?: IMessage[];
+    chatId: string;
+    report_context?: IReportContext;
+    query: string;
+    version?: number;
+    chatbot_type?: string;
+    limit?: number;
+    previous_messages?: IMessage[];
 }
 ```
 
-Once again, `reports_country_name` is used to specify the report chatting functionality.
+Once again, `report_context` is used to specify the report chatting functionality.
 
-All in all, report chatting is specified via setting the `reports_country_name` attribute twice: once for the chat itself and once for each query send to the backend. This helps to distinguish each chat in the frontend and handling queries accordingly to their functionality in the backend.
+All in all, report chatting is specified via setting the `report_context` attribute twice: once for the chat itself and once for each query send to the backend. This helps to distinguish each chat in the frontend and handling queries accordingly to their functionality in the backend.
 
 ## Back-end Processing
 
 ### Handling the Query
 
-When a query for report chatting is sent from the frontend, further processing is being done with the `handle_user_query` function on the backend. It uses the `reports_country_name` attribute to determine whether the query is related to a specific country report, allowing the system to provide contextually relevant responses and differentiate between general vs. report chatting.
+When a query for report chatting is sent from the frontend, further processing is being done with the `handle_user_query` function on the backend. It uses the `report_context` attribute to determine whether the query is related to a specific country report, allowing the system to provide contextually relevant responses and differentiate between general vs. report chatting.
 
 ```python
 def handle_user_query(
     query: str,
     chatbot_type: str,
-    report_context: str,
+    report_context: dict = None,
     limit: int = 5,
     previous_message: str = "",
 ) -> tuple[str, list]:
     # ... existing code ...
     # Extract relevant documents using similarity search
-    if report_context != "":
+    if report_context:
         docs_similarity_search = similarity_search(
             query,
             limit=2,
-            report_country_name=report_context,
+            report_context=report_context,
             collection_name="report_chatting",
         )
     else:
@@ -85,14 +93,17 @@ The difference in general vs. report specific chatting in `handle_user_query` is
 
 For the report chatting functionality, `similarity_search` is generally used with `limit=2` and the specific collection, in which the report data is being stored (`collection_name="report_chatting"`). Reducing the limit to two results per search has shown to be a good enough for keeping the token usage low while producing high quality responses.
 
-Another main difference is that a pre-filtering is being done in a report chatting based similarity search to solely get report entries from the corresponding country:
+Another main difference is that a pre-filtering is being done in a report chatting based similarity search to solely get report entries from the corresponding country/year:
 
 ```python
 ... existing code ...
 # Filter entries for the specified country. Especially for report chatting
 filter_condition = {}
-if report_country_name:
-    filter_condition = {"country_name": {"$eq": f"{report_country_name}"}}
+if report_context:
+    if report_context["type"] == "country":
+        filter_condition = {"country_name": {"$eq": report_context["value"]}}
+    elif report_context["type"] == "year_in_review":
+        filter_condition = {"year": {"$eq": report_context["value"]}}
 
 # Perform the similarity search once
 results = db_collection.aggregate(
@@ -120,10 +131,10 @@ results = db_collection.aggregate(
 All in all, the workflow of a report chatting based query can be summarized like the following:
 
 1. **Receive Query**: The back-end receives the query request from the front-end.
-2. **Identify Context**: It checks if `reports_country_name` is present to identify report-specific queries.
+2. **Identify Context**: It checks if `report_context` is present to identify report-specific queries.
 3. **Similarity Search**: The system performs a similarity search to retrieve relevant report sections.
 4. **Generate Response**: A response is generated and sent back to the front-end, providing users with precise and context-aware information.
 
-This integration ensures that users can seamlessly interact with country-specific reports through a conversational interface. The use of the `reports_country_name` attribute allows the system to maintain context and provide accurate, report-based responses.
+This integration ensures that users can seamlessly interact with country-specific reports through a conversational interface. The use of the `report_context` attribute allows the system to maintain context and provide accurate, report-based responses.
 
 In the next section, we'll explore how report data is processed and structured within the system.

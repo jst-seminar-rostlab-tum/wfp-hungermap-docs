@@ -46,23 +46,25 @@ OPENAI_API_KEY=your_openai_api_key
 
 ## Overview of Data Uploaders
 
-| Uploader Name                              | Description                                                                                                   | Fields of Interest                                                                                                                                                                         | Specialized Fields                                                                                                    | Name of Script                           |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| **Yearly Reports Uploader**          | Uploads yearly reports data into the MongoDB collection.                                                      | `year`, `title`, `url`                                                                                                                                                               | no special field                                                                                                      | `db_upload_yearly_reports_data.py`     |
-| **Reports Data Uploader**            | Uploads specific country reports URL in the Database (if there is a report for this certain country).         | `country_code`, `country_name`, `report_url`                                                                                                                                         | no special fields                                                                                                     | `db_upload_reports_data.py`            |
-| **RSCI Data Uploader**               | Uploads RSCI data into the MongoDB collection.                                                                | `country_id`, `country_name`, `rsci_graph`                                                                                                                                           | no special fields                                                                                                     | `db_upload_country_rsci_data.py`       |
-| **Country Population Data Uploader** | Uploads country population data into the MongoDB collection.                                                  | `country_id`, `population`, `population_source`                                                                                                                                      | no special fields                                                                                                     | `db_upload_country_population_data.py` |
-| **Country PDC Data Uploader**        | Uploads country PDC data into the MongoDB collection.                                                         | `type`, `country_name`, `occurrences```**Inside `occurrences `**: `id `, `type `, `severity_id `, `hazard_name `, `country `, `create_date `, `last_update`            | The field `occurrences` is an array containing all incidents defined by `type`.                                   | `db_upload_country_pdc_data.py`        |
-| **Country Nutrition Data Uploader**  | Uploads country nutrition and food inflation data into the MongoDB collection.                                | `country_code`, `country_name`, `nutrition`, `food_inflation_graph```                                                                                                                | no special fields                                                                                                     | `db_upload_country_nutrition_data.py`  |
-| **Country News Data Uploader**       | Uploads country news data into the MongoDB collection.                                                        | `country_id`, `country_name`, `news```                                                                                                                                                 | no special fields                                                                                                     | `db_upload_country_news.py`            |
-| **Country IPC Data Uploader**        | Uploads country IPC data into the MongoDB collection and also generates a global summary document.            | `country_id`, `country_name`, `ipc_population_affected`, `ipc_percent`, `source`, `analysis_period`, `date_of_analysis`, `phase_4_plus_population`, `phase_5_population``` | **Global Document**: A specialized document summarizing global IPC statistics (e.g., extremes, total affected). | `db_upload_country_ipc_data.py`        |
-| **Country FCS Data Uploader**        | Uploads country FCS data into the MongoDB collection.                                                         | `country_name`, `country_id`, `fcs_graph`, `fcs_minus_1`, `fcs_minus_3`, `fcs```                                                                                                 | no special fields                                                                                                     | `db_upload_country_fcs_data.py`        |
-| **Country Economy Data Uploader**    | Uploads country economy data into the MongoDB collection.                                                     | `country_name`, `currency_exchange_graph`, `balance_of_trade_graph`, `headline_inflation_graph```                                                                                    | no special fields                                                                                                     | `db_upload_country_economy_data.py`    |
-| **Country Conflict Data Uploader**   | Uploads country conflict events data into the MongoDB collection.                                             | `event_type`, `country_name`, `occurrences```**Inside `occurrences `**: `region `, `count `, `latitude `, `longitude`                                                        | Removes existing records (same `event_type` & `country_name`) before insertion.                                   | `db_upload_country_conflict_data.py`   |
-| **Country & Region Data Uploader**   | Uploads region data per country into the MongoDB collection.                                                  | `country_id`, `country_name`, `regions`, `region_codes```                                                                                                                            | Groups multiple regions under a single country’s entry.                                                              | `db_upload_country_and_region_data.py` |
-| **Country Additional Data Uploader** | Uploads additional data about country regions (features, codes, FCS, rCSI, etc.) into the MongoDB collection. | `country_id`, `country_name`, `regions_data`                                                                                                                                         | **Inside `regions_data`**: `Code`, `Name`, `fcs`, `rcsi`, `fcsGraph`                                | `db_upload_country_additional_data.py` |
-| **Report Chatting Data Uploader**    | Uploads report data for chatbot functionality and handles PDF parsing and embeddings.                         | `country_name`, `document_name`, `document_title`, `data_labels`, `data_description`, `document_page_number`, `data`                                                         | Fields for each report document and parsed content                                                                    | `db_upload_report_chatting_data.py`    |
-| **Report Summary Data Uploader**     | Uploads AI-generated report summaries for chatbot functionality.                                              | `country_name`, `document_name`, `data_labels`, `data_description`, `data`                                                                                                       | Special field for AI summary data                                                                                     | `db_upload_report_summary.py`          |
+| Uploader Name | Description | Fields of Interest | Specialized Fields | Name of Script |
+|--------------|-------------|-------------------|-------------------|----------------|
+| **Yearly Reports Uploader** | Uploads yearly reports data into the MongoDB collection. | `year`, `title`, `url` | no special field | `db_upload_yearly_reports_data.py` |
+| **Reports Data Uploader** | Uploads specific country reports URL in the Database (if there is a report for this certain country). | `country_code`, `country_name`, `report_url` | no special fields | `db_upload_reports_data.py` |
+| **RSCI Data Uploader** | Uploads RSCI data into the MongoDB collection. | `country_id`, `country_name`, `rsci_graph` | no special fields | `db_upload_country_rsci_data.py` |
+| **Country Population Data Uploader** | Uploads country population data into the MongoDB collection. | `country_id`, `population`, `population_source` | no special fields | `db_upload_country_population_data.py` |
+| **Country PDC Data Uploader** | Uploads country PDC data into the MongoDB collection. | `type`, `country_name`, `occurrences` **Inside `occurrences`**: `id`, `type`, `severity_id`, `hazard_name`, `country`, `create_date`, `last_update` | The field `occurrences` is an array containing all incidents defined by `type`. | `db_upload_country_pdc_data.py` |
+| **Country Nutrition Data Uploader** | Uploads country nutrition and food inflation data into the MongoDB collection. | `country_code`, `country_name`, `nutrition`, `food_inflation_graph` | no special fields | `db_upload_country_nutrition_data.py` |
+| **Country News Data Uploader** | Uploads country news data into the MongoDB collection. | `country_id`, `country_name`, `news` | no special fields | `db_upload_country_news.py` |
+| **Country IPC Data Uploader** | Uploads country IPC data into the MongoDB collection and also generates a global summary document. | `country_id`, `country_name`, `ipc_population_affected`, `ipc_percent`, `source`, `analysis_period`, `date_of_analysis`, `phase_4_plus_population`, `phase_5_population` | **Global Document**: A specialized document summarizing global IPC statistics (e.g., extremes, total affected). | `db_upload_country_ipc_data.py` |
+| **Country FCS Data Uploader** | Uploads country FCS data into the MongoDB collection. | `country_name`, `country_id`, `fcs_graph`, `fcs_minus_1`, `fcs_minus_3`, `fcs` | no special fields | `db_upload_country_fcs_data.py` |
+| **Country Economy Data Uploader** | Uploads country economy data into the MongoDB collection. | `country_name`, `currency_exchange_graph`, `balance_of_trade_graph`, `headline_inflation_graph` | no special fields | `db_upload_country_economy_data.py` |
+| **Country Conflict Data Uploader** | Uploads country conflict events data into the MongoDB collection. | `event_type`, `country_name`, `occurrences` **Inside `occurrences`**: `region`, `count`, `latitude`, `longitude` | Removes existing records (same `event_type` & `country_name`) before insertion. | `db_upload_country_conflict_data.py` |
+| **Country & Region Data Uploader** | Uploads region data per country into the MongoDB collection. | `country_id`, `country_name`, `regions`, `region_codes` | Groups multiple regions under a single country's entry. | `db_upload_country_and_region_data.py` |
+| **Country Additional Data Uploader** | Uploads additional data about country regions (features, codes, FCS, rCSI, etc.) into the MongoDB collection. | `country_id`, `country_name`, `regions_data` | **Inside `regions_data`**: `Code`, `Name`, `fcs`, `rcsi`, `fcsGraph` | `db_upload_country_additional_data.py` |
+| **Report Chatting Country Content Uploader** | Uploads parsed country report content into MongoDB. | `document_name`, `country_name`, `document_title`, `data_labels`, `data_description`, `document_page_number`, `data` | no special fields | `db_upload_report_chatting_data.py` |
+| **Report Chatting Year-in-Review Content Uploader** | Uploads parsed year-in-review report content into MongoDB. | `document_name`, `year`, `document_title`, `data_labels`, `data_description`, `document_page_number`, `data` | Content is extracted and structured from PDF based on headings | `db_upload_year_in_review_report_data.py` |
+| **Report Chatting Summary Uploader** | Uploads AI-generated summaries for both country reports and year-in-review reports. | For country reports: <br/> `document_name`, `country_name`, `data_labels`, `data_description`, `data` <br/><br/> For year-in-review: <br/> `document_name`, `year`, `data_labels`, `data_description`, `data` | Summaries are AI-generated from combined report content | `db_upload_report_summary.py` |
+
 
 These fields are used to structure the data in a consistent format, while also keeping the necessary context for each collection.
 Each document also includes `document_name`, `data_labels`, `data_description` for internal indexing and labeling in the database.
@@ -125,20 +127,25 @@ It does the following:
 
 ---
 
-*Affecting following scripts: `db_upload_report_chatting_data.py`, `db_upload_report_summary.py`*
+*Affecting following scripts: `db_upload_report_chatting_data.py`, `db_upload_report_summary.py`, `db_upload_year_in_review_report_data.py`*
 
- **Function** : `upload_report_chatting_data(data)`
+**Function**: `upload_report_chatting_data(data)`, `upload_report_summary(data)`, `upload_year_in_review_data(data)`
 
-Uploads the processed report data (including content and summary) into MongoDB for chatbot functionality.
+Uploads the processed report data (content and summary) into MongoDB for chatbot report chatting functionality. These functions work together through the `upload_all_reports.py` script, which orchestrates:
 
- *Arguments* :
+1. PDF parsing (using either `report_chatting_data_parser.py` or `year_in_review_parser.py`)
+2. Content extraction and structuring
+3. Database upload of content
+4. AI summary generation
+5. Database upload of summary
+6. Embedding generation and updates for vector search functionality
 
-* `data` (List[Dict[str,str]]): Processed data for uploading.
+*Arguments*:
+- `data` (List[Dict[str,str]]): Processed data for uploading.
 
- *Returns* :
-
-* No return value.
-* Prints status messages for successful uploads.
+*Returns*:
+- No return value.
+- Prints status messages for successful uploads.
 
 ---
 
