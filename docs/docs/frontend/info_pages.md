@@ -3,6 +3,8 @@ import TabItem from '@theme/TabItem';
 
 # Info pages
 
+**Author:** `Jakob Schödl`
+
 > If you want to add a new info page, follow [this guide](/docs/how_to/how_to_add_info_page).
 
 :::note
