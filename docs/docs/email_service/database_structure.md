@@ -8,7 +8,7 @@ sidebar_position: 3
 
 Author: `Shaurya Sharma`
 
-Below is a overview of the collections (tables) used by this Email Service, alongside their relationships. 
+Below is a overview of the collections (tables) used by this Email Service, alongside their relationships.
 
 - The database is hosted with [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) on AWS.
 
@@ -24,44 +24,51 @@ An schema diagram is shown here:
 
 ### 1. Subscribers
 Holds subscriber details.
-- **_id** (ObjectId)  
-- **name** (string)  
-- **organization** (string)  
-- **email** (string)  
+- **_id** (ObjectId)
+- **name** (string)
+- **organization** (string)
+- **email** (string)
 - **created_at** (timestamp)
 
 ### 2. Subscriptions
 Captures which subscriber is subscribed to which topic.
-- **_id** (ObjectId)  
-- **subscriber_id** (ObjectId) → references **Subscribers**  
-- **topic_id** (ObjectId) → references **Topics**  
-- **option_ids** (string[]) → references **Reports** if options are enabled  
+- **_id** (ObjectId)
+- **subscriber_id** (ObjectId) → references **Subscribers**
+- **topic_id** (ObjectId) → references **Topics**
+- **option_ids** (string[]) → references **Countries** if options are enabled
 - **created_at**, **updated_at** (timestamp)
 
 ### 3. Topics
 Defines each unique topic or category of emails.
-- **_id** (ObjectId)  
-- **topic_name** (string)  
-- **topic_description** (string)  
-- **template_id** (ObjectId) → references **Templates**  
-- **topic_display_name** (string)  
-- **options_available** (bool)  
+- **_id** (ObjectId)
+- **topic_name** (string)
+- **topic_description** (string)
+- **template_id** (ObjectId) → references **Templates**
+- **topic_display_name** (string)
+- **options_available** (bool)
 
 ### 4. Reports
 Usually contains links to daily or periodic reports for a given topic (e.g., countries).
-- **_id** (ObjectId)  
-- **report_name** (string)  
-- **topic_id** (ObjectId) → references **Topics**  
+- **_id** (ObjectId)
+- **report_name** (string)
+- **topic_id** (ObjectId) → references **Topics**
 - **report_link** (string)
+- **country_id** (ObjectId) → references **Countries**
 
 ### 5. Templates
 Email templates for each type of email.
-- **_id** (ObjectId)  
-- **template_name** (string)  
-- **content** (string; HTML)  
-- **css** (string; CSS inlined later)  
-- **hash** / **css_hash** (string; used to detect changes)  
+- **_id** (ObjectId)
+- **template_name** (string)
+- **content** (string; HTML)
+- **css** (string; CSS inlined later)
+- **hash** / **css_hash** (string; used to detect changes)
 - **created_at**, **updated_at** (timestamp)
+
+### 7. countries
+Contains the list of countries.
+- **_id** (ObjectId)
+- **country_name** (string)
+- **country_adm0_code** (int)
 
 ### 6. email_reports (Optional Logging)
 Stores logs of sent emails.
@@ -72,5 +79,6 @@ Stores logs of sent emails.
 - **status** (string; e.g., "success" or "failed")
 - **created_at** (timestamp)
 - **error** (string; optional error message)
+
 
 This schema supports flexible subscription models (with or without sub-options), dynamic email templates, and logging of email deliveries.

@@ -27,31 +27,31 @@ Please read the following documents to get the complete picture of how to run, c
 ## Overview
 
 1. **App Initialization**
-   - The Flask application is created in `app.py`.
-   - Cross-Origin Resource Sharing (CORS) is configured to allow requests from specified origins.
+    - The Flask application is created in `app.py`.
+    - Cross-Origin Resource Sharing (CORS) is configured to allow requests from specified origins.
 
 2. **Routing**
-   - Primary routes are defined in `routes.py`.
-     - **/subscribe** (POST)  
-     - **/unsubscribe** (GET)  
-     - **/topics** (GET)  
-     - **/send-email** (POST)  
-     - **/send-bulk-emails** (POST)  
-     - **/daily-reports/countries** (GET)
+    - Primary routes are defined in `routes.py`.
+        - **/subscribe** (POST)
+        - **/unsubscribe** (GET)
+        - **/topics** (GET)
+        - **/send-email** (POST)
+        - **/send-bulk-emails** (POST)
+        - **/daily-reports/countries** (GET)
 
 3. **Database (MongoDB)**
-   - The database used is MongoDB, hosted with [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) on AWS.
-   - Collections used:
-     - `subscribers`, `subscriptions`, `topics`, `templates`, `reports`, and `email_reports`.
+    - The database used is MongoDB, hosted with [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) on AWS.
+    - Collections used:
+        - `countries`, `subscribers`, `subscriptions`, `topics`, `templates`, `reports`, and `email_reports`.
 
 4. **Templates & Rendering**
-   - Email templates are stored in the `email_templates/` folder.
-   - `upload_templates.py` loads or updates these templates into the `templates` collection.
+    - Email templates are stored in the `email_templates/` folder.
+    - `upload_templates.py` loads or updates these templates into the `templates` collection.
 
 5. **Business Logic**
-   - Subscribing/Unsubscribing is handled by `subscribe_endpoint_v2.py` and `unsubscribe_endpoint.py`.
-   - Retrieving topics and daily reports involves `get_topics_endpoint.py` and `daily_reports_countries_endpoint.py`.
-   - Sending emails is carried out by `send_email_endpoint.py` and `send_bulk_emails_endpoint.py`.
+    - Subscribing/Unsubscribing is handled by `subscribe_endpoint_v2.py` and `unsubscribe_endpoint.py`.
+    - Retrieving topics and daily reports involves `get_topics_endpoint.py` and `daily_reports_countries_endpoint.py`.
+    - Sending emails is carried out by `send_email_endpoint.py` and `send_bulk_emails_endpoint.py`.
 
 ## High-Level Flow
 
