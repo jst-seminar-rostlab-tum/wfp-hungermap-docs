@@ -10,7 +10,7 @@ sidebar_position: 7
 
 The **Forecast Notifications** module is designed to notify subscribers when the forecasted values for a country change by a certain percentage.
 
-It can be executed through the `/send-bulk-emails` endpoint with the `topic_id` set to the mongoDB document ID of the `forecasts` topic..
+It can be executed through the `/send-bulk-emails` endpoint with the `topic_id` set to the mongoDB document ID of the `forecasts` topic.
 
 ## Environment Variables and Setup
 - **DATA_CHANGE_THRESHOLD**: The percentage change threshold for the forecasted values to trigger an email notification. Default value is 15.
