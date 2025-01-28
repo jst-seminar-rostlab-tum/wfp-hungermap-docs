@@ -117,7 +117,7 @@ Author: `Georgi Peev`
 
    ## Token Management
 
-   The Context Retrieval System works in conjunction with the [Token Optimization Techniques](Token%20Optimization%20Techniques.md) for efficient token management. While the Token Optimization system handles the compression of individual prompts, the Context Retrieval System manages token usage across conversation history.
+   The Context Retrieval System works in conjunction with the [Token Optimization Techniques](token_optimization_techniques.md) for efficient token management. While the Token Optimization system handles the compression of individual prompts, the Context Retrieval System manages token usage across conversation history.
 
    ### Token Usage Control
 
