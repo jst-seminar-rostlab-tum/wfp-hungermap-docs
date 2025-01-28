@@ -3,6 +3,6 @@
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Documentation of the chatbot"
+    "description": "The HungerMap Chatbot is designed to deliver quick, accurate information on hunger, food security, and related topics. This documentation delves into the inner workings of the Retrieval-Augmented Generation (RAG) chatbot developed for this purpose."
   }
 }

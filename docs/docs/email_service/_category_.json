@@ -3,6 +3,6 @@
     "position": 4,
     "link": {
       "type": "generated-index",
-      "description": "Documentation of the email service"
+      "description": "The email service for HungerMap enables subscribers to receive targeted updates based on their selected topics. Through a simple subscription process on the frontend, users can choose the topics they are interested in, and the system ensures they receive timely, relevant email notifications. This documentation explains the service’s functionality about how emails are sent based on topic preferences."
     }
   }

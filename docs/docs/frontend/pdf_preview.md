@@ -1,5 +1,7 @@
 # PDF Preview
 
+**Author:** `Bohdan Garchu`
+
 The **PDF Preview** feature allows users to view and interact with PDF documents directly within the application. This feature is implemented using [react-pdf](https://www.npmjs.com/package/react-pdf) library, and it integrates seamlessly into the user interface by providing a modal-based preview of the PDF content.
 
 ## Features
