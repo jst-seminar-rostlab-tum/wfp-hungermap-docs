@@ -97,11 +97,11 @@ Author: `Georgi Peev`
 
    The system uses a weighted combination of factors to calculate relevance scores:
 
-   | Factor | Weight | Description |
-   |--------|--------|-------------|
-   | Semantic Similarity | 40% | - Keyword overlap between queries<br>- Uses both query and response text<br>- Formula: `similarity = overlap_words / total_unique_words` |
-   | Time Decay | 40% | - Recent conversations weighted higher<br>- 24-hour decay period<br>- Formula: `time_weight = 1.0 / (1.0 + hours_difference / 24)` |
-   | Token Efficiency | 20% | - Prefers shorter, relevant context<br>- Formula: `token_weight = 1.0 - (turn_token_count / max_tokens)` |
+   | Factor | Weight | Description                                                                                                                                                   |
+   |--------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | Semantic Similarity | 40% | - Keyword overlap between queries<br/>![img.png](img.png)- Uses both query and response text<br/>- Formula: `similarity = overlap_words / total_unique_words` |
+   | Time Decay | 40% | - Recent conversations weighted higher<br/>- 24-hour decay period<br/>- Formula: `time_weight = 1.0 / (1.0 + hours_difference / 24)`                          |
+   | Token Efficiency | 20% | - Prefers shorter, relevant context<br/>- Formula: `token_weight = 1.0 - (turn_token_count / max_tokens)`                                                     |
 
    The final relevance score is calculated as:
    ```

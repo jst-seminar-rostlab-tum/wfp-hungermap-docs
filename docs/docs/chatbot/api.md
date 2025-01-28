@@ -48,13 +48,13 @@ The API is available at the following base URLs depending on the environment:
 
 The API uses CORS (Cross-Origin Resource Sharing) for security. The following restrictions apply:
 
-| Category | Values |
-|----------|--------|
-| Allowed Origins | `http://localhost:3000`<br>`http://127.0.0.1:3000`<br>`http://127.0.0.1:5000`<br>`https://wfp-hungermap.netlify.app` |
-| Allowed Methods | POST only |
-| Allowed Headers | Content-Type, Authorization |
-| Exposed Headers | Content-Type |
-| Max Age | 600 seconds |
+| Category | Values                                                                                                                  |
+|----------|-------------------------------------------------------------------------------------------------------------------------|
+| Allowed Origins | `http://localhost:3000`<br/>`http://127.0.0.1:3000`<br/>`http://127.0.0.1:5000`<br/>`https://wfp-hungermap.netlify.app` |
+| Allowed Methods | POST only                                                                                                               |
+| Allowed Headers | Content-Type, Authorization                                                                                             |
+| Exposed Headers | Content-Type                                                                                                            |
+| Max Age | 600 seconds                                                                                                             |
 
 ---
 
@@ -117,11 +117,11 @@ Returns an HTML page containing API documentation.
 
 ## Implementation Notes
 
-| Category | Description |
-|----------|-------------|
-| Model Type | - Accepts `chatbot_type` parameter<br>- Currently fixed to "gpt-4o"<br>- Hardcoded for consistency |
-| Token Usage | - Tracked internally<br>- Used for monitoring<br>- Daily limits enforced |
-| Previous Messages | - The `previous_messages` parameter is accepted but reserved for future implementation<br>- Currently does not affect the response generation |
+| Category | Description                                                                                                                                    |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Model Type | - Accepts `chatbot_type` parameter<br/>- Currently fixed to "gpt-4o"<br/>- Hardcoded for consistency                                           |
+| Token Usage | - Tracked internally<br/>- Used for monitoring<br/>- Daily limits enforced                                                                     |
+| Previous Messages | - The `previous_messages` parameter is accepted but reserved for future implementation<br/>- Currently does not affect the response generation |
 
 ## Example Usage
 

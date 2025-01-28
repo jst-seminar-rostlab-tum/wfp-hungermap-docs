@@ -180,12 +180,12 @@ The chatbot builds context for OpenAI in several layers:
 
 The chatbot's responses follow strict formatting and content guidelines:
 
-| Category | Guidelines |
-|----------|------------|
-| Language | - Clear and concise<br>- Professional tone<br>- No technical jargon |
-| Content Restrictions | - No future predictions<br>- No political opinions<br>- No food aid recommendations<br>- No sensitive information |
-| Data Usage | - Only use provided context<br>- No external data sources<br>- Cite sources when available |
-| Formatting | - Use markdown for structure<br>- Include relevant headers<br>- Maintain consistent style |
+| Category | Guidelines                                                                                                           |
+|----------|----------------------------------------------------------------------------------------------------------------------|
+| Language | - Clear and concise<br/>- Professional tone<br/>- No technical jargon                                                |
+| Content Restrictions | - No future predictions<br/>- No political opinions<br/>- No food aid recommendations<br/>- No sensitive information |
+| Data Usage | - Only use provided context<br/>- No external data sources<br/>- Cite sources when available                         |
+| Formatting | - Use markdown for structure<br/>- Include relevant headers<br/>- Maintain consistent style                          |
 
 1. **Supported Markdown Syntax**
    - Headers (h1-h3) for section organization
