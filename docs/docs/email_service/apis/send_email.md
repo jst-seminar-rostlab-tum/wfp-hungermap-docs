@@ -14,7 +14,7 @@ Author: `Shaurya Sharma`
 Sends a single email to one recipient for a specific `topic_id`.
 
 1. Validate `topic_id` and fetch the relevant template.
-2. Generate HTML content via `generate_email_content.py`.
+2. Generate HTML content via `email_generator.py`.
 3. Download PDFs (if any) and encode them for attachment.
 4. Use Brevo’s Transactional API to send the email.
 5. Insert a record into an `email_reports` or equivalent logging collection.

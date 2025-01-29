@@ -57,7 +57,7 @@ Please read the following documents to get the complete picture of how to run, c
 
 1. A request arrives at one of the routes.
 2. The endpoint handler (e.g., `subscribe_endpoint_v2.py`) processes input data, reads/writes to MongoDB.
-3. When sending an email, `generate_email_content.py` fetches the relevant template and merges it with data.
+3. When sending an email, `email_generator.py` fetches the relevant template and merges it with data.
 4. Brevo (STMP Server as Service, Third Party) handles the actual email delivery.
 5. Logs and statuses are saved to the `email_reports` collection or used for debugging as needed.
 
