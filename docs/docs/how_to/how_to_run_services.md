@@ -35,9 +35,9 @@ Before starting any service:
 
 2. Copy environment templates and configure variables:
 
-| Service | Template Location | Target Location | Required Variables                                                                                                               |
-|---------|------------------|-----------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Chatbot | `.env_template` | `.env` | `MONGODB_URI`<br/>`MONGODB_DB`<br/>`MONGODB_COLLECTION`<br/>`OPENAI_API_KEY`                                                      |
+| Service | Template Location | Target Location | Required Variables                                                                                                             |
+|---------|------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Chatbot | `.env_template` | `.env` | `MONGODB_URI`<br/>`MONGODB_DB`<br/>`MONGODB_COLLECTION`<br/>`OPENAI_API_KEY`                                                   |
 | Email | `email_service/.env_template` | `email_service/.env` | `MONGODB_URI`<br/>`MONGODB_DB_EMAIL_SERVICE`<br/>`BREVO_API_KEY`<br/>`BREVO_SENDER_EMAIL`<br/>`BREVO_SENDER_NAME`<br/>`BASE_URL` |
 
 ---
