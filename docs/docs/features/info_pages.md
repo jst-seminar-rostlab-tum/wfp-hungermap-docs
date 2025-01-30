@@ -6,7 +6,7 @@ Author: `Jakob Schödl`
 
 To help users understand what the HungerMap is and how it works, it contains
 multiple [Info Pages](/docs/frontend/info_pages). Those go into detail on the used data sources and technologies. The
-same information is also accessible using [tooltips](http://localhost:3000/docs/frontend/tooltip) throughout the map.
+same information is also accessible using [tooltips](/docs/frontend/tooltip) throughout the map.
 
 We worked on making this information more accessible by summarizing the explanations and improving the way they are
 shown to the user.
