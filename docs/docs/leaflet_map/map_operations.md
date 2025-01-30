@@ -1,12 +1,9 @@
----
-sidebar_position: 3
----
-
 # Map Operations
+Author: ```Lukas Weigmann```
 
 ## Overview
 The MapOperations class provides a set of methods for managing and interacting with geographical data on the map.
-It contains functionality for the main [MapComponent](map_component.md) but also for smaller components such as [Cloropleths](map_cloropleths.md)
+It contains functionality for the main [MapComponent](map_component) but also for smaller components such as [Cloropleths](cloropleths)
 that are used in the map.
 
 ## Class Details
@@ -31,7 +28,7 @@ when the user is zooming in or out.
 - ```tooltip```: Tooltip instance to be updated
 
 #### Workflow
-You can find details about the region labeling under [region labels](map_region_labels.md).
+You can find details about the region labeling under [region labels](region_labels).
 
 ### setupRegionLabelTooltip()
 #### Description
@@ -47,7 +44,7 @@ The method configures a permanent tooltip for region labels and updates it dynam
 The method returns the created tooltip
 
 #### Workflow
-You can find details about the region labeling under [region labels](map_region_labels.md).
+You can find details about the region labeling under [region labels](region_labels).
 
 ### attachCountryNameTooltip()
 #### Description
