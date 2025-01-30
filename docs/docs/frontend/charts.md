@@ -41,6 +41,7 @@ For more information on the structure of the expected data object by `params.dat
 - `disableBarChartSwitch` boolean: when selected, the functionality to switch to a bar chart is disabled (optional)
 - `disableXAxisSlider` boolean: when selected, the functionality to change the x-axis range via a slider is disabled (optional)
 - `disableDownload` boolean: when selected, the functionality to download the chart is disabled (optional)
+- `simplifyTooltip`boolean: when selected, the labels of the categories are not shown in the chart's tooltip (optional)
 
 ### `CategoricalChart` Parameters
 
@@ -54,7 +55,7 @@ For more information on the structure of the expected data object by `params.dat
 - `disableExpandable` boolean: when selected, the functionality to open the chart in a larger modal is disabled (optional)
 - `disablePieChartSwitch` boolean: when selected, the functionality to switch to a pie chart is disabled (optional)
 - `disableDownload` boolean: when selected, the functionality to download the chart is disabled (optional)
-
+- `disableSorting` boolean: when selected, sorting button is hidden in the chart full size modal (optional)
 
 ## Data
 
@@ -139,6 +140,14 @@ The `CategoricalChart` component expects a data object of type `CategoricalChart
 In this object, the title of the y-axis label can be defined using `yAxisLabel` (optional), 
 along with an arbitrarily long `categories` array where each entry corresponds to a category. 
 A category consists of a `name`, a `dataPoint` containing only the actual data point (`y`), and an optional `color` attribute.
+If a range around an individual data point should also be displayed in the chart, this can be defined using `yRangeMin` 
+and `yRangeMax` for each individual data point. The range whiskers are only shown in the bar chart, not in the pie chart, 
+and only if both, `yRangeMin` and `yRangeMax`, are defined.
+
+With the help of `yRelative`, it is possible to specify also relative numbers.
+If at least one category has a `yRelative` defined, the chart provides a button that allows the user to switch to the relative numbers.
+When the user switches to relative numbers, only the bar chart is displayed, and switching back to a pie chart is no longer possible.
+Additionally, `yRangeMinRelative` and `yRangeMaxRelative` can be used to define an error range for the relative numbers.
 
 ``` javascript
 export interface CategoricalChartData {
@@ -147,6 +156,12 @@ export interface CategoricalChartData {
     name: string;
     dataPoint: {
       y: number;
+      yRangeMin?: number;
+      yRangeMax?: number;
+      
+      yRelative?: number;
+      yRangeMinRelative?: number;
+      yRangeMaxRelative?: number;
     };
     color?: string;
   }[];
