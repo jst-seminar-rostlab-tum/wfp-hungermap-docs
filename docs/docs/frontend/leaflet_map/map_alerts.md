@@ -4,6 +4,8 @@ sidebar_position: 6
 
 # Alerts
 
+**Author:** `Lukas Fabio Weigmann`
+
 ## Overview
 Alerts are the markers that are placed inside of the map indicating certain events such as different types of conflicts for
 the conflict alerts. The different alert types are implemented in ```src/components/Map/Alerts/AlertContainer.tsx``` that is placed

@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Map Operations
 
+**Author:** `Lukas Fabio Weigmann`
+
 ## Overview
 The MapOperations class provides a set of methods for managing and interacting with geographical data on the map.
 It contains functionality for the main [MapComponent](map_component.md) but also for smaller components such as [Cloropleths](map_cloropleths.md)

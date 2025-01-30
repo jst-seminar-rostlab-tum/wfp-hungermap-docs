@@ -1,10 +1,3 @@
----
-title: Architecture
-sidebar_label: Architecture
-slug: /email-service/architecture
-sidebar_position: 2
----
-
 # Architecture
 
 Author: `Shaurya Sharma`

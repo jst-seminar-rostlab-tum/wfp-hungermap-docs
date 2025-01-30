@@ -1,14 +1,8 @@
----
-title: Daily Reports
-sidebar_label: Daily Reports
-sidebar_position: 4
----
-
 # Daily Reports
 
 **Author:** `Marius Moldovan`
 
-The **Daily Reports** Module is designed to manage reports in a MongoDB database. It fetches, uploads, updates daily reports, 
+The **Daily Reports** Module is designed to manage reports in a MongoDB database. It fetches, uploads, updates daily reports,
 and ensures that users are only subscribed to available reports.
 
 ## Overview
@@ -21,7 +15,7 @@ The following functionalities are available:
 
 **Function**: `upload_daily_reports_to_db()`:
 
-Uploads or Updates all available daily reports to the MongoDB database. 
+Uploads or Updates all available daily reports to the MongoDB database.
 
 *Params*:
 - `None`
@@ -31,7 +25,7 @@ Uploads or Updates all available daily reports to the MongoDB database.
 
 *Workflow*:
 1. Fetches available reports from `https://static.hungermapdata.org/insight-reports/latest/country.json`
-2. Calls `check_if_topic_exists` to ensure that the database does not include any countries not present in the fetched reports. 
+2. Calls `check_if_topic_exists` to ensure that the database does not include any countries not present in the fetched reports.
 3. Uploads all daily reports to the database. If a country already has a daily report, the link is updated.
 
 *Example Usage*:

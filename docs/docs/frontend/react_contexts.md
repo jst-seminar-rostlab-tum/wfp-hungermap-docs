@@ -1,5 +1,7 @@
 # React Contexts
 
+**Author:** `Georgi Tsipov`
+
 ## SelectedMapContext
 
 Manages map type selection state and operations.

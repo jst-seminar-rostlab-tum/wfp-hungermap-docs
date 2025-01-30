@@ -1,5 +1,7 @@
 # Legends
 
+**Author:** `Ahmed Farouk`
+
 Legends play a vital role in providing contextual information for the data displayed on the map. There are two primary types of legends: **Gradient Legends** and **Point Legends**, both are always positioned at the bottom right of the screen.
 
 1. **Gradient Legends**:
@@ -11,7 +13,7 @@ Legends play a vital role in providing contextual information for the data displ
    - Represent non-continuous or categorical data.
    - Example: Specific alerts or categories like conflicts or hazards.
 
-**Maximum Display:**  
+**Maximum Display:**
 At any given time, only maximum of **two legends** can be displayed simultaneously. They may include:
 
 - One legend for global alerts (e.g., conflicts , hazards, country alerts).
@@ -77,7 +79,7 @@ In order to use point legend, the following properties are required:
 
 ## Different Screen Sizes
 
-The application is optimized for three screen sizes: **Large**, **Medium**, and **Small**.  
+The application is optimized for three screen sizes: **Large**, **Medium**, and **Small**.
 Each screen size has a tailored component rendering, with variations in how legends and map data are displayed.
 
 ### 1. Large Screens

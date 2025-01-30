@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # Map Component
 
+**Author:** `Lukas Fabio Weigmann`
+
 ## 1. MapContainer
 The MapContainer component is the root container for the map.
 It contains the different layers of the map and configures the general behavior.
@@ -97,7 +99,7 @@ interaction functionality with the countries.
 Regular borders and borders of disputed areas are rendered in two separate leaflet layers. You can customize their style
 in the ```Map.ts``` constants file (see above).
 
-## 2.Data Flow
+## 2. Data Flow
 The component processes geographic and contextual data using props and local state management. When the Map Type or
 the value of the selectedCountryId context changes (i.e. when clicking on a country) new data is fetched. How these operations
 work in detail is further explained in [Map Operations](map_operations.md).

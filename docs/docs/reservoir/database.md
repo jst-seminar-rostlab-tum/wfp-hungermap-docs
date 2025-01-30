@@ -1,4 +1,4 @@
-## Database Overview
+# Database Overview
 
 Author: `Cansu Moran`
 
@@ -24,11 +24,11 @@ Author: `Cansu Moran`
 
 ---
 
-### Queries Used:
+### Queries Used
 
 #### 1. Get all unique country codes:
 ```sql
-SELECT DISTINCT adm0_code 
+SELECT DISTINCT adm0_code
 FROM datav_fcs_rcsi_aggregation_bootstrap;
 ```
 
@@ -37,24 +37,24 @@ FROM datav_fcs_rcsi_aggregation_bootstrap;
 
 #### 2. Fetch FCS/RCSI graph data:
 ```sql
-SELECT adm0_code, sum(fcs_people) as fcs, sum(fcs_people_upper_bound) as fcs_upper_bound, 
-       sum(fcs_people_lower_bound) as fcs_lower_bound, sum(rcsi_people) as rcsi, 
-       sum(rcsi_people_upper_bound) as rcsi_upper_bound, sum(rcsi_people_lower_bound) as rcsi_lower_bound, 
+SELECT adm0_code, sum(fcs_people) as fcs, sum(fcs_people_upper_bound) as fcs_upper_bound,
+       sum(fcs_people_lower_bound) as fcs_lower_bound, sum(rcsi_people) as rcsi,
+       sum(rcsi_people_upper_bound) as rcsi_upper_bound, sum(rcsi_people_lower_bound) as rcsi_lower_bound,
        date1 as 'x'
 FROM (
-    SELECT adm0_code, fcs_people, fcs_people_upper_bound, fcs_people_lower_bound, 
-           rcsi_people, rcsi_people_upper_bound, rcsi_people_lower_bound, 
+    SELECT adm0_code, fcs_people, fcs_people_upper_bound, fcs_people_lower_bound,
+           rcsi_people, rcsi_people_upper_bound, rcsi_people_lower_bound,
            CONCAT_WS('-', year, lpad(month, 2, 0), lpad(day + 0, 2, 0)) as 'date1'
     FROM datav_fcs_rcsi_aggregation_bootstrap
     WHERE adm0_code = %s
 ) t1
-WHERE date1 BETWEEN DATE_SUB((SELECT CONCAT_WS('-', year, lpad(month, 2, 0), lpad(day + 0, 2, 0)) 
-                               FROM datav_fcs_rcsi_aggregation_bootstrap 
-                               WHERE adm0_code = %s AND data_type = 'ACTUAL DATA' 
+WHERE date1 BETWEEN DATE_SUB((SELECT CONCAT_WS('-', year, lpad(month, 2, 0), lpad(day + 0, 2, 0))
+                               FROM datav_fcs_rcsi_aggregation_bootstrap
+                               WHERE adm0_code = %s AND data_type = 'ACTUAL DATA'
                                ORDER BY date2 DESC LIMIT 1), INTERVAL 3 MONTH)
-      AND (SELECT CONCAT_WS('-', year, lpad(month, 2, 0), lpad(day + 0, 2, 0)) 
-           FROM datav_fcs_rcsi_aggregation_bootstrap 
-           WHERE adm0_code = %s AND data_type = 'ACTUAL DATA' 
+      AND (SELECT CONCAT_WS('-', year, lpad(month, 2, 0), lpad(day + 0, 2, 0))
+           FROM datav_fcs_rcsi_aggregation_bootstrap
+           WHERE adm0_code = %s AND data_type = 'ACTUAL DATA'
            ORDER BY date2 DESC LIMIT 1)
 GROUP BY adm0_code, date1
 ORDER BY date1;
@@ -66,9 +66,9 @@ ORDER BY date1;
 
 #### 3. Fetch FCS/RCSI prediction data:
 ```sql
-SELECT fcs_score, fcs_score_upper_bound, fcs_score_lower_bound, fcs_people, 
-       fcs_people_upper_bound, fcs_people_lower_bound, rcsi_score, rcsi_score_upper_bound, 
-       rcsi_score_lower_bound, rcsi_people, rcsi_people_upper_bound, rcsi_people_lower_bound, 
+SELECT fcs_score, fcs_score_upper_bound, fcs_score_lower_bound, fcs_people,
+       fcs_people_upper_bound, fcs_people_lower_bound, rcsi_score, rcsi_score_upper_bound,
+       rcsi_score_lower_bound, rcsi_people, rcsi_people_upper_bound, rcsi_people_lower_bound,
        adm0_code, prediction_date, update_date
 FROM prediction_data
 WHERE adm0_code = %s

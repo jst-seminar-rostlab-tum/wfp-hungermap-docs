@@ -1,9 +1,3 @@
----
-title: Templates
-sidebar_label: Templates
-sidebar_position: 5
----
-
 # Templates
 
 Author: `Shaurya Sharma`
@@ -28,7 +22,7 @@ Note: Please ensure the each template name(Template file name) is unique.
 
 To update existing templates or add new ones:
 1. Place the `.html` and `_styles.css` files (with matching base filenames) into the `email_templates/` directory.
-2. Run the `upload_templates.py` script.  
+2. Run the `upload_templates.py` script.
    - If the hashes differ, the content is updated.
    - Otherwise, a new template document is created if it doesn’t exist.
 

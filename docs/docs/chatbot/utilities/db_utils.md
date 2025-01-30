@@ -1,4 +1,4 @@
-# Database Utils
+# Database utils
 
 **Author:** `Marius Moldovan`
 

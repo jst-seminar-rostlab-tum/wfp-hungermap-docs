@@ -1,5 +1,7 @@
 # Accordions
 
+**Author:** `Armanpreet Ghotra`
+
 The accordions in our application, sourced from NextUI, are designed to expand and reveal additional information or collapse to hide it. In this website, the accordions of the ***Splitted variant*** have been used. These accordions have been customized to align with our specific requirements. They are utilized in the following sections of the website:
 
 - Comparison Portal

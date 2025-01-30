@@ -1,5 +1,7 @@
 # IPC Map
 
+**Author:** `Ahmed Farouk`
+
 The IPC Map is one of the five key maps in our project, leveraging the Integrated Food Security Phase Classification (IPC) framework. This framework categorizes population's regions into five phases based on the severity of food insecurity and malnutrition:
 
 - **Phase 1**: Minimal

@@ -1,8 +1,8 @@
-### Architecture
+# Architecture
 
 Author: `Cansu Moran`
 
-#### Pipeline Overview
+## Pipeline Overview
 
 The reservoir computing system comprises several components designed to streamline data preprocessing, prediction, and
 storage. Below is an outline of the architecture:
@@ -26,7 +26,7 @@ storage. Below is an outline of the architecture:
 5. **API Endpoint for Predictions**
     - Predictions are exposed through an API endpoint that provides structured data for frontend visualization.
 
-#### Diagram
+## Diagram
 
 ```
 [ Data Ingestion ] ---> [ Preprocessing ] ---> [ Reservoir Computing Model ] ---> [ Database ] ---> [ API Endpoint ]

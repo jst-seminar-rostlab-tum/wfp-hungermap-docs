@@ -4,6 +4,8 @@ sidebar_position: 5
 
 # Region Labels
 
+**Author:** `Lukas Fabio Weigmann`
+
 ## Overview
 The region labels are shown in the FCS and Nutrition view. Since for some countries like Vietnam labels get very long and would
 have to fit in very small region shapes the display of the names switches between the full label and "...".
@@ -12,7 +14,7 @@ This is done based on an estimation on the label width and the borders of the re
 ## Setup
 The labels are set up once the user selects a country and the regions are rendered by the setupRegionLabelTooltip() method
 that is located in [Map Operations](map_operations.md). This method is called inside of the [Cloropleth Elements](map_cloropleths.md)
-on country level in the corresponding components. Let's have a closer look at how the labels are set up: 
+on country level in the corresponding components. Let's have a closer look at how the labels are set up:
 ```ts
 static
 setupRegionLabelTooltip(

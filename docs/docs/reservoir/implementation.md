@@ -1,8 +1,8 @@
-### **Implementation**
+# Implementation
 
 Author: `Cansu Moran`
 
-#### **Overview**
+## **Overview**
 
 This document provides detailed information about the implementation of the forecasting pipeline. It explains the
 code structure, the main functions, how the endpoints are triggered, and the process for generating and updating
@@ -10,9 +10,9 @@ predictions.
 
 ---
 
-### **Core Implementation Details**
+## **Core Implementation Details**
 
-#### **1. Data Flow and Prediction Workflow**
+### **1. Data Flow and Prediction Workflow**
 
 1. **Daily Updates with Cron Jobs**
     - A cron job triggers the `updatePredictions()` function every morning.
@@ -31,15 +31,15 @@ predictions.
 
 ---
 
-#### **2. Key Functions**
+### **2. Key Functions**
 
-##### **getCountryFcsRcsiGraphData(adm0_id)**
+#### **getCountryFcsRcsiGraphData(adm0_id)**
 
 Retrieves historical FCS and RCSI data for a specific country.
 
-- **Inputs:**  
+- **Inputs:**
   `adm0_id` (country identifier).
-- **Outputs:**  
+- **Outputs:**
   Graph data for FCS and RCSI.
 
 ```python
@@ -52,13 +52,13 @@ def getCountryFcsRcsiGraphData(adm0_id):
 
 ---
 
-##### **getCountryFcsRcsiPredictionData(adm0_id)**
+#### **getCountryFcsRcsiPredictionData(adm0_id)**
 
 Fetches previously predicted FCS and RCSI data from the database.
 
-- **Inputs:**  
+- **Inputs:**
   `adm0_id` (country identifier).
-- **Outputs:**  
+- **Outputs:**
   Prediction data for FCS and RCSI.
 
 ```python
@@ -69,13 +69,13 @@ def getCountryFcsRcsiPredictionData(adm0_id):
 
 ---
 
-##### **getCountryPredictions(adm0_id)**
+#### **getCountryPredictions(adm0_id)**
 
 Processes prediction data into a JSON format for the frontend.
 
-- **Inputs:**  
+- **Inputs:**
   `adm0_id` (country identifier).
-- **Outputs:**  
+- **Outputs:**
   JSON-formatted predictions for FCS and RCSI graphs.
 
 ```python
@@ -101,7 +101,7 @@ def getCountryPredictions(adm0_id):
 
 ---
 
-##### **updatePredictions()**
+#### **updatePredictions()**
 
 Main function to calculate predictions and update the database.
 
@@ -173,26 +173,26 @@ def updatePredictions():
 
 ---
 
-##### **forecast_model.getRcsiFcsForecast(data)**
+#### **forecast_model.getRcsiFcsForecast(data)**
 
 This function takes the historical data as input and generates predictions. More details can be found below in the **Forecast Model Implementation**.
 
 ---
 
-#### **3. How to Use the Endpoints**
+### **3. How to Use the Endpoints**
 
-- **Frontend Endpoint:**  
+- **Frontend Endpoint:**
   Use `GET /<adm0_id>/predictions.json` to retrieve predictions for a country.
 
-- **Cron Job Endpoint:**  
+- **Cron Job Endpoint:**
   The cron job triggers `updatePredictions()` daily.
 
 ---
 
-#### **4. Forecast Model Implementation**
+### **4. Forecast Model Implementation**
 
 
-##### Data Preprocessing: **`getRcsiFcsForecast`**
+#### Data Preprocessing: **`getRcsiFcsForecast`**
 
 This function retrieves and forecasts both **FCS** and **RCSI** data:
 
@@ -213,7 +213,7 @@ def getRcsiFcsForecast(graphData):
 ```
 ---
 
-##### Predicting: **`getForecast`**
+#### Predicting: **`getForecast`**
 
 This function performs the core forecasting:
 

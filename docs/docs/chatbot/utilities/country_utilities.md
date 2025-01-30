@@ -1,10 +1,4 @@
----
-id: country-utils
-title: Country Utilities
-slug: /country-utils
----
-
-# Country Utilities
+# Country utilities
 
 **Author:** `Muhammed Emre Bayraktaroglu`
 
@@ -24,7 +18,7 @@ The **Country Utilities** module provides:
 ## Requirements and Setup
 
 Before using this module, ensure you have the following:
-- Python 3.8+  
+- Python 3.8+
 - The `pandas` library installed.
 - A CSV file containing country data in the specified directory structure.
 

@@ -4,6 +4,8 @@ sidebar_position: 7
 
 # Loading and Skeletons
 
+**Author:** `Lukas Fabio Weigmann`
+
 ## Overview
 When the application is loading data, the corresponding components are showing a skeleton or loading animation.
 Here we will go over the most important loading functionality regarding the map.
@@ -27,14 +29,14 @@ export default function MapSkeleton() {
 }
 ```
 The SVG is added additional behavior by using tailwind classes. animate-opacityPulse for example adds the behavior for changing
-the opacity of the element continuously and is defined in the tailwind config file.  
+the opacity of the element continuously and is defined in the tailwind config file.
 
 ## Loading after selection of country
 When a country is selected, the map zooms to the corresponding country and is showing a skeleton in the shape of the country and
 a loading animation for the accordions.
 ![img.png](img.png)
 The code for this behavior can be found in the [Cloropleth Component](map_cloropleths.md) of the currently selected mode in the
-CountryLoadingLayer component: 
+CountryLoadingLayer component:
 ```ts
 function CountryLoadingLayer({ data, selectedCountryId, color }: CountryLoadingProps) {
   const filteredFeatures = data.features.filter((feature) => feature?.properties?.adm0_id === selectedCountryId);
