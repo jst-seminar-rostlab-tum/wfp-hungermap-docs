@@ -1,10 +1,6 @@
 # Comparison Portal
 
-**Author:** `Bohdan Garchu`, `Jakob Schödl`
-
-**Comparison Portal** allows users to compare two to five countries based on various indicators such as food security,
-import dependency, balance of trade, food and headline inflation. It further enables the comparison of the regions of a
-single country against each other.
+**Authors:** `Bohdan Garchu`, `Jakob Schödl`
 
 ## Functionality
 
