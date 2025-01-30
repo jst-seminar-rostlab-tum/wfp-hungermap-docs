@@ -75,7 +75,7 @@ export const disputedAreaStyle = {
 
 ### Layers
 The map renders layers dynamically based on user interaction. Layers are stacked beginning from the first element in the MapContainer
-wrapper component being in the background. Here you can read more about [how to add a new leaflet layer](../how_to/how_to_add_leaflet_layer).
+wrapper component being in the background. Here you can read more about [how to add a new leaflet layer](../../how_to/how_to_add_leaflet_layer).
 
 #### Alert Layer
 The AlertContainer component contains the functionality for displaying the alerts.
