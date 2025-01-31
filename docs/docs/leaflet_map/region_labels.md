@@ -1,8 +1,5 @@
----
-sidebar_position: 5
----
-
 # Region Labels
+Author: ```Lukas Weigmann```
 
 ## Overview
 The region labels are shown in the FCS and Nutrition view. Since for some countries like Vietnam labels get very long and would
@@ -11,7 +8,7 @@ This is done based on an estimation on the label width and the borders of the re
 
 ## Setup
 The labels are set up once the user selects a country and the regions are rendered by the setupRegionLabelTooltip() method
-that is located in [Map Operations](map_operations.md). This method is called inside of the [Cloropleth Elements](map_cloropleths.md)
+that is located in [Map Operations](map_operations.md). This method is called inside of the [Cloropleth Elements](cloropleths)
 on country level in the corresponding components. Let's have a closer look at how the labels are set up: 
 ```ts
 static
@@ -60,7 +57,7 @@ setupRegionLabelTooltip(
 1: From the data containing information about the label and position for each label the right element is searched for.
 
 2: The found label data is then used to create a tooltip element that is added to leaflet map element and also to a list that keeps track of
-all the used tooltips in order to be able to remove them later again. This list is passed down from the main [Map Component](map_component.md).
+all the used tooltips in order to be able to remove them later again. This list is passed down from the main [Map Component](map_component).
 
 3: Lastly listeners are added. When zooming, the labels should update and if given should switch between the full region name and "...". Also when the
 tooltip is removed, the listener that was just setup should be removed so that no unnecessary listeners are running in the background for elements that are not being used anymore.
@@ -107,7 +104,7 @@ fully zoomed in all labels are fully shown, if the map is at the threshold befor
 shown with "...".
 
 ## Removal
-When the selected country or the selected mode are changing also the labels should be updated. Therefore, in the [Map Component](map_component.md)
+When the selected country or the selected mode are changing also the labels should be updated. Therefore, in the [Map Component](map_component)
 there is a useEffect hook that contains the functionality for removing all tooltips from the map that were added to a list in the setup step.
 ```ts
 if (mapRef.current) {
