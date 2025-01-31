@@ -1,8 +1,5 @@
----
-sidebar_position: 2
----
-
 # Map Component
+Author: ```Lukas Weigmann```
 
 **Author:** `Lukas Fabio Weigmann`
 
@@ -67,7 +64,7 @@ export const disputedAreaStyle = {
 - **MAP_MAX_ZOOM:** how much you can zoom in the map
 - **MAP_MIN_ZOOM:** how much you can zoom out the map
 - **SELECTED_COUNTRY_ZOOM_THRESHOLD:** at what zoom level the map should switch from the country view mode to the global view when zooming out
-- **REGION_LABEL_SENSITIVITY:** how sensitive the labels of the regions of countries should react to zooming when switching from displaying the name to "...". A higher value makes the labels turn faster into "...". More about this you can read in [region labels](map_region_labels.md)
+- **REGION_LABEL_SENSITIVITY:** how sensitive the labels of the regions of countries should react to zooming when switching from displaying the name to "...". A higher value makes the labels turn faster into "...". More about this you can read in [region labels](region_labels)
 - **oceanBounds:** sets the border for the ocean layer
 - **countryBaseStyle:** sets the style for the base shapes of all the countries
 - **countryBorderStyle:** sets the style for the country borders
@@ -92,7 +89,7 @@ Depending on which mode is selected different contents should be displayed. This
 conditions are fulfilled. These components again contain all the functionality needed for each individual mode. For the Vegetation Mode, Rainfall
 Mode and Food Consumption Mode TileLayers are rendered using raster layers provided by the Backend. These are responsible for the colored
 overlays.
-In Food Consumption Mode, Nutrition Mode and IPC Mode also [Cloropleth Components](map_cloropleths) are used for providing
+In Food Consumption Mode, Nutrition Mode and IPC Mode also [Cloropleth Components](cloropleths) are used for providing
 interaction functionality with the countries.
 
 #### Border Layer
@@ -122,7 +119,7 @@ work in detail is further explained in [Map Operations](map_operations.md).
 - ```ipcRegionData```: Holds details of the regions of the selected country in IPC mode
 - ```selectedCountryName```: Holds the name of the currently selected country if present
 - ```regionLabelData```: Holds details (name, position) of all labels for all regions. It is only loaded once.
-- ```regionLabelTooltips```: Holds the tooltips showing the labels of the regions of the currently selected country (More in [Region Labels](map_region_labels.md))
+- ```regionLabelTooltips```: Holds the tooltips showing the labels of the regions of the currently selected country (More in [Region Labels](region_labels))
 - ```isDataAvailable```: Tracks whether relevant data is present for the selected country
 
 #### Contexts provide global state across the application:

@@ -151,22 +151,34 @@ return response
 The MongoDB aggregation pipeline for vector search:
 
 ```python
-results = db_collection.aggregate(
-    [
-        {
-            "$vectorSearch": {
-                "index": "vector_index",
-                "path": "data_embedding",
-                "queryVector": create_embedding(query),
-                "numCandidates": 1000,
-                "limit": limit,
-            }
-        },
-        {"$addFields": {"score": {"$meta": "vectorSearchScore"}}},
-        {"$project": {"data_embedding": 0}},
-    ]
-)
+    filter_condition = {}
+    if report_context:
+        if report_context["type"] == "country":
+            filter_condition = {"country_name": {"$eq": report_context["value"]}}
+        elif report_context["type"] == "year_in_review":
+            filter_condition = {"year": {"$eq": report_context["value"]}}
+
+    # Perform the similarity search once
+    results = db_collection.aggregate(
+        [
+            {
+                "$vectorSearch": {
+                    "index": "vector_index",
+                    "path": "data_embedding",
+                    "queryVector": create_embedding(query),
+                    "filter": filter_condition,
+                    "numCandidates": 1000,  # Fetch enough candidates
+                    "limit": limit,
+                }
+            },
+            {"$addFields": {"score": {"$meta": "vectorSearchScore"}}},
+            {"$sort": {"score": -1}},
+            {"$project": {"data_embedding": 0}},
+        ]
+    )
 ```
+
+The `filter` is specifically used for `report_chatting` collection. For `chatbot_data` searches, it is not relevant.
 
 ### Threshold Logic
 

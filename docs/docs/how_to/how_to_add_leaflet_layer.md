@@ -1,6 +1,6 @@
 # How to add a leaflet layer
 
-**Author:** `Lukas Fabio Weigmann`
+**Author:** `Lukas Weigmann`
 
 ## Overview
 Leaflet layers are placed in the [Map Component](../frontend/leaflet_map/map_component.md) in the MapContainer component. A leaflet layer

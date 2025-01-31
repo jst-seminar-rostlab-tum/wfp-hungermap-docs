@@ -1,6 +1,6 @@
 # How to add an alert
 
-**Author:** `Lukas Fabio Weigmann`
+**Author:** `Lukas Weigmann`
 
 ## Overview
 Alerts are [leaflet markers](https://leafletjs.com/reference.html#marker) that are rendered in the map. If you first want to get an overview of how alerts are implemented
