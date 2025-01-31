@@ -1,10 +1,4 @@
----
-id: loc-utils
-title: Location Utilities
-slug: /loc-utils
----
-
-# Location Utilities
+# Location utilities
 
 **Author:** `Muhammed Emre Bayraktaroglu`
 
@@ -25,7 +19,7 @@ The **Location Utilities** module provides:
 ## Requirements and Setup
 
 Before using this module, ensure you have the following:
-- Python 3.8+  
+- Python 3.8+
 - A valid **OpenAI API Key** for GPT-based operations (optional).
 - Installed dependencies from `requirements.txt`.
 

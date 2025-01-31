@@ -4,7 +4,7 @@ title: Context Retrieval System
 slug: /chatbot/context_retrieval
 ---
 
-   # Context Retrieval System
+# Context Retrieval System
 
 Author: `Georgi Peev`
 
@@ -230,7 +230,7 @@ Author: `Georgi Peev`
       ```python
       # Store conversations
       context_manager.add_turn(query, response)
-      
+
       # Retrieve relevant context
       context = context_manager.get_formatted_context(current_query)
       ```

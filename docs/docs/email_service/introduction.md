@@ -1,10 +1,8 @@
 ---
-id: email-service
-title: Email Service
 sidebar_position: 1
 ---
 
-# Email Service
+# Introduction
 
 Author: `Georgi Peev`
 
@@ -28,7 +26,7 @@ The service is designed to:
   - `/topics`: List available topics
   - `/daily-reports/countries`: Retrieve countries with daily reports
 
-- **Email Templates**: 
+- **Email Templates**:
   - HTML templates with responsive design
   - Separate CSS styling for maintainable designs
   - Dynamic content injection via template variables

@@ -1,9 +1,3 @@
----
-title: Database Structure
-sidebar_label: Database Structure
-sidebar_position: 3
----
-
 # Database Structure
 
 Author: `Shaurya Sharma`

@@ -1,10 +1,4 @@
----
-id: vector-search
-title: Vector Search
-slug: /vector-search
----
-
-# Vector Search
+# Vector search
 
 Author: `Cansu Moran`
 

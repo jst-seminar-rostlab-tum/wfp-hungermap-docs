@@ -1,10 +1,12 @@
 # Food Consumption map
 
+**Author:** `Armanpreet Ghotra`
+
 FCS or Food Consumption Score map visualize FCS data. In addition to the map, custom components such as accordions, tooltips, and legends are included.
 
 ---
 
-#### World View
+## World View
 In world view, FCS map appears with country alert's. Along with alerts, one point legend and other gradient legend appears. To enhance user experience, hover effect is also activated.
 
 ***Technical Overview***
@@ -37,7 +39,7 @@ If no selectedCountryId is specified then a TileLayer is added inside a Pane com
 
 ---
 
-#### Country View
+## Country View
 
 Apart from that, customized accordions, legend, loading state and hover effect appears.
 
@@ -112,6 +114,3 @@ The component uses dynamic styling and displays data interactively, enhancing th
 ![Fcs Tooltip](/img/fcs/FcsTooltip.png)
 
 Gradient Legend will appear, which depicts the color with information ```People with insufficient food consumption```.
-
-
-

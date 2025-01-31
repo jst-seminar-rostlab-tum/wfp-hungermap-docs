@@ -1,5 +1,7 @@
 # Sidebar Component
 
+**Author:** `Georgi Tsipov`
+
 The Sidebar component provides a collapsible navigation and control panel, offering country search, global insights and alerts selection, and additional navigation options.
 
 <div align="center">

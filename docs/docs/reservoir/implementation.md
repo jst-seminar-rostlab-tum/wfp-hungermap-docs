@@ -1,8 +1,8 @@
-### **Implementation**
+# Implementation
 
 Author: `Cansu Moran`
 
-#### **Overview**
+## **Overview**
 
 This document provides detailed information about the implementation of the forecasting pipeline. It explains the
 code structure, the main functions, how the endpoints are triggered, and the process for generating and updating
@@ -10,9 +10,9 @@ predictions.
 
 ---
 
-### **Core Implementation Details**
+## **Core Implementation Details**
 
-#### **1. Data Flow and Prediction Workflow**
+### **1. Data Flow and Prediction Workflow**
 
 1. **Daily Updates**
     - A cron job can be used to trigger the `updatePredictions()` function every morning.
@@ -39,32 +39,32 @@ predictions.
             try:
                 if event is None:
                     return {"error": "Request body must be JSON"}, 400
-        
+
                 body_data = event.get('body', {})
-        
+
                 if "percentage" not in body_data or not isinstance(body_data["percentage"], int):
                     return ({"error": "'percentage' is required and must be an integer"}), 400
-        
+
                 percentage = body_data["percentage"]
-        
+
                 # Call the function with validated data
                 return getNotification(adm0Id, percentage)
-        
+
             except Exception as e:
                 return {"error": "An error occurred", "details": str(e)}, 500
       ```
 
 ---
 
-#### **2. Key Functions**
+### **2. Key Functions**
 
-##### **getCountryFcsRcsiGraphData(adm0_id)**
+#### **getCountryFcsRcsiGraphData(adm0_id)**
 
 Retrieves historical FCS and RCSI data for a specific country.
 
-- **Inputs:**  
+- **Inputs:**
   `adm0_id` (country identifier).
-- **Outputs:**  
+- **Outputs:**
   Graph data for FCS and RCSI.
 
 ```python
@@ -77,13 +77,13 @@ def getCountryFcsRcsiGraphData(adm0_id):
 
 ---
 
-##### **getCountryFcsRcsiPredictionData(adm0_id)**
+#### **getCountryFcsRcsiPredictionData(adm0_id)**
 
 Fetches previously predicted FCS and RCSI data from the database.
 
-- **Inputs:**  
+- **Inputs:**
   `adm0_id` (country identifier).
-- **Outputs:**  
+- **Outputs:**
   Prediction data for FCS and RCSI.
 
 ```python
@@ -94,13 +94,13 @@ def getCountryFcsRcsiPredictionData(adm0_id):
 
 ---
 
-##### **getCountryPredictions(adm0_id)**
+#### **getCountryPredictions(adm0_id)**
 
 Processes prediction data into a JSON format for the frontend.
 
-- **Inputs:**  
+- **Inputs:**
   `adm0_id` (country identifier).
-- **Outputs:**  
+- **Outputs:**
   JSON-formatted predictions for FCS and RCSI graphs.
 
 ```python
@@ -146,7 +146,7 @@ def getCountryPredictions(adm0_id):
 
 ---
 
-##### **updatePredictions()**
+#### **updatePredictions()**
 
 Main function to calculate predictions and update the database.
 
@@ -236,7 +236,7 @@ def updatePredictions():
 
 ---
 
-##### **getNotification(adm0_id, percentage)**
+#### **getNotification(adm0_id, percentage)**
 
 If the percentage threshold is met or exceeded, the predictions are processed and notifications are sent. If the
 threshold is not met, the response indicates that no notifications will be sent, ensuring the email backend remains
@@ -342,18 +342,18 @@ def getNotification(adm0_id, percentage):
 
 ---
 
-##### **forecast_model.getRcsiFcsForecast(data)**
+#### **forecast_model.getRcsiFcsForecast(data)**
 
 This function takes the historical data as input and generates predictions. More details can be found below in the **Forecast Model Implementation**.
 
 ---
 
-#### **3. How to Use the Endpoints**
+### **3. How to Use the Endpoints**
 
-- **Frontend Endpoint:**  
+- **Frontend Endpoint:**
   Use `GET /<adm0Id>/predictions.json` to retrieve predictions for a country.
 ---
-- **Update Predictions Endpoint:**  
+- **Update Predictions Endpoint:**
   Use `POST /update_predictions` to update predictions for all the countries.
 ---
 - **Notification Check Endpoint:**
@@ -391,23 +391,23 @@ Use `GET /<adm0Id>/notification-check.json` to evaluate whether the specified co
   }
 }
 ```
-- **`check`**: (boolean) Indicates whether the threshold percentage change was met (`true`) or not (`false`). 
+- **`check`**: (boolean) Indicates whether the threshold percentage change was met (`true`) or not (`false`).
 
 The following fields are added if and only if `check` key is `true`.
-- **`first_date_percentage_change`**: Dates when the first bigger than or equal to percentage changes occurred within the FCS and RCSI predictions.  
-  - **`fcs_first_change_date`**: Date of the first significant FCS change.  
-  - **`rcsi_first_change_date`**: Date of the first significant RCSI change.  
-- **`last_date`**: -The most recent date of historical data.  
-- **`last_fcs_value`**: The last recorded FCS value.  
-- **`last_rcsi_value`**: The last recorded RCSI value.  
-- **`predictions`**: Graph data for FCS and RCSI predictions.  
-  - **`fcsGraph`**: Graph data for FCS predictions.  
-  - **`rcsiGraph`**: Graph data for RCSI predictions (empty array if no data).  
+- **`first_date_percentage_change`**: Dates when the first bigger than or equal to percentage changes occurred within the FCS and RCSI predictions.
+  - **`fcs_first_change_date`**: Date of the first significant FCS change.
+  - **`rcsi_first_change_date`**: Date of the first significant RCSI change.
+- **`last_date`**: -The most recent date of historical data.
+- **`last_fcs_value`**: The last recorded FCS value.
+- **`last_rcsi_value`**: The last recorded RCSI value.
+- **`predictions`**: Graph data for FCS and RCSI predictions.
+  - **`fcsGraph`**: Graph data for FCS predictions.
+  - **`rcsiGraph`**: Graph data for RCSI predictions (empty array if no data).
 ---
 
-#### **4. Forecast Model Implementation**
+### **4. Forecast Model Implementation**
 
-##### Data Preprocessing: **`getRcsiFcsForecast`**
+#### Data Preprocessing: **`getRcsiFcsForecast`**
 
 This function retrieves and forecasts both **FCS** and **RCSI** data:
 
@@ -442,7 +442,7 @@ def getRcsiFcsForecast(graphData):
 
 ---
 
-##### Predicting: **`getForecast`**
+#### Predicting: **`getForecast`**
 
 This function performs the core forecasting:
 

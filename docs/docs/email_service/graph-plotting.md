@@ -1,9 +1,3 @@
----
-id: graph-plotting-utility
-title: Graph Plotting Utility
-slug: /graph-plotting-utility
----
-
 # Graph Plotting Utility
 
 **Author:** `Muhammed Emre Bayraktaroglu`
@@ -148,5 +142,5 @@ RCSI Graph saved: plots/Country_A_RCSI.png
 
 ## Conclusion
 
-The **Graph Plotting Utility** is an efficient tool for visualizing food consumption trends across different countries. 
+The **Graph Plotting Utility** is an efficient tool for visualizing food consumption trends across different countries.
 

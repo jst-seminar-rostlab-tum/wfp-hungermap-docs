@@ -1,5 +1,6 @@
 # Map Component
-Author: ```Lukas Weigmann```
+
+**Author:** `Lukas Weigmann`
 
 ## 1. MapContainer
 The MapContainer component is the root container for the map.
@@ -70,7 +71,7 @@ export const disputedAreaStyle = {
 
 ### Layers
 The map renders layers dynamically based on user interaction. Layers are stacked beginning from the first element in the MapContainer
-wrapper component being in the background. Here you can read more about [how to add a new leaflet layer](../how_to/how_to_add_leaflet_layer).
+wrapper component being in the background. Here you can read more about [how to add a new leaflet layer](../../how_to/how_to_add_leaflet_layer).
 
 #### Alert Layer
 The AlertContainer component contains the functionality for displaying the alerts.
@@ -94,7 +95,7 @@ interaction functionality with the countries.
 Regular borders and borders of disputed areas are rendered in two separate leaflet layers. You can customize their style
 in the ```Map.ts``` constants file (see above).
 
-## 2.Data Flow
+## 2. Data Flow
 The component processes geographic and contextual data using props and local state management. When the Map Type or
 the value of the selectedCountryId context changes (i.e. when clicking on a country) new data is fetched. How these operations
 work in detail is further explained in [Map Operations](map_operations.md).

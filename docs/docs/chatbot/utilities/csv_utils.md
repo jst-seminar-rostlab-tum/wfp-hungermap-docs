@@ -1,4 +1,4 @@
-# CSV Utils
+# CSV utils
 
 **Author:** `Marius Moldovan`
 
@@ -25,7 +25,7 @@ Read data from a CSV file and return a list of dictionaries.
 2. Uses `csv.DictReader` to read the csv file content and map every row to a dictionary
 3. Appends each dictionary to a list, which is then returned
 
-*Example Usage*: 
+*Example Usage*:
 ```python
 from csv_utils import read_csv_data
 

@@ -3,7 +3,8 @@ sidebar_position: 1
 ---
 
 # Map Intro
-Author: ```Lukas Weigmann```
+
+**Author:** `Lukas Weigmann`
 
 ## Overview
 The map leverages [leaflet](https://leafletjs.com/) and [React-Leaflet](https://react-leaflet.js.org/) to create an interactive visualization platform for displaying country-level data and geographic insights.

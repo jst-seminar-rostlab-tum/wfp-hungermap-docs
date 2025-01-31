@@ -1,5 +1,6 @@
 # Map Operations
-Author: ```Lukas Weigmann```
+
+**Author:** `Lukas Weigmann`
 
 ## Overview
 The MapOperations class provides a set of methods for managing and interacting with geographical data on the map.
