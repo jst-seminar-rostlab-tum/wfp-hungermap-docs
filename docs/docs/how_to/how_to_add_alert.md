@@ -4,7 +4,7 @@
 
 ## Overview
 Alerts are [leaflet markers](https://leafletjs.com/reference.html#marker) that are rendered in the map. If you first want to get an overview of how alerts are implemented
-in the hunger map you can read more on the [Alert Page](../frontend/leaflet_map/map_alerts.md). Adding a new alert
+in the hunger map you can read more on the [Alert Page](../frontend/leaflet_map/alerts.md). Adding a new alert
 consists of adding a new alert type to the leaflet map and making it selectable through the legend component or sidebar. Additionally
 also information about the new alert can be added to the legend accordion on the bottom of the page.
 
@@ -23,7 +23,7 @@ export enum AlertType {
 ## 2. Leaflet Map
 Now we can add a new alert layer to ```src/components/Map/Alerts/AlertContainer.tsx```. Before doing this however we have to create a
 new layer component for our alert. Mapping a marker for each data point is the easiest way but you can also use clustering
-as it is used for example for the conflict layer. You can find an example of clustering on the [Alert Page](../frontend/leaflet_map/map_alerts.md).\
+as it is used for example for the conflict layer. You can find an example of clustering on the [Alert Page](../frontend/leaflet_map/alerts.md).\
 For now we will just use a simple marker:
 ```ts
 export function MyAlertLayer() {
