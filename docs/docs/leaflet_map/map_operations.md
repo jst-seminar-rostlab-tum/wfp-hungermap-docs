@@ -68,7 +68,7 @@ This method handles the functionality for the tooltips shown in the global view 
 - ```countryMapData?```: general data about the country the tooltip is being attached to - needs to be set when calling from nutrition cloropleth
 
 #### Returns
-A method destructing the map listeners that is used in the corresponding useEffect of the [Cloropleth Elments](map_cloropleths.md).
+A method destructing the map listeners that is used in the corresponding useEffect of the [Cloropleth Elments](cloropleths.md).
 
 #### Workflow
 The method binds and unbinds the tooltips to the leaflet map. When dragging the map however, there is a certain lag which can
