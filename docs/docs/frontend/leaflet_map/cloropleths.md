@@ -1,7 +1,6 @@
 # Custom Choropleths
-Author: ```Lukas Weigmann```
 
-**Author:** `Lukas Fabio Weigmann`
+**Author:** `Lukas Weigmann`
 
 ## Overview
 The map supports multiple thematic data visualizations for each mode. For the FCS, Nutrition and IPC view Cloropleth elements

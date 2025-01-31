@@ -1,7 +1,6 @@
 # Map Component
-Author: ```Lukas Weigmann```
 
-**Author:** `Lukas Fabio Weigmann`
+**Author:** `Lukas Weigmann`
 
 ## 1. MapContainer
 The MapContainer component is the root container for the map.

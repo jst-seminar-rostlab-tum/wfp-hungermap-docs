@@ -1,6 +1,6 @@
 # Region Labels
 
-**Author:** `Lukas Fabio Weigmann`
+**Author:** `Lukas Weigmann`
 
 ## Overview
 The region labels are shown in the FCS and Nutrition view. Since for some countries like Vietnam labels get very long and would
