@@ -1,4 +1,4 @@
-## Database Overview
+# Database Overview
 
 Author: `Cansu Moran`
 
@@ -109,33 +109,33 @@ Generated through the following function:
     def upsertPredictions(prediction_row):
         """
           Generates an SQL query to insert or update a prediction row in the database.
-    
+
           Args:
               prediction_row (dict): A dictionary representing a prediction row, where keys are column names.
-    
+
           Returns:
               str: The SQL query string.
-    
+
           Raises:
               ValueError: If `prediction_row` is not a dictionary or required unique columns are missing.
           """
-    
+
         if not isinstance(prediction_row, dict):
             raise ValueError("Predictions must be a dictionary.")
-    
+
         # Columns used for checking existence
         unique_columns = ["adm0_code", "prediction_date"]
         if not all(col in prediction_row for col in unique_columns):
             raise ValueError(f"Missing required unique columns: {unique_columns}")
-    
+
         columns = list(prediction_row.keys())
         values = list(prediction_row.values())
-    
+
         values_clause = ", ".join(
             f"'{value}'" if isinstance(value, str) else str(value)
             for value in values
         )
-    
+
         update_clause = ", ".join(
             "`{}` = {}".format(
                 col,
@@ -144,15 +144,15 @@ Generated through the following function:
             for col in columns
             if col not in unique_columns
         )
-    
+
         columns_clause = ", ".join(f"`{col}`" for col in columns)
-    
+
         query = (
             f"INSERT INTO `{prediction_table}` ({columns_clause}) "
             f"VALUES ({values_clause}) "
             f"ON DUPLICATE KEY UPDATE {update_clause};"
         )
-    
+
         return query
 ```
 

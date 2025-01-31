@@ -1,7 +1,5 @@
 ---
-id: Overview of Dependencies
-title: Overview of Dependencies
-slug: /overview-of-dependencies
+sidebar_position: 2
 ---
 
 # Overview of Dependencies
@@ -24,8 +22,8 @@ Following external dependencies are essential and required to run the Chatbot:
 | `tiktoken` | A fast python BPE tokenizer for OpenAI's GPT models |
 | `certifi` | A Python package that provides Mozilla's CA Bundle - used for the MongoDB connection |
 
-## Data Parsing and Uploading Scripts 
-The **Chatbot** relies on data provided from the MongoDB database, which is populated by various data parsing and uploading scripts. These scripts fetch data World Food Programme APIs and store it in the database for the Chatbot to access.  
+## Data Parsing and Uploading Scripts
+The **Chatbot** relies on data provided from the MongoDB database, which is populated by various data parsing and uploading scripts. These scripts fetch data World Food Programme APIs and store it in the database for the Chatbot to access.
 
 :::note
 You can enlarge pictures by clicking on them.
@@ -44,7 +42,7 @@ You can enlarge pictures by clicking on them.
 | `csv_utils.py` | Contains utility functions for reading and writing CSV files|
 | `db_vectorizing.py` | Contains utility functions for vectorizing MongoDB documents for `Vector Search`|
 
-## Utilities 
+## Utilities
 Common utility modules are used across the Chatbot project to streamline various tasks. These utilities include functions for database interaction, data processing, and file handling.
 
 ![Utilities Overview](../../../static/img/chatbot/utils_svg.svg)

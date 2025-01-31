@@ -1,10 +1,4 @@
----
-id: openai_integration
-title: OpenAI Integration & Response
-slug: /chatbot/openai_integration
----
-
-# Chatbot: OpenAI Integration & Response
+# OpenAI Integration & Response
 
 Author: `Georgi Peev`
 

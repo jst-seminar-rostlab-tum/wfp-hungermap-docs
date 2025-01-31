@@ -1,6 +1,6 @@
 # Charts
 
-Author: Linus Sander
+**Author:** `Linus Sander`
 
 ## Overview
 
@@ -13,19 +13,19 @@ Both provide various practical customization options, which will be explained in
 The components are basically boxes that render a title, description, and chart.
 They have a width of 100%, so they adjust to the width of their parent element in which they are used.
 The height of the boxes depend on the provided text, while the chart itself has a fixed height (adjustable with the `chartHeight` parameter).
-For the chart itself, the widely used [Highcharts](https://www.highcharts.com/) framework was utilized. 
+For the chart itself, the widely used [Highcharts](https://www.highcharts.com/) framework was utilized.
 This framework makes it easy to represent charts of any complexity.
 
 > <img src="/img/charts/charts_custom_functionalities_icons.png" alt="Charts custom functionalities" width="200" />
 
 1. Functionality to reveal a slider, that allows the displayed x-axis to be adjusted. This feature is only available for the `ContinuousChart`.
-2. It is possible to change the chart type. By default, a line chart is displayed in the `ContinuousChart`, but with a button press, one can switch to a bar chart. In the `CategoricalChart` the default bar chart can be changed to a donut (pie) chart. 
-3. Button to download the raw data behind the chart (csv, json) as well as the chart itself (png, svg). 
+2. It is possible to change the chart type. By default, a line chart is displayed in the `ContinuousChart`, but with a button press, one can switch to a bar chart. In the `CategoricalChart` the default bar chart can be changed to a donut (pie) chart.
+3. Button to download the raw data behind the chart (csv, json) as well as the chart itself (png, svg).
 4. Option to open the chart in a full-screen modal.
 
 ## Parameters
 
-The following section provides a detailed explanation of the individual parameters for the two chart components. 
+The following section provides a detailed explanation of the individual parameters for the two chart components.
 For more information on the structure of the expected data object by `params.data`, please refer to the 'Data' section below.
 
 ### `ContinuousChart` Parameters
@@ -63,31 +63,31 @@ This section provides a detailed description of the data expected by each of the
 
 ### `ContinuousChartData`
 
-The `ContinuousChart` component expects a data object of type `CategoricalChartData`. In this object, the `type` 
-parameter is set to `ContinuousChartDataType.LINE_CHART_DATA` to inform the chart component that it is dealing with 
+The `ContinuousChart` component expects a data object of type `CategoricalChartData`. In this object, the `type`
+parameter is set to `ContinuousChartDataType.LINE_CHART_DATA` to inform the chart component that it is dealing with
 `LINE_CHART_DATA`. Additionally, the `xAxisType` parameter specifies the exact type of the x-axis. For more information
-about the available x-axis types, see [official highcharts documentation](https://api.highcharts.com/class-reference/Highcharts#.AxisTypeValue). 
+about the available x-axis types, see [official highcharts documentation](https://api.highcharts.com/class-reference/Highcharts#.AxisTypeValue).
 The optional `yAxisLabel` parameter can be used to set the title of the y-axis.
 
-The actual data is stored in `lines`, which contains an array where each entry represents a data series ('line') in the chart. 
-Each `lines` element must have a `name` and an array called `dataPoints`, which includes all data points of this data series. 
-For each individual data point, an `x` value must be specified, and a `y` value can be optionally provided. 
-If a range around an individual data point should also be displayed in the chart, 
+The actual data is stored in `lines`, which contains an array where each entry represents a data series ('line') in the chart.
+Each `lines` element must have a `name` and an array called `dataPoints`, which includes all data points of this data series.
+For each individual data point, an `x` value must be specified, and a `y` value can be optionally provided.
+If a range around an individual data point should also be displayed in the chart,
 this can be defined using `yRangeMin` and `yRangeMax` for each individual data point.
 
-To display the range, `showRange` must be set to true; only then the specified values for `yRangeMin` and `yRangeMax` will be rendered. 
-Additionally, the `color` for each data series ('line') can be explicitly set, and a specific dash style can be selected using `dashStyle`, 
+To display the range, `showRange` must be set to true; only then the specified values for `yRangeMin` and `yRangeMax` will be rendered.
+Additionally, the `color` for each data series ('line') can be explicitly set, and a specific dash style can be selected using `dashStyle`,
 if desired ([available dash styles](https://api.highcharts.com/class-reference/Highcharts#.DashStyleValue)).
 
-In addition to all the previously described settings for the chart setup itself and the individual data series, 
+In addition to all the previously described settings for the chart setup itself and the individual data series,
 the parameters `verticalLines` and `verticalBands` can be used to add vertical dividing lines or color-filled areas to the graph.
-A vertical line requires an `x`-value specifying where it should be displayed, and optionally a `color` or `dashStyle` 
-([available dash styles](https://api.highcharts.com/class-reference/Highcharts#.DashStyleValue)) can also be defined. 
-For each vertical band, `xStart` and `xEnd` must be specified to define where the area begins and ends. 
+A vertical line requires an `x`-value specifying where it should be displayed, and optionally a `color` or `dashStyle`
+([available dash styles](https://api.highcharts.com/class-reference/Highcharts#.DashStyleValue)) can also be defined.
+For each vertical band, `xStart` and `xEnd` must be specified to define where the area begins and ends.
 Additionally, a specific color can be optionally chosen using `color`, and a label for the band can be declared using `label`.
 
-Furthermore, it is also possible to label data series in the chart as 'predictions' to ensure consistent styling for all charts that contain predictions data. 
-To display a predictions data series, the following two parameters need to be configured: 
+Furthermore, it is also possible to label data series in the chart as 'predictions' to ensure consistent styling for all charts that contain predictions data.
+To display a predictions data series, the following two parameters need to be configured:
 First, the `predictionVerticalLineX` parameter must define the x-value where the 'future' begins.
 Second, the `prediction` value must be set to true for the predictions data series, so the component recognizes it as the 'predictions' series.
 Multiple predictions series can exist in a single chart, but each must be marked with `prediction: true`.
@@ -136,12 +136,12 @@ export interface ContinuousChartData {
 
 ### `CategoricalChartData`
 
-The `CategoricalChart` component expects a data object of type `CategoricalChartData`. 
-In this object, the title of the y-axis label can be defined using `yAxisLabel` (optional), 
-along with an arbitrarily long `categories` array where each entry corresponds to a category. 
+The `CategoricalChart` component expects a data object of type `CategoricalChartData`.
+In this object, the title of the y-axis label can be defined using `yAxisLabel` (optional),
+along with an arbitrarily long `categories` array where each entry corresponds to a category.
 A category consists of a `name`, a `dataPoint` containing only the actual data point (`y`), and an optional `color` attribute.
-If a range around an individual data point should also be displayed in the chart, this can be defined using `yRangeMin` 
-and `yRangeMax` for each individual data point. The range whiskers are only shown in the bar chart, not in the pie chart, 
+If a range around an individual data point should also be displayed in the chart, this can be defined using `yRangeMin`
+and `yRangeMax` for each individual data point. The range whiskers are only shown in the bar chart, not in the pie chart,
 and only if both, `yRangeMin` and `yRangeMax`, are defined.
 
 With the help of `yRelative`, it is possible to specify also relative numbers.
@@ -158,7 +158,7 @@ export interface CategoricalChartData {
       y: number;
       yRangeMin?: number;
       yRangeMax?: number;
-      
+
       yRelative?: number;
       yRangeMinRelative?: number;
       yRangeMaxRelative?: number;

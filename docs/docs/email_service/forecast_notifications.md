@@ -1,9 +1,3 @@
----
-title: Forecast Notifications
-sidebar_label: Forecast Notifications
-sidebar_position: 7
----
-
 # Forecast Notifications
 
 **Author:** `Marius Moldovan`

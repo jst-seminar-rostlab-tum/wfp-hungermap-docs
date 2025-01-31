@@ -13,7 +13,7 @@ This documentation provides an overview of various data uploaders used in the Hu
 
 ## Overview
 
-Data Uploaders provide: 
+Data Uploaders provide:
 - Conversion of CSV files, resulting from parsers, with their respective headers and sorting to ready-to-use dictionaries.
 - Uploading of these dictionaries into MongoDB collections for access and retrieval.
 - Updating of existing collections with new data, ensuring data integrity and consistency.
@@ -87,8 +87,8 @@ Processes raw CSV data into dictonary format for the specific data uploader. It 
 
 *Returns*:
 - `List[Dict[str,str]]`: Processed data in dictionary format.
- 
---- 
+
+---
 
 ### Specific Functions
 
@@ -160,18 +160,18 @@ Generally, a `main` function is mostly responsible for orchestrating the data pr
 
 ---
 
-## Use of Libraries 
+## Use of Libraries
 
 The Data Uploaders rely on the following libraries:
-- [**Location Utilities**](loc-utils): For country code conversion and country name retrieval. It is used to provide human-readable location names instead of coordinates. 
-- [**Country Utilities**](/country-utils): For country name retrieval based on country IDs. It is used to provide human-readable country names based on their IDs.
+- [**Location Utilities**](docs/chatbot/utilities/location_utilities): For country code conversion and country name retrieval. It is used to provide human-readable location names instead of coordinates.
+- [**Country Utilities**](docs/chatbot/utilities/country_utilities): For country name retrieval based on country IDs. It is used to provide human-readable country names based on their IDs.
 - **CSV Utilities**: For reading and processing CSV files. It is used to parse and process raw data from CSV files. (TODO: Add link to CSV Utilities)
 - **Database Utilities**: This utility provides functions for loading MongoDB configurations and and uploading data to the database. It also provides a function to delete all records. (TODO: Add link to Database Utilities)
 
 ---
 
 ## Conclusion
-The various Data Uploaders are essentially processing the raw data provided from the APIs through the API Parsers. 
+The various Data Uploaders are essentially processing the raw data provided from the APIs through the API Parsers.
 
-- **Sorted and well-formed data sets** as a result of thorough filtering and processing 
-- **Building** a data-rich collection database, which is the heart of the chatbot 
+- **Sorted and well-formed data sets** as a result of thorough filtering and processing
+- **Building** a data-rich collection database, which is the heart of the chatbot

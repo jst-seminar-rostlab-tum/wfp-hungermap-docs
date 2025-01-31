@@ -1,6 +1,5 @@
 {
   "label": "How to",
-  "position": 4,
   "link": {
     "type": "generated-index",
     "description": "This documentation provides guidelines on how to extend the functionalities of the HungerMap platform. Whether you're looking to contribute new forecasting models, enhance the chatbot's capabilities, or extend the email service, this guide offers the necessary instructions and best practices."

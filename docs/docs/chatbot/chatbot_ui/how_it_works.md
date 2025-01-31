@@ -1,4 +1,4 @@
-# Technicality
+# How it works
 
 **Author:** `Haidong Xu`
 

@@ -1,4 +1,8 @@
-### Introduction to Reservoir Computing Pipeline
+---
+sidebar_position: 1
+---
+
+# Introduction
 
 Author: `Cansu Moran`
 

@@ -1,27 +1,21 @@
----
-id: run-all-uploaders.py
-title: run_all_uploaders.py
-slug: /run-all-uploaders
----
-
-# `run_all_uploaders.py`
+# Run all uploaders script
 
 **Author:** `Muhammed Emre Bayraktaroglu`
 
-**Purpose:**  
+**Purpose:**
 This script automates the execution of all Python scripts in the `src/data_uploaders` folder, essentially running every single data uploader to set up the database for the chatbot. It runs each script sequentially, captures output, and handles errors, making it ideal for batch processing.
 
 
 ---
 
-## Usage 
+## Usage
 
-1. **Run the Script:**  
+1. **Run the Script:**
    ```bash
    python run_all_uploaders.py
    ```
 
-2. **Output:**  
+2. **Output:**
    - Displays the name of each data uploader being executed.
    - Prints the standard output or errors for each script.
    - Stops if a script fails.
@@ -30,13 +24,13 @@ This script automates the execution of all Python scripts in the `src/data_uploa
 
 ## Code Overview
 
-1. **`folder_path`:**  
+1. **`folder_path`:**
    Specifies the directory (`src/data_uploaders`) containing the data uploaders to execute.
 
-2. **Dynamic Execution:**  
+2. **Dynamic Execution:**
    Converts filenames to module paths (e.g., `uploader.py` → `src.data_uploaders.uploader`) and runs them using `subprocess.run`.
 
-3. **Error Handling:**  
+3. **Error Handling:**
    - Prints errors if a script fails (`stderr`).
    - Stops further execution if the return code is non-zero.
 
@@ -60,5 +54,5 @@ uploader2 failed to execute.
 
 ---
 
-## Conclusion  
+## Conclusion
 This lightweight script aimed at simplifying the setup process of the database for the chatbot.

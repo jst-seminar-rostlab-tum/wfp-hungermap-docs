@@ -1,10 +1,4 @@
----
-id: cleanup-script
-title: Cleanup Script
-slug: /cleanup-script
----
-
-# Cleanup Script
+# Cleanup script
 
 **Author:** `Muhammed Emre Bayraktaroglu`
 

@@ -1,5 +1,6 @@
 # Custom Choropleths
-Author: ```Lukas Weigmann```
+
+**Author:** `Lukas Weigmann`
 
 ## Overview
 The map supports multiple thematic data visualizations for each mode. For the FCS, Nutrition and IPC view Cloropleth elements
@@ -12,7 +13,7 @@ regions of one country. Since there are small differences between the three clor
 following:
 
 ## FCS and Nutrition Cloropleth
-The implementation for the Food Consumption and Nutrition View are very similar and fairly simple. 
+The implementation for the Food Consumption and Nutrition View are very similar and fairly simple.
 ### Global View
 Each cloropleth component directly placed in the MapContainer is rendering one single country. This means in the [Map Component](map_component)
 to each country of all the data a single Cloropleth element is mapped. This Cloropleth element thus also contains functionality

@@ -1,10 +1,12 @@
 # Nutrition Map
 
+**Author:** `Armanpreet Ghotra`
+
 Nutrition map gives the information of Nutrition in the world as well as country level. It helps to visualize and retrieve the information risk of inadequate intake of micronutrients at country level.
 
 ---
 
-#### World View
+## World View
 
 In world view, nutrition map renders nutrition layer along with point gradient and hover effect.
 
@@ -50,7 +52,7 @@ The code snippet which triggers Nutrition Map:
 
 ---
 
-#### Country View
+## Country View
 
 The Country view of nutrition map visualizes the Micronutrients information, along with customized tooltip, accordion and gradient legend.
 
