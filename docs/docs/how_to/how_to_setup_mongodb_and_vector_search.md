@@ -62,19 +62,43 @@ OR
 5. Click **Create Search Index** and select the **Atlas Vector Search** type and **JSON Editor**.
 6. Select the database and collection to index. (e.g. `db_main` -> `chatbot_data`).
 7. Configure the index:
-    ```json
-    {
+   - For `chatbot_data` collection:
+       ```json
+       {
+           "fields": [
+               {
+               "numDimensions": 1536,
+               "path": "data_embedding",
+               "similarity": "cosine",
+               "type": "vector"
+               }
+           ]
+       }
+       ```
+   - For `report_chatting` collection:
+       ```json
+       {
         "fields": [
-            {
-            "numDimensions": 1536,
-            "path": "data_embedding",
-            "similarity": "cosine",
-            "type": "vector"
-            }
-        ]
-    }
-    ```
-6. Save the index.
+             {
+               "numDimensions": 1536,
+               "path": "data_embedding",
+               "similarity": "cosine",
+               "type": "vector"
+             },
+             {
+               "type": "filter",
+               "path": "country_name"
+             },
+             {
+               "type": "filter",
+               "path": "year"
+             }
+           ]
+        }
+       ```
+
+8. Save the index.
+
 
 
 ## Step 7: Test the Connection
@@ -107,3 +131,9 @@ OR
 1. Use the **Metrics** section in MongoDB Atlas to monitor database performance.
 2. Review **Index Usage** to ensure the vector search index is effectively utilized.
 3. Scale your cluster if needed based on usage and performance metrics.
+
+
+## Important Notes
+
+After performing a database update or reset, ensure that the search indexes are not deleted. If they are, recreate them.
+
